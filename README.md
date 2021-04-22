@@ -16,6 +16,7 @@
     <li><a href="#built-with">Built With</a></li>
     <li><a href="#dependencies">Dependencies</a></li>
     <li><a href="#why-react">Why React?</a></li>
+    <li><a href="#test-environment">Test environment</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
@@ -78,6 +79,10 @@ On the other hand, Vue.js (and the MEVN stack) could be considered for the proje
 By having its virtual DOM, it will allow the myVHS application to render views faster and more efficiently. We will have to load a lot of data from the server-side, so it is better to be certain from the beginning that the framework to be used will be able to deal with the high database load by users in the future.
 
 Another advantage is that React prioritizes the user experience, which is one of the main goals of the myFlix application: to display in a simple and intuitive way information about movies to the user.
+
+## Test environment
+
+Project tested using Parcel v2: `parcel src/index.html`
 
 ## License
 
