@@ -17,6 +17,7 @@
     <li><a href="#dependencies">Dependencies</a></li>
     <li><a href="#why-react">Why React?</a></li>
     <li><a href="#test-environment">Test environment</a></li>
+    <li><a href="#server-side">Server-side</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
@@ -83,6 +84,10 @@ Another advantage is that React prioritizes the user experience, which is one of
 ## Test environment
 
 Project tested using Parcel v2: `parcel src/index.html`
+
+## Server-side
+
+To see the Server-side of the app, please check [this repository](https://github.com/gregoriodelasheras/myVHS).
 
 ## License
 
