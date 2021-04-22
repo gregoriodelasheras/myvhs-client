@@ -66,7 +66,7 @@ The development of this application was organized through a Kanban board. You ca
 - react
 - react-dom
 
-## Why React?
+## Why did I choose React as a library / framework?
 
 For the myVHS application, React would certainly be the best choice. It is not a particularly heavy application and does not have complex user interfaces, nor does it have to display a large amount of data to the user from the server-side. Angular (and the MEAN stack) is therefore out of the question, as it would slow down the workflow.
 
