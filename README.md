@@ -32,9 +32,11 @@
 </p>
 
 ### Objective:
+
 - Build a web application that provides users with access to information about different movies, genres, directors and actors of the 1980s. Users are able to register, update their personal information, deregister and create a list of "Favorites" and "To Watch" movies.
 
 ### User Stories:
+
 - As a user, I want to be able to receive information on movies, genres, directors and actors of the 1980s so that I can learn more about movies I’ve watched or am interested in.
 - As a user, I want to have a "Favorites" list and a "To Watch" list, and add and remove movies from them.
 - As a user, I want to access a simple web application with a minimalist interface, displaying only essential information.
@@ -42,7 +44,8 @@
 - As a user, I want to be able to update my personal data.
 - As a user, I want to be able to deregister my profile from the web application database.
 
-### Key Features: 
+### Key Features:
+
 - Return a list of movies of the 80's to the user.
 - Return data about a single movie by title to the user.
 - Return data about movie genres to the user.
@@ -55,6 +58,7 @@
 - Secure access to the API data: authentication and authorization with HTTP and JSON Web Token.
 
 ### Kanban Board:
+
 The development of this application was organized through a Kanban board. You can see the board by [following this link](https://trello.com/b/44Fttxq0/myvhs-client-side).
 
 ## Built With
