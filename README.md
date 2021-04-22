@@ -15,8 +15,7 @@
     <li><a href="#about-the-project">About The Project</a></li>
     <li><a href="#built-with">Built With</a></li>
     <li><a href="#dependencies">Dependencies</a></li>
-    <li><a href="#why-react">Why did I choose React as a library / framework?</a></li>
-    <li><a href="#documentation">Documentation</a></li>
+    <li><a href="#why-react">Why React?</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
@@ -66,7 +65,7 @@ The development of this application was organized through a Kanban board. You ca
 - react
 - react-dom
 
-## Why did I choose React as a library / framework?
+## Why React?
 
 For the myVHS application, React would certainly be the best choice. It is not a particularly heavy application and does not have complex user interfaces, nor does it have to display a large amount of data to the user from the server-side. Angular (and the MEAN stack) is therefore out of the question, as it would slow down the workflow.
 
@@ -75,9 +74,6 @@ On the other hand, Vue.js (and the MEVN stack) could be considered for the proje
 By having its virtual DOM, it will allow the myVHS application to render views faster and more efficiently. We will have to load a lot of data from the server-side, so it is better to be certain from the beginning that the framework to be used will be able to deal with the high database load by users in the future.
 
 Another advantage is that React prioritizes the user experience, which is one of the main goals of the myFlix application: to display in a simple and intuitive way information about movies to the user.
-
-## Documentation
-To read the API documentation, please follow [this link](https://gregoriodelasheras.github.io/myVHS/public/documentation).
 
 ## License
 
@@ -88,7 +84,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Francisco Gregorio de las Heras - [@herasdev](https://twitter.com/herasdev)
 
-Project Link: [https://myvhs.herokuapp.com/](https://myvhs.herokuapp.com/)
+Project Link: [https://myvhs.herokuapp.com/](https://gregoriodelasheras.github.io/myVHS-client/)
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
