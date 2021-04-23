@@ -102,7 +102,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Francisco Gregorio de las Heras - [@herasdev](https://twitter.com/herasdev)
 
-Project Link: [https://myvhs.herokuapp.com/](https://gregoriodelasheras.github.io/myVHS-client/)
+Project Link: [https://gregoriodelasheras.github.io/myVHS-client/](https://gregoriodelasheras.github.io/myVHS-client/)
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
