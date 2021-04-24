@@ -91,7 +91,7 @@ Project tested using Parcel v2: `parcel src/index.html`
 
 ## Server-side
 
-To see the Server-side of the app, please check [this repository](https://github.com/gregoriodelasheras/myVHS).
+To see the Server-side of the app, please check [this repository](https://github.com/gregoriodelasheras/myVHS-server).
 
 ## License
 
