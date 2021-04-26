@@ -74,6 +74,7 @@ The development of this application was organized through a Kanban board. You ca
 - eslint
 - react
 - react-dom
+- prop-types
 
 ## Why React?
 
