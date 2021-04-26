@@ -1,10 +1,11 @@
 {
   "name": "myvhs-client",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Client-side for myVHS web app.",
   "main": "src/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel src/index.html --open"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/gregoriodelasheras/myVHS-client#readme",
   "dependencies": {
+    "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
