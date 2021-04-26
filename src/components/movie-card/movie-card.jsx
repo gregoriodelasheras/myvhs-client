@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export class MovieCard extends React.Component {
   render() {
@@ -16,3 +16,8 @@ export class MovieCard extends React.Component {
     );
   }
 }
+
+MovieCard.propTypes = {
+  movieData: PropTypes.object.isRequired,
+  onMovieClick: PropTypes.func.isRequired,
+};
