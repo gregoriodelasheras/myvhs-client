@@ -75,6 +75,7 @@ The development of this application was organized through a Kanban board. You ca
 - react
 - react-dom
 - prop-types
+- axios
 
 ## Why React?
 
