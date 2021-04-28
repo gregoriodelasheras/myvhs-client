@@ -11,13 +11,16 @@ export class MovieCard extends React.Component {
         onClick={() => {
           onMovieClick(movieData);
         }}>
-        {movieData.title}
+        {`${movieData.releaseYear} - ${movieData.title}`}
       </div>
     );
   }
 }
 
 MovieCard.propTypes = {
-  movieData: PropTypes.object.isRequired,
+  movieData: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    releaseYear: PropTypes.number.isRequired,
+  }).isRequired,
   onMovieClick: PropTypes.func.isRequired,
 };
