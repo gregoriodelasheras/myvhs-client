@@ -1,49 +1,51 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Button from 'react-bootstrap/Button';
 
 export class MovieView extends React.Component {
   render() {
     const { movieData, onBackClick } = this.props;
 
     return (
-      <div className='movie-view'>
-        <div className='movie-image'>
+      <div className='movie-view text-center'>
+        <div className='movie-image mb-4'>
           <img src={movieData.imagePath} />
         </div>
-        <div className='movie-title'>
-          <span className='label'>Title: </span>
+        <div className='movie-title mb-2'>
+          <span className='label font-weight-bold'>Title: </span>
           <span className='value'>{movieData.title}</span>
         </div>
-        <div className='movie-year'>
-          <span className='label'>Release Year: </span>
+        <div className='movie-year mb-2'>
+          <span className='label font-weight-bold'>Release Year: </span>
           <span className='value'>{movieData.releaseYear}</span>
         </div>
-        <div className='movie-genres'>
-          <span className='label'>Genres: </span>
+        <div className='movie-genres mb-2'>
+          <span className='label font-weight-bold'>Genres: </span>
           <span className='value'>{movieData.genre.join(' / ')}</span>
         </div>
-        <div className='movie-director'>
-          <span className='label'>Director: </span>
+        <div className='movie-director mb-2'>
+          <span className='label font-weight-bold'>Director: </span>
           <span className='value'>{movieData.director}</span>
         </div>
-        <div className='movie-actors'>
-          <span className='label'>Main Cast: </span>
+        <div className='movie-actors mb-2'>
+          <span className='label font-weight-bold'>Main Cast: </span>
           <span className='value'>{movieData.actors.join(', ')}</span>
         </div>
-        <div className='movie-time'>
-          <span className='label'>Run Time: </span>
+        <div className='movie-time mb-2'>
+          <span className='label font-weight-bold'>Run Time: </span>
           <span className='value'>{movieData.runTime}</span>
         </div>
-        <div className='movie-description'>
-          <span className='label'>Description: </span>
-          <span className='value'>{movieData.description}</span>
+        <div className='movie-description mb-4'>
+          <span className='label font-weight-bold'>Description: </span>
+          <span className='value font-italic'>{movieData.description}</span>
         </div>
-        <button
+        <Button
+          className='px-5'
           onClick={() => {
             onBackClick(null);
           }}>
           Back
-        </button>
+        </Button>
       </div>
     );
   }

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 export function RegistrationView(props) {
   const [name, setName] = useState('');
@@ -12,62 +14,44 @@ export function RegistrationView(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (
-      name &&
-      lastName &&
-      birthday &&
-      country &&
-      email &&
-      username &&
-      password
-    ) {
-      console.log(name, lastName, birthday, country, email, username, password);
-      props.onRegistered(
-        name &&
-          lastName &&
-          birthday &&
-          country &&
-          email &&
-          username &&
-          password,
-      );
-      console.log(
-        `Thanks for registering with us, ${username}! Welcome to myVHS. Click on a movie to start discovering the wonderful world of 1980s cinema!`,
-      );
-    } else {
-      console.log('Please fill in all fields to register with us.');
-    }
+    console.log(name, lastName, birthday, country, email, username, password);
+    props.onRegistered(
+      name && lastName && birthday && country && email && username && password,
+    );
   };
 
   return (
-    <form>
-      <div>
-        <label>Name:</label>
-        <input
+    <Form className='mt-4'>
+      <Form.Group controlId='formName'>
+        <Form.Label>Name:</Form.Label>
+        <Form.Control
           type='text'
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-      </div>
-      <div>
-        <label>Last Name:</label>
-        <input
+      </Form.Group>
+
+      <Form.Group controlId='formLastName'>
+        <Form.Label>Last Name:</Form.Label>
+        <Form.Control
           type='text'
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
         />
-      </div>
-      <div>
-        <label>Birthday:</label>
-        <input
+      </Form.Group>
+      <Form.Group controlId='formBirthday'>
+        <Form.Label>Birthday:</Form.Label>
+        <Form.Control
           type='date'
           value={birthday}
           onChange={(e) => setBirthday(e.target.value)}
         />
-      </div>
-      <div>
-        <label>Country:</label>
-        <select
+      </Form.Group>
+      <Form.Group controlId='formCountry'>
+        <Form.Label>Country:</Form.Label>
+        <Form.Control
+          as='select'
+          custom
           name='country'
           value={country}
           onChange={(e) => setCountry(e.target.value)}>
@@ -362,36 +346,36 @@ export function RegistrationView(props) {
           <option value='Yemen'>Yemen</option>
           <option value='Zambia'>Zambia</option>
           <option value='Zimbabwe'>Zimbabwe</option>
-        </select>
-      </div>
-      <div>
-        <label>E-mail:</label>
-        <input
+        </Form.Control>
+      </Form.Group>
+      <Form.Group controlId='formEmail'>
+        <Form.Label>E-mail:</Form.Label>
+        <Form.Control
           type='email'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-      </div>
-      <div>
-        <label>Username:</label>
-        <input
+      </Form.Group>
+      <Form.Group controlId='formUsername'>
+        <Form.Label>Username:</Form.Label>
+        <Form.Control
           type='text'
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-      </div>
-      <div>
-        <label>Password:</label>
-        <input
+      </Form.Group>
+      <Form.Group controlId='formPassword'>
+        <Form.Label>Password:</Form.Label>
+        <Form.Control
           type='password'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-      </div>
-      <button type='submit' onClick={handleSubmit}>
+      </Form.Group>
+      <Button variant='primary' type='submit' onClick={handleSubmit}>
         Submit
-      </button>
-    </form>
+      </Button>
+    </Form>
   );
 }
 
