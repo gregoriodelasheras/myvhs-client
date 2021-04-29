@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import axios from 'axios';
 
 export function LoginView(props) {
   const [username, setUsername] = useState('');
@@ -9,8 +10,20 @@ export function LoginView(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(`Username: ${username} | Password: ${password}`);
-    props.onLoggedIn(username && password);
+    axios
+      .post('https://myvhs.herokuapp.com/login', {
+        username: username,
+        password: password,
+      })
+      .then((response) => {
+        const data = response.data;
+        props.onLoggedIn(data);
+      })
+      .catch((e) => {
+        console.log(
+          `The user does not exist or the password is incorrect. ${e}`,
+        );
+      });
   };
 
   return (
