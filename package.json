@@ -1,6 +1,6 @@
 {
   "name": "myvhs-client",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Client-side for myVHS web app.",
   "main": "src/index.html",
   "scripts": {
@@ -21,6 +21,7 @@
     "axios": "^0.21.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
+    "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {

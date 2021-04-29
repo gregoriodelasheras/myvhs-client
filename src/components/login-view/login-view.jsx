@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 export function LoginView(props) {
   const [username, setUsername] = useState('');
@@ -7,39 +9,33 @@ export function LoginView(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (username && password) {
-      console.log(`Username: ${username} | Password: ${password}`);
-      props.onLoggedIn(username && password);
-      console.log(
-        `Sorry, the username you have entered, "${username}", doesn't exist in our database. Please register to start using our wonderful App!`,
-      );
-    } else {
-      console.log('Please enter your username and password.');
-    }
+    console.log(`Username: ${username} | Password: ${password}`);
+    props.onLoggedIn(username && password);
   };
 
   return (
-    <form>
-      <div>
-        <label>Username:</label>
-        <input
+    <Form className='mt-4'>
+      <Form.Group controlId='formUsername'>
+        <Form.Label>Username:</Form.Label>
+        <Form.Control
           type='text'
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-      </div>
-      <div>
-        <label>Password:</label>
-        <input
+      </Form.Group>
+
+      <Form.Group controlId='formPassword'>
+        <Form.Label>Password:</Form.Label>
+        <Form.Control
           type='password'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-      </div>
-      <button type='submit' onClick={handleSubmit}>
+      </Form.Group>
+      <Button variant='primary' type='submit' onClick={handleSubmit}>
         Submit
-      </button>
-    </form>
+      </Button>
+    </Form>
   );
 }
 
