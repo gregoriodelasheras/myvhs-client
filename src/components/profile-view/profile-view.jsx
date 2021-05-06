@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import { Row, Col, Button, ButtonGroup, Alert, Modal } from 'react-bootstrap';
 
-/* export default function ProfileView() { */
 export default class ProfileView extends React.Component {
   constructor() {
     super();
@@ -50,7 +49,7 @@ export default class ProfileView extends React.Component {
       window.open(`/users/${users.username}`, '_self');
     }
 
-    function MyVerticallyCenteredModal(props) {
+    function DeleteUserModal(props) {
       return (
         <Modal
           {...props}
@@ -58,7 +57,7 @@ export default class ProfileView extends React.Component {
           aria-labelledby='contained-modal-title-vcenter'
           centered>
           <Modal.Body className='modalDeleteUser text-center'>
-            <p className='h3 my-4'>⚠ Warning! Danger! ⚠</p>
+            <p className='h3 my-4'>⚠ Warning! ⚠</p>
             <p className='h5 my-3'>
               You are very close to delete your profile 😱
             </p>
@@ -97,7 +96,7 @@ export default class ProfileView extends React.Component {
             Delete
           </Button>
 
-          <MyVerticallyCenteredModal
+          <DeleteUserModal
             show={modalShow}
             onHide={() => setModalShow(false)}
           />
