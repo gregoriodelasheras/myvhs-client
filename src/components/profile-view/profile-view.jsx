@@ -10,7 +10,7 @@ export default class ProfileView extends React.Component {
     };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     const accessToken = localStorage.getItem('token');
     const urlProfile = `https://myvhs.herokuapp.com/users/${localStorage.getItem(
       'user',
