@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { Row, Col, Button } from 'react-bootstrap';
+import { MovieCard } from '../movie-card/movie-card';
+import { Row, Col } from 'react-bootstrap';
 
 export default class DirectorView extends React.Component {
   constructor(props) {
@@ -12,6 +12,21 @@ export default class DirectorView extends React.Component {
       director: [],
       movies: [],
     };
+  }
+
+  getMovies(token) {
+    axios
+      .get('https://myvhs.herokuapp.com/movies', {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((response) => {
+        this.setState({
+          movies: response.data,
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
   async componentDidMount() {
@@ -40,58 +55,66 @@ export default class DirectorView extends React.Component {
     });
   }
 
-  getMovieName(id) {
-    const movie = this.state.movies.find((movie) => movie._id === id);
-    return movie.title;
-  }
-
   render() {
-    let { director } = this.state;
+    let { director, movies } = this.state;
     let directorDead;
+    let moviesMatched = [];
 
-    if (director.deathYear) {
-      directorDead = (
-        <div className='director-death mb-2'>
-          <span className='label font-weight-bold'>Year of death: </span>
-          <span className='value'>{director.deathYear}</span>
-        </div>
-      );
+    function DirectorIsDead() {
+      if (director.deathYear) {
+        directorDead = (
+          <div className='director-death'>
+            <span className='label font-weight-bold'>Year of death: </span>
+            <span className='value'>{director.deathYear}</span>
+          </div>
+        );
+      }
     }
 
+    function ShowMovies() {
+      movies.map((movie) => {
+        if (movie.director.includes(director._id)) {
+          moviesMatched.push(
+            <Col sm={6} lg={3} className={'mb-4'} key={movie._id}>
+              <MovieCard movie={movie} />
+            </Col>,
+          );
+        }
+      });
+    }
+
+    DirectorIsDead();
+    ShowMovies();
+
     return (
-      director && (
-        <Row className='main-view justify-content-md-center pt-4'>
+      <div className='main-view'>
+        <Row className='justify-content-md-center'>
           <Col className='director-view text-center' md={8}>
-            <div className='director-image mb-4'>
-              <img src={director.imagePath} width={250} />
+            <div className='director-image'>
+              <img
+                src={director.imagePath}
+                className='film-image mt-5 mb-3'
+                width={250}
+              />
             </div>
-            <div className='director-name mb-2'>
-              <span className='label font-weight-bold'>Name: </span>
-              <span className='value'>{director.name}</span>
+            <div className='director-name my-4'>
+              <h1 className='value'>{director.name}</h1>
             </div>
-            <div className='director-birth mb-2'>
+            <div className='director-birth'>
               <span className='label font-weight-bold'>Year of birth: </span>
               <span className='value'>{director.birthYear}</span>
             </div>
             {directorDead}
-            <div className='director-description mb-2'>
-              <span className='label font-weight-bold'>Biography: </span>
+            <div className='director-description my-4'>
               <span className='value font-italic'>{director.bio}</span>
             </div>
-            <div className='director-movies mb-2'>
-              <p className='label font-weight-bold mb-2'>Movies: </p>
-              {director.movies &&
-                director.movies.map((movie, index) => (
-                  <Link key={index} to={`/movies/${movie}`}>
-                    <Button className='mx-1' variant='outline-info' size='sm'>
-                      {this.getMovieName(movie)}
-                    </Button>
-                  </Link>
-                ))}
+            <div className='my-4'>
+              <p className='label h3 font-weight-bold'>Movies:</p>
             </div>
           </Col>
         </Row>
-      )
+        <Row className='justify-content-center'>{moviesMatched}</Row>
+      </div>
     );
   }
 }
