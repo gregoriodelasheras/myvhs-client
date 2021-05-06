@@ -20,6 +20,9 @@ import LoginView from './components/login-view/login-view';
 import RegistrationView from './components/registration-view/registration-view';
 import ProfileView from './components/profile-view/profile-view';
 
+import FavoriteView from './components/profile-view/profile-favorite';
+import ToWatchView from './components/profile-view/profile-towatch';
+
 // Movies
 import MovieMain from './components/movie-main/movie-main';
 import MovieView from './components/movie-view/movie-view';
@@ -68,6 +71,12 @@ function MyVHSApp() {
             {isLogged}
           </Route>
           <Route exact path={urlProfile} component={ProfileView}>
+            {isNotLogged}
+          </Route>
+          <Route exact path={`${urlProfile}/favorite`} component={FavoriteView}>
+            {isNotLogged}
+          </Route>
+          <Route exact path={`${urlProfile}/towatch`} component={ToWatchView}>
             {isNotLogged}
           </Route>
           <Route exact path='/movies' component={MovieMain}>
