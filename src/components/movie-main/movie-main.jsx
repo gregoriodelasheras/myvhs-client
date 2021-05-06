@@ -8,21 +8,8 @@ export default class MovieMain extends React.Component {
     super();
     this.state = {
       movies: [],
-      genres: [],
-      directors: [],
-      actors: [],
-      user: null,
-      /* userRegistered: null, */
     };
   }
-
-  /*   onLoggedOut() {
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
-    this.setState({
-      user: null,
-    });
-  } */
 
   getMovies(token) {
     axios
@@ -39,51 +26,6 @@ export default class MovieMain extends React.Component {
       });
   }
 
-  getGenres(token) {
-    axios
-      .get('https://myvhs.herokuapp.com/genres', {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-      .then((response) => {
-        this.setState({
-          genres: response.data,
-        });
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
-
-  getDirectors(token) {
-    axios
-      .get('https://myvhs.herokuapp.com/directors', {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-      .then((response) => {
-        this.setState({
-          directors: response.data,
-        });
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
-
-  getActors(token) {
-    axios
-      .get('https://myvhs.herokuapp.com/actors', {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-      .then((response) => {
-        this.setState({
-          actors: response.data,
-        });
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
-
   componentDidMount() {
     let accessToken = localStorage.getItem('token');
     if (accessToken !== null) {
@@ -91,9 +33,6 @@ export default class MovieMain extends React.Component {
         user: localStorage.getItem('user'),
       });
       this.getMovies(accessToken);
-      this.getGenres(accessToken);
-      this.getDirectors(accessToken);
-      this.getActors(accessToken);
     }
   }
 
@@ -101,13 +40,16 @@ export default class MovieMain extends React.Component {
     const { movies } = this.state;
 
     return (
-      <Row className='main-view justify-content-md-center pt-4'>
-        {movies.map((movie) => (
-          <Col sm={6} lg={3} className={'mb-4'} key={movie._id}>
-            <MovieCard movie={movie} />
-          </Col>
-        ))}
-      </Row>
+      <div className='main-view text-center my-3'>
+        <h1>Movies</h1>
+        <Row>
+          {movies.map((movie) => (
+            <Col sm={6} lg={3} className={'my-3'} key={movie._id}>
+              <MovieCard movie={movie} />
+            </Col>
+          ))}
+        </Row>
+      </div>
     );
   }
 }
