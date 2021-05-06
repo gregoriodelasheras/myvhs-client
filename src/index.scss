@@ -1,0 +1,82 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+
+// Color palette (Steam Punk)
+$primary-dark: #20232a;
+$primary-light: #282c34;
+$secondary: #17a2b8;
+$font: #ffffff;
+$link: #011efe;
+
+body {
+  a {
+    color: $link;
+    &:hover {
+      color: darken($link, 5%);
+    }
+  }
+}
+
+#container-app {
+  min-height: 100vh;
+  background-color: $primary-dark;
+  color: $font;
+}
+
+.main-view {
+  min-height: 90vh;
+  padding-top: 70px;
+}
+
+.card:nth-child(1) {
+  background-color: $primary-light;
+  color: $font;
+  border-color: $secondary;
+}
+
+.film-image {
+  border: 2px solid $secondary;
+  box-shadow: 0 0 20px 5px rgba(23, 162, 184, 0.5);
+}
+
+.card-image,
+.form-neon {
+  box-shadow: 0 0 10px 5px rgba(23, 162, 184, 0.3);
+}
+
+.logo-web {
+  width: 600px;
+}
+
+.btn {
+  box-shadow: 0 0 5px 5px rgba(23, 162, 184, 0.2);
+  &-header,
+  &-form {
+    width: 100px;
+  }
+}
+
+.form-neon {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.main-footer {
+  a {
+    color: $secondary;
+    &:hover {
+      color: darken($secondary, 5%);
+    }
+  }
+}
+
+.modalUser {
+  background-color: $primary-light;
+  color: $font;
+  border: 2px solid $secondary;
+  box-shadow: 0 0 5px 2px rgba(23, 162, 184, 1);
+}
+
+.alert-message {
+  max-width: 500px;
+  margin: 0 auto;
+}
