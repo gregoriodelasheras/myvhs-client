@@ -26,7 +26,7 @@ export default class DirectorMain extends React.Component {
       });
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     let accessToken = localStorage.getItem('token');
     if (accessToken !== null) {
       this.setState({

@@ -26,7 +26,7 @@ export default class ActorMain extends React.Component {
       });
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     let accessToken = localStorage.getItem('token');
     if (accessToken !== null) {
       this.setState({
