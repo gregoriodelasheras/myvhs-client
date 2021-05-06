@@ -8,6 +8,8 @@ export default function Header() {
   let buttonMenu;
   let button1;
   let button2;
+  let buttonFav;
+  let buttonWat;
 
   if (!accessToken) {
     button1 = (
@@ -33,10 +35,26 @@ export default function Header() {
         <NavDropdown.Item href='/actors'>Actors</NavDropdown.Item>
       </NavDropdown>
     );
+    buttonFav = (
+      <Button
+        href={`${urlProfile}/favorite`}
+        className='btn-profile4 mx-2'
+        variant='outline-warning'>
+        Favorite
+      </Button>
+    );
+    buttonWat = (
+      <Button
+        href={`${urlProfile}/towatch`}
+        className='btn-profile4 mx-2'
+        variant='outline-warning'>
+        To Watch
+      </Button>
+    );
     button1 = (
       <Button
         href={urlProfile}
-        className='btn-header mx-3'
+        className='btn-header mx-2'
         variant='outline-info'>
         {accesUsername}
       </Button>
@@ -44,7 +62,7 @@ export default function Header() {
     button2 = (
       <Button
         href='/'
-        className='btn-header mx-3'
+        className='btn-header mx-2'
         variant='outline-info'
         onClick={onLoggedOut}>
         Log out
@@ -67,6 +85,10 @@ export default function Header() {
               <Nav.Link href='/'>Home</Nav.Link>
               <Nav.Link href='/about'>About</Nav.Link>
               {buttonMenu}
+            </Nav>
+            <Nav className='justify-content-center flex-row py-2'>
+              {buttonFav}
+              {buttonWat}
             </Nav>
             <Nav className='justify-content-center flex-row py-2'>
               {button1}
