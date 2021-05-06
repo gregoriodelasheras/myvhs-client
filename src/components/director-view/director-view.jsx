@@ -14,21 +14,6 @@ export default class DirectorView extends React.Component {
     };
   }
 
-  getMovies(token) {
-    axios
-      .get('https://myvhs.herokuapp.com/movies', {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-      .then((response) => {
-        this.setState({
-          movies: response.data,
-        });
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
-
   async componentDidMount() {
     const { directorID } = this.props.match.params;
     const token = localStorage.getItem('token');
