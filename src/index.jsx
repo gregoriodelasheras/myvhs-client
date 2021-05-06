@@ -1,18 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
-// Layouts
-import Header from './components/header/header';
-import Footer from './components/footer/footer';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
 
 // Style
 import Container from 'react-bootstrap/Container';
 import './index.scss';
 
+// Layouts
+import Header from './components/header/header';
+import Footer from './components/footer/footer';
+
 // User
 import LoginView from './components/login-view/login-view';
 import RegistrationView from './components/registration-view/registration-view';
+import ProfileView from './components/profile-view/profile-view';
 
 // Movies
 import MovieMain from './components/movie-main/movie-main';
@@ -30,39 +36,68 @@ import DirectorView from './components/director-view/director-view';
 import ActorMain from './components/actor-main/actor-main';
 import ActorView from './components/actor-view/actor-view';
 
-function MyVHSApp() {
-  /*  const onLoggedOut = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
-    history.push('/login');
-  };
+// Pages
+import MainView from './components/main-view/main-view';
+import AboutView from './components/about-view/about-view';
 
-  const isLoggedIn = () => {
-    const token = localStorage.getItem(token);
-    return token && true;
-  }; */
+function MyVHSApp() {
+  let accessToken = localStorage.getItem('token');
+  let urlProfile = `/users/${localStorage.getItem('user')}`;
+  let isLogged;
+  let isNotLogged;
+
+  function UserIsLogged() {
+    if (accessToken) {
+      isLogged = <Redirect to='/' />;
+    } else isNotLogged = <Redirect to='/' />;
+  }
+
+  UserIsLogged();
 
   return (
-    <Container>
+    <div className='main-app'>
       <Header />
-      <Switch>
-        <Route exact path='/login' component={LoginView} />
-        <Route exact path='/register' component={RegistrationView} />
-
-        <Route exact path='/movies' component={MovieMain} />
-        <Route exact path='/movies/:movieID' component={MovieView} />
-
-        <Route exact path='/genres' component={GenreMain} />
-        <Route exact path='/genres/:genreID' component={GenreView} />
-
-        <Route exact path='/directors' component={DirectorMain} />
-        <Route exact path='/directors/:directorID' component={DirectorView} />
-
-        <Route exact path='/actors' component={ActorMain} />
-        <Route exact path='/actors/:actorID' component={ActorView} />
-      </Switch>
+      <Container>
+        <Switch>
+          <Route exact path='/' component={MainView} />
+          <Route exact path='/about' component={AboutView} />
+          <Route exact path='/login' component={LoginView}>
+            {isLogged}
+          </Route>
+          <Route exact path='/register' component={RegistrationView}>
+            {isLogged}
+          </Route>
+          <Route exact path={urlProfile} component={ProfileView}>
+            {isNotLogged}
+          </Route>
+          <Route exact path='/movies' component={MovieMain}>
+            {isNotLogged}
+          </Route>
+          <Route exact path='/movies/:movieID' component={MovieView}>
+            {isNotLogged}
+          </Route>
+          <Route exact path='/genres' component={GenreMain}>
+            {isNotLogged}
+          </Route>
+          <Route exact path='/genres/:genreID' component={GenreView}>
+            {isNotLogged}
+          </Route>
+          <Route exact path='/directors' component={DirectorMain}>
+            {isNotLogged}
+          </Route>
+          <Route exact path='/directors/:directorID' component={DirectorView}>
+            {isNotLogged}
+          </Route>
+          <Route exact path='/actors' component={ActorMain}>
+            {isNotLogged}
+          </Route>
+          <Route exact path='/actors/:actorID' component={ActorView}>
+            {isNotLogged}
+          </Route>
+        </Switch>
+      </Container>
       <Footer />
-    </Container>
+    </div>
   );
 }
 
@@ -70,5 +105,5 @@ ReactDOM.render(
   <Router>
     <MyVHSApp />
   </Router>,
-  document.getElementById('app-container'),
+  document.getElementById('container-app'),
 );
