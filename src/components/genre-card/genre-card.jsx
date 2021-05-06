@@ -8,8 +8,8 @@ export class GenreCard extends React.Component {
     const { genre } = this.props;
 
     return (
-      <Card className='h-100'>
-        {/* <Card.Img className='p-2' variant='top' src={genre.imagePath} /> */}
+      <Card className='card-image h-100'>
+        {/* <Card.Img variant='top' src={genre.imagePath} /> */}
         <Card.Body>
           <Card.Title className='text-center'>{genre.name}</Card.Title>
         </Card.Body>

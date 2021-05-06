@@ -8,8 +8,8 @@ export class DirectorCard extends React.Component {
     const { director } = this.props;
 
     return (
-      <Card className='h-100'>
-        <Card.Img className='p-2' variant='top' src={director.imagePath} />
+      <Card className='card-image h-100'>
+        <Card.Img variant='top' src={director.imagePath} />
         <Card.Body>
           <Card.Title className='text-center'>{director.name}</Card.Title>
         </Card.Body>

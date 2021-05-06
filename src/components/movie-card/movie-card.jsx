@@ -8,8 +8,8 @@ export class MovieCard extends React.Component {
     const { movie } = this.props;
 
     return (
-      <Card className='h-100'>
-        <Card.Img className='p-2' variant='top' src={movie.imagePath} />
+      <Card className='card-image h-100'>
+        <Card.Img variant='top' src={movie.imagePath} />
         <Card.Body>
           <Card.Title className='text-center'>{movie.title}</Card.Title>
           <Card.Text className='text-center'>{movie.releaseYear}</Card.Text>
