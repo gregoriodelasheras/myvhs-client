@@ -139,7 +139,7 @@ export default function RegistrationView() {
                     message: 'You must enter your name in order to register!',
                   },
                   pattern: {
-                    value: /^[A-Za-z\u00E0-\u00FC]+$/i,
+                    value: /^[A-Za-zÀ-ž\s]+$/i,
                     message: 'The name contains invalid characters.',
                   },
                 })}
@@ -165,7 +165,7 @@ export default function RegistrationView() {
                       'You must enter your last name in order to register!',
                   },
                   pattern: {
-                    value: /^[A-Za-z\u00E0-\u00FC]+$/i,
+                    value: /^[A-Za-zÀ-ž\s]+$/i,
                     message: 'The last name contains invalid characters.',
                   },
                 })}
