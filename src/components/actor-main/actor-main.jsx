@@ -40,13 +40,16 @@ export default class ActorMain extends React.Component {
     const { actors } = this.state;
 
     return (
-      <Row className='main-view justify-content-md-center pt-4'>
-        {actors.map((actor) => (
-          <Col sm={6} lg={3} className={'mb-4'} key={actor._id}>
-            <ActorCard actor={actor} />
-          </Col>
-        ))}
-      </Row>
+      <div className='main-view text-center my-3'>
+        <h1>Actors</h1>
+        <Row>
+          {actors.map((actor) => (
+            <Col sm={6} lg={3} className={'my-3'} key={actor._id}>
+              <ActorCard actor={actor} />
+            </Col>
+          ))}
+        </Row>
+      </div>
     );
   }
 }
