@@ -77,26 +77,30 @@ export default class MovieView extends React.Component {
     let { movie } = this.state;
 
     return (
-      movie && (
-        <Row className='main-view justify-content-md-center pt-4'>
-          <Col className='movie-view text-center' md={8}>
-            <div className='movie-image mb-4'>
-              <img src={movie.imagePath} width={250} />
+      <div className='main-view text-center d-flex justify-content-center align-items-center'>
+        <Row className='align-items-center'>
+          <Col className='movie-view text-center' md={6}>
+            <div className='movie-image'>
+              <img src={movie.imagePath} className='film-image' width={400} />
             </div>
-            <div className='movie-title mb-2'>
-              <span className='label font-weight-bold'>Title: </span>
-              <span className='value'>{movie.title}</span>
+          </Col>
+          <Col className='movie-view text-center' md={6}>
+            <div className='movie-title my-4'>
+              <h1 className='value'>{movie.title}</h1>
             </div>
-            <div className='movie-year mb-2'>
+            <div className='movie-description my-4'>
+              <span className='value font-italic'>{movie.description}</span>
+            </div>
+            <div className='movie-year my-4'>
               <span className='label font-weight-bold'>Release Year: </span>
               <span className='value'>{movie.releaseYear}</span>
             </div>
-            <div className='movie-time mb-2'>
+            <div className='movie-time my-4'>
               <span className='label font-weight-bold'>Run Time: </span>
               <span className='value'>{movie.runTime}</span>
             </div>
-            <div className='movie-genres mb-2'>
-              <p className='label font-weight-bold mb-1'>Genres: </p>
+            <div className='movie-genres my-4'>
+              <p className='label font-weight-bold'>Genres: </p>
               {movie.genre &&
                 movie.genre.map((genre, index) => (
                   <Link key={index} to={`/genres/${genre}`}>
@@ -106,16 +110,16 @@ export default class MovieView extends React.Component {
                   </Link>
                 ))}
             </div>
-            <div className='movie-director mb-2'>
-              <p className='label font-weight-bold mb-1'>Director: </p>
+            <div className='movie-director my-4'>
+              <p className='label font-weight-bold'>Director: </p>
               <Link to={`/directors/${movie.director}`}>
                 <Button className='mx-1' variant='outline-info' size='sm'>
                   {this.getDirectorName(movie.director)}
                 </Button>
               </Link>
             </div>
-            <div className='movie-actors mb-2'>
-              <p className='label font-weight-bold mb-1'>Main Cast: </p>
+            <div className='movie-actors my-4'>
+              <p className='label font-weight-bold'>Main Cast: </p>
               {movie.actors &&
                 movie.actors.map((actor, index) => (
                   <Link key={index} to={`/actors/${actor}`}>
@@ -125,13 +129,9 @@ export default class MovieView extends React.Component {
                   </Link>
                 ))}
             </div>
-            <div className='movie-description mb-4'>
-              <span className='label font-weight-bold'>Description: </span>
-              <span className='value font-italic'>{movie.description}</span>
-            </div>
           </Col>
         </Row>
-      )
+      </div>
     );
   }
 }

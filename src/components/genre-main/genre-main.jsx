@@ -40,13 +40,16 @@ export default class GenreMain extends React.Component {
     const { genres } = this.state;
 
     return (
-      <Row className='main-view justify-content-md-center pt-4'>
-        {genres.map((genre) => (
-          <Col sm={6} lg={3} className={'mb-4'} key={genre._id}>
-            <GenreCard genre={genre} />
-          </Col>
-        ))}
-      </Row>
+      <div className='main-view text-center my-3'>
+        <h1>Genres</h1>
+        <Row>
+          {genres.map((genre) => (
+            <Col sm={6} lg={3} className={'my-3'} key={genre._id}>
+              <GenreCard genre={genre} />
+            </Col>
+          ))}
+        </Row>
+      </div>
     );
   }
 }

@@ -40,13 +40,16 @@ export default class DirectorMain extends React.Component {
     const { directors } = this.state;
 
     return (
-      <Row className='main-view justify-content-md-center pt-4'>
-        {directors.map((director) => (
-          <Col sm={6} lg={3} className={'mb-4'} key={director._id}>
-            <DirectorCard director={director} />
-          </Col>
-        ))}
-      </Row>
+      <div className='main-view text-center my-3'>
+        <h1>Directors</h1>
+        <Row>
+          {directors.map((director) => (
+            <Col sm={6} lg={3} className={'my-3'} key={director._id}>
+              <DirectorCard director={director} />
+            </Col>
+          ))}
+        </Row>
+      </div>
     );
   }
 }
