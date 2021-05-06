@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Alert } from 'react-bootstrap';
 
 export default function AboutView() {
   return (
@@ -17,7 +17,7 @@ export default function AboutView() {
           <p className='h4 my-4'>
             All in one VHS! Built with its own API and the MERN stack.
           </p>
-          <div className='alert alert-info my-4' role='alert'>
+          <Alert className='alert-info my-4' variant='alert'>
             <p className=''>Want to know more about the project?</p>
             <p className='h6'>Repositories on GitHub:</p>
             <a
@@ -41,7 +41,7 @@ export default function AboutView() {
               rel='noreferrer'>
               Other projects
             </a>
-          </div>
+          </Alert>
         </Col>
       </Row>
     </div>

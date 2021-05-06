@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Alert } from 'react-bootstrap';
 
 export default function MainView() {
   let infoGuest;
@@ -7,7 +7,7 @@ export default function MainView() {
 
   if (!accessToken) {
     infoGuest = (
-      <div className='alert alert-info' role='alert'>
+      <Alert className='alert-info' variant='alert'>
         <div>
           Join our exclusive club for free and get access to the best 80s movie
           information page.
@@ -16,7 +16,7 @@ export default function MainView() {
           Click <a href='/register'>here to sign up</a> or{' '}
           <a href='/login'>here to login</a>!
         </div>
-      </div>
+      </Alert>
     );
   }
 
