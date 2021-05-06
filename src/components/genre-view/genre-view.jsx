@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import { MovieCard } from '../movie-card/movie-card';
 import { Row, Col } from 'react-bootstrap';
-import './genre-view.scss';
 
 export default class GenreView extends React.Component {
   constructor(props) {
@@ -10,41 +10,86 @@ export default class GenreView extends React.Component {
 
     this.state = {
       genre: [],
+      movies: [],
     };
+  }
+
+  getMovies(token) {
+    axios
+      .get('https://myvhs.herokuapp.com/movies', {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((response) => {
+        this.setState({
+          movies: response.data,
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
   async componentDidMount() {
     const { genreID } = this.props.match.params;
     const token = localStorage.getItem('token');
+
     const genresURL = 'https://myvhs.herokuapp.com/genres/';
+    const moviesURL = 'https://myvhs.herokuapp.com/movies';
 
     const genresResponse = axios.get(genresURL + genreID, {
       headers: { Authorization: `Bearer ${token}` },
     });
 
-    const [genres] = await axios.all([genresResponse]);
+    const moviesResponse = axios.get(moviesURL, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+
+    const [genres, movies] = await axios.all([genresResponse, moviesResponse]);
 
     this.setState({
       genre: genres.data,
+      movies: movies.data,
     });
   }
 
   render() {
-    let { genre } = this.state;
+    let { genre, movies } = this.state;
+    let moviesMatched = [];
+
+    function ShowMovies() {
+      movies.map((movie) => {
+        if (movie.genre.includes(genre._id)) {
+          moviesMatched.push(
+            <Col sm={6} lg={3} className={'mb-4'} key={movie._id}>
+              <MovieCard movie={movie} />
+            </Col>,
+          );
+        }
+      });
+    }
+
+    ShowMovies();
 
     return (
-      <Row className='main-view justify-content-md-center'>
-        <Col className='genre-view text-center' md={8}>
-          <div className='genre-name mb-2'>
-            <span className='label font-weight-bold'>Name: </span>
-            <span className='value'>{genre.name}</span>
-          </div>
-          <div className='genre-description mb-4'>
-            <span className='label font-weight-bold'>Description: </span>
-            <span className='value font-italic'>{genre.description}</span>
-          </div>
-        </Col>
-      </Row>
+      <div className='main-view'>
+        <Row className='justify-content-md-center'>
+          <Col className='genre-view text-center' md={8}>
+            {/* <div className='genre-image'>
+              <img src={genre.imagePath} className='film-image mt-5 mb-3' width={250} />
+            </div> */}
+            <div className='genre-name my-4'>
+              <h1 className='value'>{genre.name}</h1>
+            </div>
+            <div className='genre-description my-4'>
+              <span className='value font-italic'>{genre.description}</span>
+            </div>
+            <div className='my-4'>
+              <p className='label h3 font-weight-bold'>Movies</p>
+            </div>
+          </Col>
+        </Row>
+        <Row className='justify-content-center'>{moviesMatched}</Row>
+      </div>
     );
   }
 }
