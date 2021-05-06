@@ -76,8 +76,22 @@ body {
 
 .btn-profile4 {
   width: 100px;
-  height: 40px;
   box-shadow: 0 0 5px 5px rgba(255, 193, 7, 0.2);
+}
+
+.btn-show {
+  @extend %btn;
+  width: 115px;
+}
+
+.btn-favorite {
+  width: 50px;
+  box-shadow: 0 0 5px 5px rgba(255, 193, 7, 0.2);
+}
+
+.btn-watch {
+  width: 50px;
+  box-shadow: 0 0 5px 5px rgba(0, 123, 255, 0.2);
 }
 
 .btn-delete-user {
