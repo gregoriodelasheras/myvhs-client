@@ -81,7 +81,11 @@ export default class MovieView extends React.Component {
         <Row className='align-items-center'>
           <Col className='movie-view text-center' md={6}>
             <div className='movie-image'>
-              <img src={movie.imagePath} className='film-image' width={400} />
+              <img
+                src={movie.imagePath}
+                className='film-image mt-5 mb-3'
+                width={250}
+              />
             </div>
           </Col>
           <Col className='movie-view text-center' md={6}>
