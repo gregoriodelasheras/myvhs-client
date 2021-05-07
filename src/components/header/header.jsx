@@ -46,8 +46,8 @@ export default function Header() {
     buttonWat = (
       <Button
         href={`${urlProfile}/towatch`}
-        className='btn-profile4 mx-2'
-        variant='outline-warning'>
+        className='btn-profile5 mx-2'
+        variant='outline-primary'>
         To Watch
       </Button>
     );
