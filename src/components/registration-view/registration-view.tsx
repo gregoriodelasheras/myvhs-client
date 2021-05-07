@@ -606,9 +606,9 @@ export default function RegistrationView() {
                     message: 'You need to enter a password to sign up!',
                   },
                   minLength: {
-                    value: 6,
+                    value: 8,
                     message:
-                      'Please enter a valid password (at least 6 characters)',
+                      'Please enter a valid password (at least 8 characters)',
                   },
                   pattern: {
                     value: /^[A-Za-z0-9@#$%!?]+$/i,
@@ -628,7 +628,7 @@ export default function RegistrationView() {
                 </Alert>
               )}
               <p className='text-muted my-2'>
-                Please enter a password with at least 6 characters (A-Z, a-z,
+                Please enter a password with at least 8 characters (A-Z, a-z,
                 0-9, @#$%!?)
               </p>
             </Form.Group>
@@ -641,9 +641,9 @@ export default function RegistrationView() {
                     message: 'Please confirm the password!',
                   },
                   minLength: {
-                    value: 6,
+                    value: 8,
                     message:
-                      'Please re-enter a password (at least 6 characters)',
+                      'Please re-enter a password (at least 8 characters)',
                   },
                   pattern: {
                     value: /^[A-Za-z0-9@#$%!?]+$/i,

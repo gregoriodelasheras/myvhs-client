@@ -125,9 +125,9 @@ export default function LoginView() {
                     message: 'You need to enter your password to login!',
                   },
                   minLength: {
-                    value: 6,
+                    value: 8,
                     message:
-                      'Please enter your password (at least 6 characters)',
+                      'Please enter your password (at least 8 characters)',
                   },
                   pattern: {
                     value: /^[A-Za-z0-9@#$%!?]+$/i,
