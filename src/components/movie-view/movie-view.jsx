@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { Row, Col, Button } from 'react-bootstrap';
+import { Row, Col, Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 
 export default class MovieView extends React.Component {
   constructor(props) {
@@ -76,6 +76,34 @@ export default class MovieView extends React.Component {
   render() {
     let { movie } = this.state;
 
+    const btnFavorite = (
+      <OverlayTrigger
+        placement='top'
+        overlay={<Tooltip id='tooltip-favorite'>To favorite list!</Tooltip>}>
+        <Button
+          className='btn-favorite my-2 mx-3'
+          variant='outline-warning'
+          /* onClick={} */
+        >
+          ★
+        </Button>
+      </OverlayTrigger>
+    );
+
+    const btnWatch = (
+      <OverlayTrigger
+        placement='top'
+        overlay={<Tooltip id='tooltip-watch'>To watch list!</Tooltip>}>
+        <Button
+          className='btn-watch my-2 mx-3'
+          variant='outline-primary'
+          /* onClick={} */
+        >
+          ◯
+        </Button>
+      </OverlayTrigger>
+    );
+
     return (
       <div className='main-view text-center d-flex justify-content-center align-items-center'>
         <Row className='align-items-center'>
@@ -87,6 +115,8 @@ export default class MovieView extends React.Component {
                 width={250}
               />
             </div>
+            {btnFavorite}
+            {btnWatch}
           </Col>
           <Col className='movie-view text-center' md={6}>
             <div className='movie-title my-4'>
