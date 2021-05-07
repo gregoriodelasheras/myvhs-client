@@ -1,14 +1,120 @@
 import React from 'react';
+import axios from 'axios';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Card, Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 
 export class MovieCard extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      user: [],
+    };
+  }
+
+  async componentDidMount() {
+    const accessUser = localStorage.getItem('user');
+    const accessToken = localStorage.getItem('token');
+
+    const profileURL = `https://myvhs.herokuapp.com/users/${accessUser}`;
+
+    const profileResponse = axios.get(profileURL, {
+      headers: { Authorization: `Bearer ${accessToken}` },
+    });
+
+    const [user] = await axios.all([profileResponse]);
+
+    this.setState({
+      user: user.data,
+    });
+  }
+
   render() {
     const { movie } = this.props;
+    const { user } = this.state;
+    const accessToken = localStorage.getItem('token');
+    const movieID = movie._id;
+    const urlFavorite = `https://myvhs.herokuapp.com/users/${user.username}/favorites/${movieID}`;
+    const urlToWatch = `https://myvhs.herokuapp.com/users/${user.username}/towatch/${movieID}`;
+
+    function ToggleFavoriteMovie() {
+      if (user.favoriteMovies.includes(movieID)) {
+        RemoveFavoriteMovie();
+      } else {
+        AddFavoriteMovie();
+      }
+    }
+
+    function ToggleToWatchMovie() {
+      if (user.toWatchMovies.includes(movieID)) {
+        RemoveToWatchMovie();
+      } else {
+        AddToWatchMovie();
+      }
+    }
+
+    function AddFavoriteMovie() {
+      const data = JSON.stringify({
+        favoriteMovies: movieID,
+      });
+      axios
+        .post(urlFavorite, data, {
+          headers: { Authorization: `Bearer ${accessToken}` },
+          'Content-Type': 'application/json',
+        })
+        .then(() => {
+          /*  */
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
+
+    function RemoveFavoriteMovie() {
+      axios
+        .delete(urlFavorite, {
+          headers: { Authorization: `Bearer ${accessToken}` },
+        })
+        .then(() => {
+          /*  */
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
+
+    function AddToWatchMovie() {
+      const data = JSON.stringify({
+        toWatchMovies: movieID,
+      });
+      axios
+        .post(urlToWatch, data, {
+          headers: { Authorization: `Bearer ${accessToken}` },
+          'Content-Type': 'application/json',
+        })
+        .then(() => {
+          /*  */
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
+
+    function RemoveToWatchMovie() {
+      axios
+        .delete(urlToWatch, {
+          headers: { Authorization: `Bearer ${accessToken}` },
+        })
+        .then(() => {
+          /*  */
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
 
     const btnShow = (
-      <Link to={`/movies/${movie._id}`}>
+      <Link to={`/movies/${movieID}`}>
         <Button className='btn-show m-2' variant='outline-info'>
           Show more
         </Button>
@@ -22,8 +128,7 @@ export class MovieCard extends React.Component {
         <Button
           className='btn-favorite m-2'
           variant='outline-warning'
-          /* onClick={} */
-        >
+          onClick={() => ToggleFavoriteMovie()}>
           ★
         </Button>
       </OverlayTrigger>
@@ -36,8 +141,7 @@ export class MovieCard extends React.Component {
         <Button
           className='btn-watch m-2'
           variant='outline-primary'
-          /* onClick={} */
-        >
+          onClick={() => ToggleToWatchMovie()}>
           ◯
         </Button>
       </OverlayTrigger>

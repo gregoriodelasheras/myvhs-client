@@ -13,17 +13,20 @@ export default class MovieView extends React.Component {
       genres: [],
       directors: [],
       actors: [],
+      user: [],
     };
   }
 
   async componentDidMount() {
     const { movieID } = this.props.match.params;
+    const accessUser = localStorage.getItem('user');
     const token = localStorage.getItem('token');
 
     const movieURL = 'https://myvhs.herokuapp.com/movies/';
     const genresURL = 'https://myvhs.herokuapp.com/genres';
     const directorsURL = 'https://myvhs.herokuapp.com/directors';
     const actorsURL = 'https://myvhs.herokuapp.com/actors';
+    const profileURL = `https://myvhs.herokuapp.com/users/${accessUser}`;
 
     const movieResponse = axios.get(movieURL + movieID, {
       headers: { Authorization: `Bearer ${token}` },
@@ -41,11 +44,16 @@ export default class MovieView extends React.Component {
       headers: { Authorization: `Bearer ${token}` },
     });
 
-    const [movie, genres, directors, actors] = await axios.all([
+    const profileResponse = axios.get(profileURL, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+
+    const [movie, genres, directors, actors, user] = await axios.all([
       movieResponse,
       genresResponse,
       directorsResponse,
       actorsResponse,
+      profileResponse,
     ]);
 
     this.setState({
@@ -53,6 +61,7 @@ export default class MovieView extends React.Component {
       genres: genres.data,
       directors: directors.data,
       actors: actors.data,
+      user: user.data,
     });
   }
 
@@ -75,6 +84,87 @@ export default class MovieView extends React.Component {
 
   render() {
     let { movie } = this.state;
+    const { user } = this.state;
+    const accessToken = localStorage.getItem('token');
+    const movieID = movie._id;
+    const urlFavorite = `https://myvhs.herokuapp.com/users/${user.username}/favorites/${movieID}`;
+    const urlToWatch = `https://myvhs.herokuapp.com/users/${user.username}/towatch/${movieID}`;
+
+    function ToggleFavoriteMovie() {
+      if (user.favoriteMovies.includes(movieID)) {
+        RemoveFavoriteMovie();
+      } else {
+        AddFavoriteMovie();
+      }
+    }
+
+    function ToggleToWatchMovie() {
+      if (user.toWatchMovies.includes(movieID)) {
+        RemoveToWatchMovie();
+      } else {
+        AddToWatchMovie();
+      }
+    }
+
+    function AddFavoriteMovie() {
+      const data = JSON.stringify({
+        favoriteMovies: movieID,
+      });
+      axios
+        .post(urlFavorite, data, {
+          headers: { Authorization: `Bearer ${accessToken}` },
+          'Content-Type': 'application/json',
+        })
+        .then(() => {
+          /*  */
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
+
+    function RemoveFavoriteMovie() {
+      axios
+        .delete(urlFavorite, {
+          headers: { Authorization: `Bearer ${accessToken}` },
+        })
+        .then(() => {
+          /*  */
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
+
+    function AddToWatchMovie() {
+      const data = JSON.stringify({
+        toWatchMovies: movieID,
+      });
+      axios
+        .post(urlToWatch, data, {
+          headers: { Authorization: `Bearer ${accessToken}` },
+          'Content-Type': 'application/json',
+        })
+        .then(() => {
+          /*  */
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
+
+    function RemoveToWatchMovie() {
+      axios
+        .delete(urlToWatch, {
+          headers: { Authorization: `Bearer ${accessToken}` },
+        })
+        .then(() => {
+          /*  */
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
 
     const btnFavorite = (
       <OverlayTrigger
@@ -83,8 +173,7 @@ export default class MovieView extends React.Component {
         <Button
           className='btn-favorite my-2 mx-3'
           variant='outline-warning'
-          /* onClick={} */
-        >
+          onClick={() => ToggleFavoriteMovie()}>
           ★
         </Button>
       </OverlayTrigger>
@@ -97,8 +186,7 @@ export default class MovieView extends React.Component {
         <Button
           className='btn-watch my-2 mx-3'
           variant='outline-primary'
-          /* onClick={} */
-        >
+          onClick={() => ToggleToWatchMovie()}>
           ◯
         </Button>
       </OverlayTrigger>
