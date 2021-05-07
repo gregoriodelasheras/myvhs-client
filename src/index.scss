@@ -79,6 +79,11 @@ body {
   box-shadow: 0 0 5px 5px rgba(255, 193, 7, 0.2);
 }
 
+.btn-profile5 {
+  width: 100px;
+  box-shadow: 0 0 5px 5px rgba(0, 123, 255, 0.2);
+}
+
 .btn-show {
   @extend %btn;
   width: 115px;
