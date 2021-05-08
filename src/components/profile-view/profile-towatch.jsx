@@ -39,9 +39,6 @@ export default class ToWatchView extends React.Component {
     const { user, movies } = this.state;
     let moviesMatched = [];
 
-    console.log(user);
-    console.log(movies);
-
     function ShowMovies() {
       movies.map((movie) => {
         if (user.toWatchMovies.includes(movie._id)) {
@@ -55,8 +52,6 @@ export default class ToWatchView extends React.Component {
     }
 
     ShowMovies();
-
-    console.log('Movies matched: ' + moviesMatched);
 
     return (
       <div className='main-view'>
