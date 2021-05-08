@@ -63,7 +63,7 @@ export class MovieCard extends React.Component {
           'Content-Type': 'application/json',
         })
         .then(() => {
-          /*  */
+          window.open(`/users/${user.username}/favorite`, '_self');
         })
         .catch(function (error) {
           console.log(error);
@@ -76,7 +76,7 @@ export class MovieCard extends React.Component {
           headers: { Authorization: `Bearer ${accessToken}` },
         })
         .then(() => {
-          /*  */
+          window.open(`/users/${user.username}/favorite`, '_self');
         })
         .catch(function (error) {
           console.log(error);
@@ -93,7 +93,7 @@ export class MovieCard extends React.Component {
           'Content-Type': 'application/json',
         })
         .then(() => {
-          /*  */
+          window.open(`/users/${user.username}/towatch`, '_self');
         })
         .catch(function (error) {
           console.log(error);
@@ -106,7 +106,7 @@ export class MovieCard extends React.Component {
           headers: { Authorization: `Bearer ${accessToken}` },
         })
         .then(() => {
-          /*  */
+          window.open(`/users/${user.username}/towatch`, '_self');
         })
         .catch(function (error) {
           console.log(error);
@@ -124,7 +124,7 @@ export class MovieCard extends React.Component {
     const btnFavorite = (
       <OverlayTrigger
         placement='top'
-        overlay={<Tooltip id='tooltip-favorite'>To favorite list!</Tooltip>}>
+        overlay={<Tooltip id='tooltip-favorite'>Favorite</Tooltip>}>
         <Button
           className='btn-favorite m-2'
           variant='outline-warning'
@@ -137,7 +137,7 @@ export class MovieCard extends React.Component {
     const btnWatch = (
       <OverlayTrigger
         placement='top'
-        overlay={<Tooltip id='tooltip-watch'>To watch list!</Tooltip>}>
+        overlay={<Tooltip id='tooltip-watch'>To Watch</Tooltip>}>
         <Button
           className='btn-watch m-2'
           variant='outline-primary'
