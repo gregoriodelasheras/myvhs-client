@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import { Row, Col, Form, Button, Alert, Modal } from 'react-bootstrap';
-
-type FormValues = {
-  username: String;
-  password: String;
-};
 
 export default function LoginView() {
   const [username, setUsername] = useState('');
@@ -18,7 +14,7 @@ export default function LoginView() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormValues>();
+  } = useForm();
 
   const OnSubmit = () => {
     const corsAnywhere = 'https://cors-anywhere.herokuapp.com/';
@@ -38,14 +34,11 @@ export default function LoginView() {
       });
   };
 
-  const onLogged = (authData: {
-    token: string;
-    user: { username: string };
-  }) => {
+  function onLogged(authData) {
     localStorage.setItem('token', authData.token);
     localStorage.setItem('user', authData.user.username);
     window.open('/movies', '_self');
-  };
+  }
 
   function ModalError(props) {
     return (
@@ -56,13 +49,13 @@ export default function LoginView() {
         centered>
         <Modal.Header className='modalUser'>
           <Modal.Title id='contained-modal-title-vcenter'>
-            "Houston, we have a problem!"
+            &quot;Houston, we have a problem!&quot;
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className='modalUser'>
-          <p className='h4 my-3'>We haven't found you 😅</p>
+          <p className='h4 my-3'>We haven&apos;t found you 😅</p>
           <p>
-            Sorry. The username entered doesn't exist or the password is
+            Sorry. The username entered doesn&apos;t exist or the password is
             incorrect.
           </p>
           <p>Please try again!</p>
@@ -160,3 +153,7 @@ export default function LoginView() {
     </div>
   );
 }
+
+LoginView.propTypes = {
+  onHide: PropTypes.func,
+};

@@ -1,18 +1,8 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import { Row, Col, Form, Button, Alert, Modal } from 'react-bootstrap';
-
-type FormValues = {
-  name: String;
-  lastName: String;
-  birthday: String;
-  country: String;
-  email: String;
-  username: String;
-  password: String;
-  passwordConfirmation: String;
-};
 
 export default function RegistrationView() {
   const [name, setName] = useState('');
@@ -31,7 +21,7 @@ export default function RegistrationView() {
     handleSubmit,
     getValues,
     formState: { errors },
-  } = useForm<FormValues>();
+  } = useForm();
 
   const OnSubmit = () => {
     const corsAnywhere = 'https://cors-anywhere.herokuapp.com/';
@@ -78,7 +68,7 @@ export default function RegistrationView() {
           <p>
             The registration was successful! After closing this message you will
             be redirected to the main page. Now you can login with your profile
-            and start exploring the wonderful world of 80's movies!
+            and start exploring the wonderful world of 80&apos;s movies!
           </p>
           <p>So what are you waiting for? On your marks, get set...</p>
         </Modal.Body>
@@ -103,7 +93,7 @@ export default function RegistrationView() {
         centered>
         <Modal.Header className='modalUser'>
           <Modal.Title id='contained-modal-title-vcenter'>
-            "Houston, we have a problem!"
+            &quot;Houston, we have a problem!&quot;
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className='modalUser'>
@@ -688,3 +678,7 @@ export default function RegistrationView() {
     </div>
   );
 }
+
+RegistrationView.propTypes = {
+  onHide: PropTypes.func,
+};
