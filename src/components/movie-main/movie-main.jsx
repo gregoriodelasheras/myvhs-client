@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import axios from '../../config';
 import { MovieCard } from '../movie-card/movie-card';
 import { Row, Col } from 'react-bootstrap';
 
@@ -11,11 +11,9 @@ export default class MovieMain extends React.Component {
     };
   }
 
-  getMovies(token) {
+  componentDidMount() {
     axios
-      .get('https://myvhs.herokuapp.com/movies', {
-        headers: { Authorization: `Bearer ${token}` },
-      })
+      .get('/movies')
       .then((response) => {
         this.setState({
           movies: response.data,
@@ -24,16 +22,6 @@ export default class MovieMain extends React.Component {
       .catch(function (error) {
         console.log(error);
       });
-  }
-
-  async componentDidMount() {
-    let accessToken = localStorage.getItem('token');
-    if (accessToken !== null) {
-      this.setState({
-        user: localStorage.getItem('user'),
-      });
-      this.getMovies(accessToken);
-    }
   }
 
   render() {

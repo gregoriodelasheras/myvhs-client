@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
+import axiosInstance from '../../config';
 import { MovieCard } from '../movie-card/movie-card';
 import { Row, Col } from 'react-bootstrap';
 
@@ -16,20 +16,13 @@ export default class DirectorView extends React.Component {
 
   async componentDidMount() {
     const { directorID } = this.props.match.params;
-    const token = localStorage.getItem('token');
 
-    const directorsURL = 'https://myvhs.herokuapp.com/directors/';
-    const moviesURL = 'https://myvhs.herokuapp.com/movies';
+    const directorResponse = await axiosInstance.get(
+      `/directors/${directorID}`,
+    );
+    const moviesResponse = await axiosInstance.get('/movies');
 
-    const directorResponse = axios.get(directorsURL + directorID, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
-
-    const moviesResponse = axios.get(moviesURL, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
-
-    const [director, movies] = await axios.all([
+    const [director, movies] = await Promise.all([
       directorResponse,
       moviesResponse,
     ]);

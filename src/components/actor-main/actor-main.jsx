@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import axios from '../../config';
 import { ActorCard } from '../actor-card/actor-card';
 import { Row, Col } from 'react-bootstrap';
 
@@ -11,11 +11,9 @@ export default class ActorMain extends React.Component {
     };
   }
 
-  getActors(token) {
+  componentDidMount() {
     axios
-      .get('https://myvhs.herokuapp.com/actors', {
-        headers: { Authorization: `Bearer ${token}` },
-      })
+      .get('/actors')
       .then((response) => {
         this.setState({
           actors: response.data,
@@ -24,16 +22,6 @@ export default class ActorMain extends React.Component {
       .catch(function (error) {
         console.log(error);
       });
-  }
-
-  async componentDidMount() {
-    let accessToken = localStorage.getItem('token');
-    if (accessToken !== null) {
-      this.setState({
-        user: localStorage.getItem('user'),
-      });
-      this.getActors(accessToken);
-    }
   }
 
   render() {

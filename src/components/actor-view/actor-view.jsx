@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
+import axiosInstance from '../../config';
 import { MovieCard } from '../movie-card/movie-card';
 import { Row, Col } from 'react-bootstrap';
 
@@ -16,20 +16,12 @@ export default class ActorView extends React.Component {
 
   async componentDidMount() {
     const { actorID } = this.props.match.params;
-    const token = localStorage.getItem('token');
 
-    const actorsURL = 'https://myvhs.herokuapp.com/actors/';
-    const moviesURL = 'https://myvhs.herokuapp.com/movies';
+    const actorResponse = await axiosInstance.get(`/actors/${actorID}`);
 
-    const actorResponse = axios.get(actorsURL + actorID, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    const moviesResponse = await axiosInstance.get('/movies');
 
-    const moviesResponse = axios.get(moviesURL, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
-
-    const [actor, movies] = await axios.all([actorResponse, moviesResponse]);
+    const [actor, movies] = await Promise.all([actorResponse, moviesResponse]);
 
     this.setState({
       actor: actor.data,
@@ -53,9 +45,9 @@ export default class ActorView extends React.Component {
       }
     }
 
-    /* function ShowMovies() {
+    function ShowMovies() {
       movies.map((movie) => {
-        if (movie.actor.includes(actor._id)) {
+        if (movie.actors.includes(actor._id)) {
           moviesMatched.push(
             <Col sm={6} lg={3} className={'mb-4'} key={movie._id}>
               <MovieCard movie={movie} />
@@ -63,10 +55,10 @@ export default class ActorView extends React.Component {
           );
         }
       });
-    } */
+    }
 
     ActorIsDead();
-    /* ShowMovies(); */
+    ShowMovies();
 
     return (
       <div className='main-view'>
@@ -95,7 +87,7 @@ export default class ActorView extends React.Component {
             </div>
           </Col>
         </Row>
-        {/* <Row className='justify-content-center'>{moviesMatched}</Row> */}
+        <Row className='justify-content-center'>{moviesMatched}</Row>
       </div>
     );
   }

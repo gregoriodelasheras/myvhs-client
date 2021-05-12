@@ -1,7 +1,7 @@
 import React from 'react';
-import axios from 'axios';
+import axiosInstance from '../../config';
 import { MovieCard } from '../movie-card/movie-card';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Alert } from 'react-bootstrap';
 
 export default class FavoriteView extends React.Component {
   constructor() {
@@ -13,21 +13,12 @@ export default class FavoriteView extends React.Component {
   }
 
   async componentDidMount() {
-    const accessUser = localStorage.getItem('user');
-    const accessToken = localStorage.getItem('token');
+    let accessUsername = JSON.parse(localStorage.getItem('user'));
 
-    const profileURL = `https://myvhs.herokuapp.com/users/${accessUser}`;
-    const moviesURL = 'https://myvhs.herokuapp.com/movies';
+    const userResponse = await axiosInstance.get(`/users/${accessUsername}`);
+    const moviesResponse = await axiosInstance.get('/movies');
 
-    const profileResponse = axios.get(profileURL, {
-      headers: { Authorization: `Bearer ${accessToken}` },
-    });
-
-    const moviesResponse = axios.get(moviesURL, {
-      headers: { Authorization: `Bearer ${accessToken}` },
-    });
-
-    const [user, movies] = await axios.all([profileResponse, moviesResponse]);
+    const [user, movies] = await Promise.all([userResponse, moviesResponse]);
 
     this.setState({
       user: user.data,
@@ -38,6 +29,9 @@ export default class FavoriteView extends React.Component {
   render() {
     const { user, movies } = this.state;
     let moviesMatched = [];
+    let favoriteView = (
+      <Row className='justify-content-md-center'>{moviesMatched}</Row>
+    );
 
     function ShowMovies() {
       movies.map((movie) => {
@@ -49,6 +43,24 @@ export default class FavoriteView extends React.Component {
           );
         }
       });
+
+      if (moviesMatched.length === 0) {
+        favoriteView = (
+          <Row className='justify-content-md-center text-center'>
+            <Col>
+              <Alert className='alert-info alert-message my-5' variant='alert'>
+                <p className='h5'>
+                  Hey, it&apos;s looking a little empty around here!
+                </p>
+                <p className='h5'>
+                  Why don&apos;t you add your{' '}
+                  <a href='/movies'>favorite movie</a> from 1987?
+                </p>
+              </Alert>
+            </Col>
+          </Row>
+        );
+      }
     }
 
     ShowMovies();
@@ -60,7 +72,7 @@ export default class FavoriteView extends React.Component {
             <h1 className='my-4'>My favorite movies</h1>
           </Col>
         </Row>
-        <Row className='justify-content-md-center'>{moviesMatched}</Row>
+        {favoriteView}
       </div>
     );
   }

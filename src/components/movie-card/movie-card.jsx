@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import axiosInstance from '../../config';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Card, Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
@@ -13,16 +13,11 @@ export class MovieCard extends React.Component {
   }
 
   async componentDidMount() {
-    const accessUser = localStorage.getItem('user');
-    const accessToken = localStorage.getItem('token');
+    const accessUsername = JSON.parse(localStorage.getItem('user'));
 
-    const profileURL = `https://myvhs.herokuapp.com/users/${accessUser}`;
+    const userResponse = await axiosInstance.get(`/users/${accessUsername}`);
 
-    const profileResponse = axios.get(profileURL, {
-      headers: { Authorization: `Bearer ${accessToken}` },
-    });
-
-    const [user] = await axios.all([profileResponse]);
+    const [user] = await Promise.all([userResponse]);
 
     this.setState({
       user: user.data,
@@ -32,7 +27,6 @@ export class MovieCard extends React.Component {
   render() {
     const { movie } = this.props;
     const { user } = this.state;
-    const accessToken = localStorage.getItem('token');
     const movieID = movie._id;
     const urlFavorite = `https://myvhs.herokuapp.com/users/${user.username}/favorites/${movieID}`;
     const urlToWatch = `https://myvhs.herokuapp.com/users/${user.username}/towatch/${movieID}`;
@@ -57,9 +51,8 @@ export class MovieCard extends React.Component {
       const data = JSON.stringify({
         favoriteMovies: movieID,
       });
-      axios
+      axiosInstance
         .post(urlFavorite, data, {
-          headers: { Authorization: `Bearer ${accessToken}` },
           'Content-Type': 'application/json',
         })
         .then(() => {
@@ -71,10 +64,8 @@ export class MovieCard extends React.Component {
     }
 
     function RemoveFavoriteMovie() {
-      axios
-        .delete(urlFavorite, {
-          headers: { Authorization: `Bearer ${accessToken}` },
-        })
+      axiosInstance
+        .delete(urlFavorite)
         .then(() => {
           window.open(`/users/${user.username}/favorite`, '_self');
         })
@@ -87,9 +78,8 @@ export class MovieCard extends React.Component {
       const data = JSON.stringify({
         toWatchMovies: movieID,
       });
-      axios
+      axiosInstance
         .post(urlToWatch, data, {
-          headers: { Authorization: `Bearer ${accessToken}` },
           'Content-Type': 'application/json',
         })
         .then(() => {
@@ -101,10 +91,8 @@ export class MovieCard extends React.Component {
     }
 
     function RemoveToWatchMovie() {
-      axios
-        .delete(urlToWatch, {
-          headers: { Authorization: `Bearer ${accessToken}` },
-        })
+      axiosInstance
+        .delete(urlToWatch)
         .then(() => {
           window.open(`/users/${user.username}/towatch`, '_self');
         })

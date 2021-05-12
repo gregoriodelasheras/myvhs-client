@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import PropTypes from 'prop-types';
+import axios from '../../config';
 import { useForm } from 'react-hook-form';
 import { Row, Col, Form, Button, Alert, Modal } from 'react-bootstrap';
 
@@ -9,11 +10,12 @@ export default function EditView() {
   const [birthday, setBirthday] = useState('');
   const [country, setCountry] = useState('');
   const [email, setEmail] = useState('');
-  const [username, setUsername] = useState('');
+  /* const [username, setUsername] = useState(''); */
   const [password, setPassword] = useState('');
 
   const [modalRedirectShow, setModalRedirectShow] = React.useState(false);
   const [modalErrorShow, setModalErrorShow] = React.useState(false);
+  const accessUsername = JSON.parse(localStorage.getItem('user'));
 
   const {
     register,
@@ -23,28 +25,15 @@ export default function EditView() {
   } = useForm();
 
   const OnSubmit = () => {
-    const corsAnywhere = 'https://cors-anywhere.herokuapp.com/';
-    const urlAPI = `https://myvhs.herokuapp.com/users/${localStorage.getItem(
-      'user',
-    )}`;
-    const accessToken = localStorage.getItem('token');
-
-    const data = JSON.stringify({
-      name: name,
-      lastName: lastName,
-      birthday: birthday,
-      country: country,
-      email: email,
-      username: username,
-      password: password,
-    });
-
-    console.log(data);
-
     axios
-      .put(corsAnywhere + urlAPI, data, {
-        headers: { Authorization: `Bearer ${accessToken}` },
-        'Content-Type': 'application/json',
+      .put(`/users/${accessUsername}`, {
+        name: name,
+        lastName: lastName,
+        birthday: birthday,
+        country: country,
+        email: email,
+        username: accessUsername,
+        password: password,
       })
       .then(() => {
         setModalRedirectShow(true);
@@ -56,7 +45,7 @@ export default function EditView() {
   };
 
   function RedirectLogin() {
-    window.open(`/login/${localStorage.getItem('user')}`, '_self');
+    window.open(`/users/${accessUsername}`, '_self');
   }
 
   function ModalRedirect(props) {
@@ -561,7 +550,7 @@ export default function EditView() {
                 </Alert>
               )}
             </Form.Group>
-            <Form.Group controlId='formUsername' className='my-4'>
+            {/*             <Form.Group controlId='formUsername' className='my-4'>
               <Form.Label>Username:</Form.Label>
               <Form.Control
                 {...register('username', {
@@ -595,7 +584,7 @@ export default function EditView() {
                 Please enter a username with at least 6 characters (A-Z, a-z,
                 0-9, _ )
               </p>
-            </Form.Group>
+            </Form.Group> */}
             <Form.Group controlId='formPassword' className='my-4'>
               <Form.Label>Password:</Form.Label>
               <Form.Control
@@ -687,3 +676,7 @@ export default function EditView() {
     </div>
   );
 }
+
+EditView.propTypes = {
+  onHide: PropTypes.func,
+};

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
+import axiosInstance from '../../config';
 import { useForm } from 'react-hook-form';
 import { Row, Col, Form, Button, Alert, Modal } from 'react-bootstrap';
 
@@ -24,10 +24,8 @@ export default function RegistrationView() {
   } = useForm();
 
   const OnSubmit = () => {
-    const corsAnywhere = 'https://cors-anywhere.herokuapp.com/';
-    const urlAPI = 'https://myvhs.herokuapp.com/users';
-    axios
-      .post(corsAnywhere + urlAPI, {
+    axiosInstance
+      .post('/users', {
         name: name,
         lastName: lastName,
         birthday: birthday,

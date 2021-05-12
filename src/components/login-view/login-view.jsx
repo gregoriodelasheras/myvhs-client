@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
+import axios from '../../config';
 import { useForm } from 'react-hook-form';
 import { Row, Col, Form, Button, Alert, Modal } from 'react-bootstrap';
 
@@ -17,10 +17,8 @@ export default function LoginView() {
   } = useForm();
 
   const OnSubmit = () => {
-    const corsAnywhere = 'https://cors-anywhere.herokuapp.com/';
-    const urlAPI = 'https://myvhs.herokuapp.com/login';
     axios
-      .post(corsAnywhere + urlAPI, {
+      .post('/login', {
         username: username,
         password: password,
       })
@@ -35,8 +33,8 @@ export default function LoginView() {
   };
 
   function onLogged(authData) {
-    localStorage.setItem('token', authData.token);
-    localStorage.setItem('user', authData.user.username);
+    localStorage.setItem('token', JSON.stringify(authData.token));
+    localStorage.setItem('user', JSON.stringify(authData.user.username));
     window.open('/movies', '_self');
   }
 

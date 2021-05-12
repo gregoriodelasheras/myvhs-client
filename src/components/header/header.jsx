@@ -2,9 +2,9 @@ import React from 'react';
 import { Navbar, Nav, NavDropdown, Button, Container } from 'react-bootstrap';
 
 export default function Header() {
-  let accessToken = localStorage.getItem('token');
-  let accesUsername = localStorage.getItem('user');
-  let urlProfile = `/users/${localStorage.getItem('user')}`;
+  let accessToken = JSON.parse(localStorage.getItem('token'));
+  let accessUsername = JSON.parse(localStorage.getItem('user'));
+  let urlProfile = `/users/${accessUsername}`;
   let buttonMenu;
   let button1;
   let button2;
@@ -56,7 +56,7 @@ export default function Header() {
         href={urlProfile}
         className='btn-header mx-2'
         variant='outline-info'>
-        {accesUsername}
+        {accessUsername}
       </Button>
     );
     button2 = (

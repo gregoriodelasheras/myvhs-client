@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import axios from '../../config';
 import { DirectorCard } from '../director-card/director-card';
 import { Row, Col } from 'react-bootstrap';
 
@@ -11,29 +11,17 @@ export default class DirectorMain extends React.Component {
     };
   }
 
-  getDirectors(token) {
+  componentDidMount() {
     axios
-      .get('https://myvhs.herokuapp.com/directors', {
-        headers: { Authorization: `Bearer ${token}` },
-      })
+      .get('/directors')
       .then((response) => {
         this.setState({
           directors: response.data,
         });
       })
       .catch(function (error) {
-        console.log(error);
+        console.error(error);
       });
-  }
-
-  async componentDidMount() {
-    let accessToken = localStorage.getItem('token');
-    if (accessToken !== null) {
-      this.setState({
-        user: localStorage.getItem('user'),
-      });
-      this.getDirectors(accessToken);
-    }
   }
 
   render() {

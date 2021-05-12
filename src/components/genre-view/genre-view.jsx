@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
+import axiosInstance from '../../config';
 import { MovieCard } from '../movie-card/movie-card';
 import { Row, Col } from 'react-bootstrap';
 
@@ -16,20 +16,14 @@ export default class GenreView extends React.Component {
 
   async componentDidMount() {
     const { genreID } = this.props.match.params;
-    const token = localStorage.getItem('token');
 
-    const genresURL = 'https://myvhs.herokuapp.com/genres/';
-    const moviesURL = 'https://myvhs.herokuapp.com/movies';
+    const genresResponse = await axiosInstance.get(`/genres/${genreID}`);
+    const moviesResponse = await axiosInstance.get('/movies');
 
-    const genresResponse = axios.get(genresURL + genreID, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
-
-    const moviesResponse = axios.get(moviesURL, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
-
-    const [genres, movies] = await axios.all([genresResponse, moviesResponse]);
+    const [genres, movies] = await Promise.all([
+      genresResponse,
+      moviesResponse,
+    ]);
 
     this.setState({
       genre: genres.data,

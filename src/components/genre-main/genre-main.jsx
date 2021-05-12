@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import axios from '../../config';
 import { GenreCard } from '../genre-card/genre-card';
 import { Row, Col } from 'react-bootstrap';
 
@@ -11,11 +11,9 @@ export default class GenreMain extends React.Component {
     };
   }
 
-  getGenres(token) {
+  componentDidMount() {
     axios
-      .get('https://myvhs.herokuapp.com/genres', {
-        headers: { Authorization: `Bearer ${token}` },
-      })
+      .get('/genres')
       .then((response) => {
         this.setState({
           genres: response.data,
@@ -24,16 +22,6 @@ export default class GenreMain extends React.Component {
       .catch(function (error) {
         console.log(error);
       });
-  }
-
-  async componentDidMount() {
-    let accessToken = localStorage.getItem('token');
-    if (accessToken !== null) {
-      this.setState({
-        user: localStorage.getItem('user'),
-      });
-      this.getGenres(accessToken);
-    }
   }
 
   render() {

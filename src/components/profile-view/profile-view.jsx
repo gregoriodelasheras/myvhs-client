@@ -1,52 +1,46 @@
 import React from 'react';
-import axios from 'axios';
+import axiosInstance from '../../config';
 import { Row, Col, Button, ButtonGroup, Alert, Modal } from 'react-bootstrap';
 
 export default class ProfileView extends React.Component {
   constructor() {
     super();
     this.state = {
-      users: [],
+      user: [],
+      bday: '',
     };
   }
 
   async componentDidMount() {
-    const accessToken = localStorage.getItem('token');
-    const urlProfile = `https://myvhs.herokuapp.com/users/${localStorage.getItem(
-      'user',
-    )}`;
+    const accessUsername = JSON.parse(localStorage.getItem('user'));
 
-    axios
-      .get(urlProfile, {
-        headers: { Authorization: `Bearer ${accessToken}` },
-      })
-      .then((response) => {
-        this.setState({
-          users: response.data,
-        });
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    const userResponse = await axiosInstance.get(`/users/${accessUsername}`);
+
+    const [user] = await Promise.all([userResponse]);
+
+    this.setState({
+      user: user.data,
+      bday: user.data.birthday.slice(0, 10),
+    });
   }
 
   render() {
-    const { users } = this.state;
+    const { user, bday } = this.state;
 
     function RedirectFavorite() {
-      window.open(`/users/${users.username}/favorite`, '_self');
+      window.open(`/users/${user.username}/favorite`, '_self');
     }
 
     function RedirectToWatch() {
-      window.open(`/users/${users.username}/towatch`, '_self');
+      window.open(`/users/${user.username}/towatch`, '_self');
     }
 
     function RedirectEdit() {
-      window.open(`/users/${users.username}/edit`, '_self');
+      window.open(`/users/${user.username}/edit`, '_self');
     }
 
     function RedirectShow() {
-      window.open(`/users/${users.username}`, '_self');
+      window.open(`/users/${user.username}`, '_self');
     }
 
     function DeleteUserModal(props) {
@@ -105,13 +99,10 @@ export default class ProfileView extends React.Component {
     }
 
     function DeleteUser() {
-      const accessToken = localStorage.getItem('token');
-      const urlProfile = `https://myvhs.herokuapp.com/users/${users.username}`;
+      const urlProfile = `https://myvhs.herokuapp.com/users/${user.username}`;
 
-      axios
-        .delete(urlProfile, {
-          headers: { Authorization: `Bearer ${accessToken}` },
-        })
+      axiosInstance
+        .delete(urlProfile)
         .then(() => {
           localStorage.clear();
           window.open('/', '_self');
@@ -144,27 +135,27 @@ export default class ProfileView extends React.Component {
             <Alert className='alert-info m-0' variant='alert'>
               <div className='username'>
                 <p className='font-weight-bold my-2'>Username: </p>
-                <p className='mb-4'>{users.username}</p>
+                <p className='mb-4'>{user.username}</p>
               </div>
               <div className='name'>
                 <p className='font-weight-bold my-2'>Name: </p>
-                <p className='mb-4'>{users.name}</p>
+                <p className='mb-4'>{user.name}</p>
               </div>
               <div className='lastName'>
                 <p className='font-weight-bold my-2'>Last Name: </p>
-                <p className='mb-4'>{users.lastName}</p>
+                <p className='mb-4'>{user.lastName}</p>
               </div>
               <div className='birthday'>
                 <p className='font-weight-bold my-2'>Birthday: </p>
-                <p className='mb-4'>{users.birthday}</p>
+                <p className='mb-4'>{bday}</p>
               </div>
               <div className='country'>
                 <p className='font-weight-bold my-2'>Country: </p>
-                <p className='mb-4'>{users.country}</p>
+                <p className='mb-4'>{user.country}</p>
               </div>
               <div className='email'>
                 <p className='font-weight-bold my-2'>E-mail: </p>
-                <p className='mb-4'>{users.email}</p>
+                <p className='mb-4'>{user.email}</p>
               </div>
             </Alert>
             <Button

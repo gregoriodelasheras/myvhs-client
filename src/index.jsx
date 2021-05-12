@@ -45,8 +45,9 @@ import MainView from './components/main-view/main-view';
 import AboutView from './components/about-view/about-view';
 
 function MyVHSApp() {
-  let accessToken = localStorage.getItem('token');
-  let urlProfile = `/users/${localStorage.getItem('user')}`;
+  let accessToken = JSON.parse(localStorage.getItem('token'));
+  let accessUsername = JSON.parse(localStorage.getItem('user'));
+  let urlProfile = `/users/${accessUsername}`;
   let isLogged;
   let isNotLogged;
 
