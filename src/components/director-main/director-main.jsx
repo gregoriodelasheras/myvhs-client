@@ -29,7 +29,7 @@ export default class DirectorMain extends React.Component {
 
     return (
       <div className='main-view text-center my-3'>
-        <h1>Directors</h1>
+        <h1 className='my-4'>Directors</h1>
         <Row>
           {directors.map((director) => (
             <Col sm={6} lg={3} className={'my-3'} key={director._id}>

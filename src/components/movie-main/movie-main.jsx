@@ -29,7 +29,7 @@ export default class MovieMain extends React.Component {
 
     return (
       <div className='main-view text-center my-3'>
-        <h1>Movies</h1>
+        <h1 className='my-4'>Movies</h1>
         <Row>
           {movies.map((movie) => (
             <Col sm={6} lg={3} className={'my-3'} key={movie._id}>

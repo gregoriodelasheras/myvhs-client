@@ -29,7 +29,7 @@ export default class GenreMain extends React.Component {
 
     return (
       <div className='main-view text-center my-3'>
-        <h1>Genres</h1>
+        <h1 className='my-4'>Genres</h1>
         <Row>
           {genres.map((genre) => (
             <Col sm={6} lg={3} className={'my-3'} key={genre._id}>
