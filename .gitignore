@@ -1,5 +1,6 @@
 # Folders
 dist/
+.history
 
 # Logs
 logs

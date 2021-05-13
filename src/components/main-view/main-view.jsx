@@ -1,98 +1,43 @@
 import React from 'react';
-import axios from 'axios';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { Row, Col, Alert } from 'react-bootstrap';
 
-import { LoginView } from '../login-view/login-view';
-import { RegistrationView } from '../registration-view/registration-view';
-import { MovieCard } from '../movie-card/movie-card';
-import { MovieView } from '../movie-view/movie-view';
+export default function MainView() {
+  let infoGuest;
+  let accessToken = localStorage.getItem('token');
 
-export class MainView extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      movies: [],
-      selectedMovie: null,
-      userLogged: null,
-      userRegistered: null,
-    };
-  }
-
-  componentDidMount() {
-    axios
-      .get('https://myvhs.herokuapp.com/movies')
-      .then((response) => {
-        console.log(response);
-        this.setState({
-          movies: response.data,
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
-
-  onLoggedIn(userLogged) {
-    this.setState({
-      userLogged,
-    });
-  }
-
-  onRegistered(userRegistered) {
-    this.setState({
-      userRegistered,
-    });
-  }
-
-  setSelectedMovie(newSelectedMovie) {
-    this.setState({
-      selectedMovie: newSelectedMovie,
-    });
-  }
-
-  render() {
-    const { movies, selectedMovie, userLogged, userRegistered } = this.state;
-
-    if (!userLogged)
-      return (
-        <LoginView onLoggedIn={(userLogged) => this.onLoggedIn(userLogged)} />
-      );
-
-    if (!userRegistered)
-      return (
-        <RegistrationView
-          onRegistered={(userRegistered) => this.onRegistered(userRegistered)}
-        />
-      );
-
-    if (movies.length === 0) return <div className='main-view' />;
-
-    return (
-      <Row className='main-view justify-content-md-center pt-4'>
-        {selectedMovie ? (
-          <Col>
-            <MovieView
-              movieData={selectedMovie}
-              onBackClick={(newSelectedMovie) => {
-                this.setSelectedMovie(newSelectedMovie);
-              }}
-            />
-          </Col>
-        ) : (
-          movies.map((movie) => (
-            <Col className='mb-4' sm={12} md={6} lg={3} key={movie._id}>
-              <MovieCard
-                key={movie._id}
-                movieData={movie}
-                onMovieClick={(newSelectedMovie) => {
-                  this.setSelectedMovie(newSelectedMovie);
-                }}
-              />
-            </Col>
-          ))
-        )}
-      </Row>
+  if (!accessToken) {
+    infoGuest = (
+      <Alert className='alert-info' variant='alert'>
+        <div>
+          Join our exclusive club for free and get access to the best 80s movie
+          information page.
+        </div>
+        <div>
+          Click <a href='/register'>here to sign up</a> or{' '}
+          <a href='/login'>here to login</a>!
+        </div>
+      </Alert>
     );
   }
+
+  return (
+    <div className='main-view text-center d-flex justify-content-center align-items-center'>
+      <Row className='w-100'>
+        <Col>
+          <img
+            src='https://raw.githubusercontent.com/gregoriodelasheras/myVHS-client/69e6feb322c09cf53547384507db20581274f0b2/img/logo.svg'
+            alt='Logo'
+            className='img-fluid logo-web'
+          />
+          <p className='h1 my-4'>Welcome to myVHS!</p>
+          <p className='h4 my-4'>
+            Get comfy, grab your favorite snacks and get ready for an exciting
+            trip right back to the mind-blowing decade of the 80&apos;s!
+          </p>
+          {infoGuest}
+          <p className='text-muted my-4'>(We bring the popcorn! 🍿)</p>
+        </Col>
+      </Row>
+    </div>
+  );
 }

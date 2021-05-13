@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import axiosInstance from '../../config';
+import axios from '../../config';
 import { useForm } from 'react-hook-form';
 import { Row, Col, Form, Button, Alert, Modal } from 'react-bootstrap';
 
-export default function RegistrationView() {
+export default function EditView() {
   const [name, setName] = useState('');
   const [lastName, setLastName] = useState('');
   const [birthday, setBirthday] = useState('');
   const [country, setCountry] = useState('');
   const [email, setEmail] = useState('');
-  const [username, setUsername] = useState('');
+  /* const [username, setUsername] = useState(''); */
   const [password, setPassword] = useState('');
 
   const [modalRedirectShow, setModalRedirectShow] = React.useState(false);
   const [modalErrorShow, setModalErrorShow] = React.useState(false);
+  const accessUsername = JSON.parse(localStorage.getItem('user'));
 
   const {
     register,
@@ -24,14 +25,14 @@ export default function RegistrationView() {
   } = useForm();
 
   const OnSubmit = () => {
-    axiosInstance
-      .post('/users', {
+    axios
+      .put(`/users/${accessUsername}`, {
         name: name,
         lastName: lastName,
         birthday: birthday,
         country: country,
         email: email,
-        username: username,
+        username: accessUsername,
         password: password,
       })
       .then(() => {
@@ -44,7 +45,7 @@ export default function RegistrationView() {
   };
 
   function RedirectLogin() {
-    window.open('/login', '_self');
+    window.open(`/users/${accessUsername}`, '_self');
   }
 
   function ModalRedirect(props) {
@@ -58,17 +59,14 @@ export default function RegistrationView() {
         keyboard={false}>
         <Modal.Header className='modalUser'>
           <Modal.Title id='contained-modal-title-vcenter'>
-            Everything is ready!
+            Your data has been updated!
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className='modalUser'>
-          <p className='h4 my-3'>Thank you for signing up with us! 🥳</p>
-          <p>
-            The registration was successful! After closing this message you will
-            be redirected to the main page. Now you can login with your profile
-            and start exploring the wonderful world of 80&apos;s movies!
+          <p className='h4 my-3'>
+            The new data were successfully entered into our database.
           </p>
-          <p>So what are you waiting for? On your marks, get set...</p>
+          <p>You can now continue your journey back to the 80&apos;s.</p>
         </Modal.Body>
         <Modal.Footer className='modalUser justify-content-center'>
           <Button
@@ -95,10 +93,12 @@ export default function RegistrationView() {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className='modalUser'>
-          <p className='h4 my-3'>Your username already exists! 😬</p>
+          <p className='h4 my-3'>We are working on it</p>
           <p>
-            Sorry, the username is already registered. Please enter another one.
+            Sorry, an unexpected error occurred during the update. Our technical
+            team is already working on it from our moonbase.
           </p>
+          <p>Please try again later.</p>
         </Modal.Body>
         <Modal.Footer className='modalUser justify-content-center'>
           <Button
@@ -117,7 +117,7 @@ export default function RegistrationView() {
       <Row>
         <Col>
           <Form onSubmit={handleSubmit(OnSubmit)}>
-            <h1 className='my-4'>Sign Up</h1>
+            <h1 className='my-4'>Edit Profile</h1>
             <Form.Group controlId='formName' className='my-4'>
               <Form.Label>Name:</Form.Label>
               <Form.Control
@@ -550,7 +550,7 @@ export default function RegistrationView() {
                 </Alert>
               )}
             </Form.Group>
-            <Form.Group controlId='formUsername' className='my-4'>
+            {/*             <Form.Group controlId='formUsername' className='my-4'>
               <Form.Label>Username:</Form.Label>
               <Form.Control
                 {...register('username', {
@@ -584,7 +584,7 @@ export default function RegistrationView() {
                 Please enter a username with at least 6 characters (A-Z, a-z,
                 0-9, _ )
               </p>
-            </Form.Group>
+            </Form.Group> */}
             <Form.Group controlId='formPassword' className='my-4'>
               <Form.Label>Password:</Form.Label>
               <Form.Control
@@ -677,6 +677,6 @@ export default function RegistrationView() {
   );
 }
 
-RegistrationView.propTypes = {
+EditView.propTypes = {
   onHide: PropTypes.func,
 };
