@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <p align="center">
   <a href="https://gregoriodelasheras.github.io/myVHS/">
-    <img src="img/logo-readme.svg" alt="Logo" width="600">
+    <img src="src/assets/logo-readme.svg" alt="Logo" width="600">
   </a>
   <p align="center">
     Web App for enthusiasts of 80's movies. All in one VHS! Built with its own API and the MERN stack.
@@ -101,6 +101,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- CONTACT -->
 ## Contact
+
+Francisco Gregorio de las Heras: [LinkedIn](https://www.linkedin.com/in/francisco-gregorio-de-las-heras/)
 
 Project Link: [https://gregoriodelasheras.github.io/myVHS-client/](https://gregoriodelasheras.github.io/myVHS-client/)
 
