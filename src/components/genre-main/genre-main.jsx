@@ -1,23 +1,16 @@
 import React from 'react';
 import axios from '../../config';
-import { GenreCard } from '../genre-card/genre-card';
-import { Row, Col } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { setGenres } from '../../actions/actions';
+import GenresList from '../genres-list/genres-list';
 
-export default class GenreMain extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      genres: [],
-    };
-  }
-
+export class GenreMain extends React.Component {
   componentDidMount() {
     axios
       .get('/genres')
       .then((response) => {
-        this.setState({
-          genres: response.data,
-        });
+        this.props.setGenres(response.data);
       })
       .catch(function (error) {
         console.log(error);
@@ -25,19 +18,24 @@ export default class GenreMain extends React.Component {
   }
 
   render() {
-    const { genres } = this.state;
+    const { genres } = this.props;
 
     return (
       <div className='main-view text-center my-3'>
         <h1 className='my-4'>Genres</h1>
-        <Row>
-          {genres.map((genre) => (
-            <Col sm={6} lg={3} className={'my-3'} key={genre._id}>
-              <GenreCard genre={genre} />
-            </Col>
-          ))}
-        </Row>
+        <GenresList genres={genres} />
       </div>
     );
   }
 }
+
+GenreMain.propTypes = {
+  genres: PropTypes.array.isRequired,
+  setGenres: PropTypes.func.isRequired,
+};
+
+let mapStateToProps = (state) => {
+  return { genres: state.genres };
+};
+
+export default connect(mapStateToProps, { setGenres })(GenreMain);
