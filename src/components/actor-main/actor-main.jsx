@@ -1,23 +1,16 @@
 import React from 'react';
 import axios from '../../config';
-import { ActorCard } from '../actor-card/actor-card';
-import { Row, Col } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { setActors } from '../../actions/actions';
+import ActorsList from '../actors-list/actors-list';
 
-export default class ActorMain extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      actors: [],
-    };
-  }
-
+export class ActorMain extends React.Component {
   componentDidMount() {
     axios
       .get('/actors')
       .then((response) => {
-        this.setState({
-          actors: response.data,
-        });
+        this.props.setActors(response.data);
       })
       .catch(function (error) {
         console.log(error);
@@ -25,19 +18,24 @@ export default class ActorMain extends React.Component {
   }
 
   render() {
-    const { actors } = this.state;
+    const { actors } = this.props;
 
     return (
       <div className='main-view text-center my-3'>
         <h1 className='my-4'>Actors</h1>
-        <Row>
-          {actors.map((actor) => (
-            <Col sm={6} lg={3} className={'my-3'} key={actor._id}>
-              <ActorCard actor={actor} />
-            </Col>
-          ))}
-        </Row>
+        <ActorsList actors={actors} />
       </div>
     );
   }
 }
+
+ActorMain.propTypes = {
+  actors: PropTypes.array.isRequired,
+  setActors: PropTypes.func.isRequired,
+};
+
+let mapStateToProps = (state) => {
+  return { actors: state.actors };
+};
+
+export default connect(mapStateToProps, { setActors })(ActorMain);
