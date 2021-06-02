@@ -25,6 +25,7 @@
 </details>
 
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
 ### Objective:
@@ -62,6 +63,7 @@ The development of this application was organized through a Kanban board. You ca
 - [JavaScript](https://www.javascript.com/)
 - [Node.js](https://nodejs.org/)
 - [React](https://reactjs.org/)
+- [React Redux](https://react-redux.js.org/)
 - [Visual Studio Code](https://code.visualstudio.com/)
 
 ## Dependencies
@@ -70,6 +72,8 @@ The development of this application was organized through a Kanban board. You ca
 - eslint
 - react
 - react-dom
+- redux
+- react-redux
 - prop-types
 - axios
 
@@ -96,6 +100,7 @@ To see the Server-side of the app, please check [this repository](https://github
 Distributed under the MIT License. See `LICENSE` for more information.
 
 <!-- CONTACT -->
+
 ## Contact
 
 Francisco Gregorio de las Heras: [LinkedIn](https://www.linkedin.com/in/francisco-gregorio-de-las-heras/)
@@ -103,7 +108,8 @@ Francisco Gregorio de las Heras: [LinkedIn](https://www.linkedin.com/in/francisc
 Project Link: [https://gregoriodelasheras.github.io/myVHS-client/](https://gregoriodelasheras.github.io/myVHS-client/)
 
 <!-- ACKNOWLEDGEMENTS -->
+
 ## Acknowledgements
 
-* [Itua Akhator](https://github.com/iakhator)
-* [Vinh-Tuong Mai](https://github.com/mvtuong)
+- [Itua Akhator](https://github.com/iakhator)
+- [Vinh-Tuong Mai](https://github.com/mvtuong)
