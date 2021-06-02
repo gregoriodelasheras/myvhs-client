@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import VisibilityFilterInput from '../visibility-filter-input/visibility-filter-input';
+import ErrorList from '../messages/error-list';
 import { MovieCard } from '../movie-card/movie-card';
 import { Row, Col } from 'react-bootstrap';
 
@@ -20,22 +21,7 @@ function MoviesList(props) {
     );
   }
 
-  if (!movies)
-    return (
-      <div className='main-view'>
-        <p>
-          If you type something, it gives an error, because movies has no data.
-        </p>
-        <Col md={12} style={{ margin: '1em' }}>
-          <VisibilityFilterInput visibilityFilter={visibilityFilter} />
-        </Col>
-        <h3>ERROR! No movies!</h3>
-        <p>
-          Failed prop type: The prop `movies` is marked as required in
-          `MoviesList`, but its value is `undefined`
-        </p>
-      </div>
-    );
+  if (!movies) return <ErrorList />;
 
   return (
     <>
