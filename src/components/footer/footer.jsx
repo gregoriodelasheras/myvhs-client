@@ -23,7 +23,7 @@ export default function Footer() {
                 href='https://github.com/gregoriodelasheras/myVHS-client/releases/latest'
                 target='_blank'
                 rel='noreferrer'>
-                v.1.0.3
+                v.1.0.4
               </a>
             </p>
           </Col>
