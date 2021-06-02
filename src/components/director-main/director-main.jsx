@@ -1,23 +1,16 @@
 import React from 'react';
 import axios from '../../config';
-import { DirectorCard } from '../director-card/director-card';
-import { Row, Col } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { setDirectors } from '../../actions/actions';
+import DirectorsList from '../directors-list/directors-list';
 
-export default class DirectorMain extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      directors: [],
-    };
-  }
-
+export class DirectorMain extends React.Component {
   componentDidMount() {
     axios
       .get('/directors')
       .then((response) => {
-        this.setState({
-          directors: response.data,
-        });
+        this.props.setDirectors(response.data);
       })
       .catch(function (error) {
         console.error(error);
@@ -25,19 +18,24 @@ export default class DirectorMain extends React.Component {
   }
 
   render() {
-    const { directors } = this.state;
+    const { directors } = this.props;
 
     return (
       <div className='main-view text-center my-3'>
         <h1 className='my-4'>Directors</h1>
-        <Row>
-          {directors.map((director) => (
-            <Col sm={6} lg={3} className={'my-3'} key={director._id}>
-              <DirectorCard director={director} />
-            </Col>
-          ))}
-        </Row>
+        <DirectorsList directors={directors} />
       </div>
     );
   }
 }
+
+DirectorMain.propTypes = {
+  directors: PropTypes.array.isRequired,
+  setDirectors: PropTypes.func.isRequired,
+};
+
+let mapStateToProps = (state) => {
+  return { directors: state.directors };
+};
+
+export default connect(mapStateToProps, { setDirectors })(DirectorMain);
