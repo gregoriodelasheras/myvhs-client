@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import axiosInstance from '../../config';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { setUser } from '../../actions/actions';
 import { useForm } from 'react-hook-form';
 import { Row, Col, Form, Button, Alert, Modal } from 'react-bootstrap';
 
-export default function EditView() {
+export function EditView() {
   const [name, setName] = useState('');
   const [lastName, setLastName] = useState('');
   const [birthday, setBirthday] = useState('');
@@ -644,5 +646,23 @@ export default function EditView() {
 }
 
 EditView.propTypes = {
+  user: PropTypes.shape({
+    favoriteMovies: PropTypes.array,
+    toWatchMovies: PropTypes.array,
+    _id: PropTypes.string,
+    name: PropTypes.string,
+    lastName: PropTypes.string,
+    birthday: PropTypes.string,
+    country: PropTypes.string,
+    email: PropTypes.string,
+    username: PropTypes.string,
+  }),
+  setUser: PropTypes.func.isRequired,
   onHide: PropTypes.func,
 };
+
+let mapStateToProps = (state) => {
+  return { user: state.user };
+};
+
+export default connect(mapStateToProps, { setUser })(EditView);
