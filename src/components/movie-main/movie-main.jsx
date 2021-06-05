@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from '../../config';
+import axiosInstance from '../../config';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { setMovies } from '../../actions/actions';
@@ -7,7 +7,7 @@ import MoviesList from '../movies-list/movies-list';
 
 export class MovieMain extends React.Component {
   componentDidMount() {
-    axios
+    axiosInstance
       .get('/movies')
       .then((response) => {
         this.props.setMovies(response.data);

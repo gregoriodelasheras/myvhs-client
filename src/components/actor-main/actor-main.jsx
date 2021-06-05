@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from '../../config';
+import axiosInstance from '../../config';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { setActors } from '../../actions/actions';
@@ -7,7 +7,7 @@ import ActorsList from '../actors-list/actors-list';
 
 export class ActorMain extends React.Component {
   componentDidMount() {
-    axios
+    axiosInstance
       .get('/actors')
       .then((response) => {
         this.props.setActors(response.data);

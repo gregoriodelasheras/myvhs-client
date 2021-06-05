@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from '../../config';
+import axiosInstance from '../../config';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { setDirectors } from '../../actions/actions';
@@ -7,7 +7,7 @@ import DirectorsList from '../directors-list/directors-list';
 
 export class DirectorMain extends React.Component {
   componentDidMount() {
-    axios
+    axiosInstance
       .get('/directors')
       .then((response) => {
         this.props.setDirectors(response.data);

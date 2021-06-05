@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from '../../config';
+import axiosInstance from '../../config';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { setGenres } from '../../actions/actions';
@@ -7,7 +7,7 @@ import GenresList from '../genres-list/genres-list';
 
 export class GenreMain extends React.Component {
   componentDidMount() {
-    axios
+    axiosInstance
       .get('/genres')
       .then((response) => {
         this.props.setGenres(response.data);

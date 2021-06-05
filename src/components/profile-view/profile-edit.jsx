@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import axios from '../../config';
+import axiosInstance from '../../config';
 import { useForm } from 'react-hook-form';
 import { Row, Col, Form, Button, Alert, Modal } from 'react-bootstrap';
 
@@ -24,7 +24,7 @@ export default function EditView() {
   } = useForm();
 
   const OnSubmit = () => {
-    axios
+    axiosInstance
       .put(`/users/${accessUsername}`, {
         name: name,
         lastName: lastName,
@@ -557,7 +557,7 @@ export default function EditView() {
                 {...register('password', {
                   required: {
                     value: true,
-                    message: 'You need to enter a password to sign up!',
+                    message: 'You need to enter a password!',
                   },
                   minLength: {
                     value: 8,
