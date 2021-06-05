@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
+import axiosInstance from '../../config';
+import { connect, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import axios from '../../config';
+import { setUser } from '../../actions/actions';
 import { useForm } from 'react-hook-form';
 import { Row, Col, Form, Button, Alert, Modal } from 'react-bootstrap';
 
-export default function LoginView() {
+export function LoginView() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const [modalErrorShow, setModalErrorShow] = React.useState(false);
+
+  const dispatch = useDispatch();
 
   const {
     register,
@@ -17,7 +21,7 @@ export default function LoginView() {
   } = useForm();
 
   const OnSubmit = () => {
-    axios
+    axiosInstance
       .post('/login', {
         username: username,
         password: password,
@@ -33,9 +37,10 @@ export default function LoginView() {
   };
 
   function onLogged(authData) {
+    dispatch(setUser(authData));
     localStorage.setItem('token', JSON.stringify(authData.token));
     localStorage.setItem('user', JSON.stringify(authData.user.username));
-    window.open('/movies', '_self');
+    /* window.open('/movies', '_self'); */
   }
 
   function ModalError(props) {
@@ -155,3 +160,9 @@ export default function LoginView() {
 LoginView.propTypes = {
   onHide: PropTypes.func,
 };
+
+const mapDispatchToProps = (dispatch) => {
+  return { user: dispatch.user };
+};
+
+export default connect(mapDispatchToProps, { setUser })(LoginView);
