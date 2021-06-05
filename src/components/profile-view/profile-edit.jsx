@@ -10,7 +10,6 @@ export default function EditView() {
   const [birthday, setBirthday] = useState('');
   const [country, setCountry] = useState('');
   const [email, setEmail] = useState('');
-  /* const [username, setUsername] = useState(''); */
   const [password, setPassword] = useState('');
 
   const [modalRedirectShow, setModalRedirectShow] = React.useState(false);
@@ -124,7 +123,8 @@ export default function EditView() {
                 {...register('name', {
                   required: {
                     value: true,
-                    message: 'You must enter your name in order to register!',
+                    message:
+                      'You must enter your name in order to update your data!',
                   },
                   pattern: {
                     value: /^[A-Za-zÀ-ž\s]+$/i,
@@ -150,7 +150,7 @@ export default function EditView() {
                   required: {
                     value: true,
                     message:
-                      'You must enter your last name in order to register!',
+                      'You must enter your last name in order to update your data!',
                   },
                   pattern: {
                     value: /^[A-Za-zÀ-ž\s]+$/i,
@@ -176,7 +176,7 @@ export default function EditView() {
                   required: {
                     value: true,
                     message:
-                      'You must enter your birthday in order to register!',
+                      'You must enter your birthday in order to update your data!',
                   },
                 })}
                 type='date'
@@ -199,7 +199,7 @@ export default function EditView() {
                   required: {
                     value: true,
                     message:
-                      'You must enter your country in order to register!',
+                      'You must enter your country in order to update your data!',
                   },
                 })}
                 as='select'
@@ -530,7 +530,8 @@ export default function EditView() {
                 {...register('email', {
                   required: {
                     value: true,
-                    message: 'You must enter your e-mail in order to register!',
+                    message:
+                      'You must enter your e-mail in order to update your data!',
                   },
                   pattern: {
                     value: /[a-z0-9._]+@[a-z0-9.-]+\.[a-z]{2,4}/g,
@@ -550,41 +551,6 @@ export default function EditView() {
                 </Alert>
               )}
             </Form.Group>
-            {/*             <Form.Group controlId='formUsername' className='my-4'>
-              <Form.Label>Username:</Form.Label>
-              <Form.Control
-                {...register('username', {
-                  required: {
-                    value: true,
-                    message: 'You need to enter a username to sign up!',
-                  },
-                  minLength: {
-                    value: 6,
-                    message:
-                      'Please enter a valid username (at least 6 characters)',
-                  },
-                  pattern: {
-                    value: /^[A-Za-z0-9_]+$/i,
-                    message:
-                      'Usernames should follow this pattern: A-Z, a-z, 0-9 and special character "_"',
-                  },
-                })}
-                type='text'
-                value={username}
-                className='form-neon'
-                placeholder='Enter a username'
-                onChange={(e) => setUsername(e.target.value)}
-              />
-              {errors.username && (
-                <Alert variant='danger' className='alert-message my-2 p-1'>
-                  {errors.username.message}
-                </Alert>
-              )}
-              <p className='text-muted my-2'>
-                Please enter a username with at least 6 characters (A-Z, a-z,
-                0-9, _ )
-              </p>
-            </Form.Group> */}
             <Form.Group controlId='formPassword' className='my-4'>
               <Form.Label>Password:</Form.Label>
               <Form.Control
