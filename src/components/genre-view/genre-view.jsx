@@ -56,11 +56,7 @@ export default class GenreView extends React.Component {
         <Row className='justify-content-md-center'>
           <Col className='genre-view text-center' md={8}>
             <div className='genre-image'>
-              <img
-                src={genre.imagePath}
-                className='film-image mt-5 mb-3 p-3'
-                width={250}
-              />
+              <img src={genre.imagePath} className='film-image mt-5 mb-3 p-3' />
             </div>
             <div className='genre-name my-4'>
               <h1 className='value'>{genre.name}</h1>

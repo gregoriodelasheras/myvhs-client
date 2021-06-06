@@ -71,11 +71,7 @@ export default class DirectorView extends React.Component {
         <Row className='justify-content-md-center'>
           <Col className='director-view text-center' md={8}>
             <div className='director-image'>
-              <img
-                src={director.imagePath}
-                className='film-image mt-5 mb-3'
-                width={250}
-              />
+              <img src={director.imagePath} className='film-image mt-5 mb-3' />
             </div>
             <div className='director-name my-4'>
               <h1 className='value'>{director.name}</h1>

@@ -34,6 +34,8 @@ body {
 }
 
 .film-image {
+  max-width: 300px;
+  width: 100%;
   border: 2px solid $secondary;
   box-shadow: 0 0 20px 5px rgba(23, 162, 184, 0.5);
 }

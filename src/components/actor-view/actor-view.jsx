@@ -67,11 +67,7 @@ export default class ActorView extends React.Component {
         <Row className='justify-content-md-center'>
           <Col className='actor-view text-center' md={8}>
             <div className='actor-image'>
-              <img
-                src={actor.imagePath}
-                className='film-image mt-5 mb-3'
-                width={250}
-              />
+              <img src={actor.imagePath} className='film-image mt-5 mb-3' />
             </div>
             <div className='actor-name my-4'>
               <h1 className='value'>{actor.name}</h1>
