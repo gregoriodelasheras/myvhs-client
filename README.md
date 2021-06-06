@@ -4,7 +4,7 @@
     <img src="src/assets/logo-readme.svg" alt="Logo" width="600">
   </a>
   <p align="center">
-    Web App for enthusiasts of 80's movies. All in one VHS! Built with its own API and the MERN stack.
+    Web App for enthusiasts of 80's movies. All in one VHS! Built with the MERN stack, its own API and deployed with Netlify.
   </p>
 </p>
 
@@ -15,8 +15,8 @@
     <li><a href="#about-the-project">About The Project</a></li>
     <li><a href="#built-with">Built With</a></li>
     <li><a href="#dependencies">Dependencies</a></li>
+    <li><a href="#dev-dependencies">Dev Dependencies</a></li>
     <li><a href="#why-react">Why React?</a></li>
-    <li><a href="#test-environment">Test environment</a></li>
     <li><a href="#server-side">Server-side</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -27,6 +27,10 @@
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/77192223/120920765-bead9700-c6c0-11eb-881f-1f834378ee86.png" alt="App Screenshot">
+</p>
 
 ### Objective:
 
@@ -64,18 +68,27 @@ The development of this application was organized through a Kanban board. You ca
 - [Node.js](https://nodejs.org/)
 - [React](https://reactjs.org/)
 - [React Redux](https://react-redux.js.org/)
+- [React Bootstrap](https://react-bootstrap.github.io/)
 - [Visual Studio Code](https://code.visualstudio.com/)
+- [Netlify](https://www.netlify.com/)
 
 ## Dependencies
 
+- axios
+- prop-types
+- react
+- react-bootstrap
+- react-dom
+- react-hook-form
+- react-redux
+- react-router-dom
+- redux
+- redux-devtools-extension
+
+## Dev Dependencies
+
 - parcel v2
 - eslint
-- react
-- react-dom
-- redux
-- react-redux
-- prop-types
-- axios
 
 ## Why React?
 
@@ -86,10 +99,6 @@ On the other hand, Vue.js (and the MEVN stack) could be considered for the proje
 By having its virtual DOM, it will allow the myVHS application to render views faster and more efficiently. We will have to load a lot of data from the server-side, so it is better to be certain from the beginning that the framework to be used will be able to deal with the high database load by users in the future.
 
 Another advantage is that React prioritizes the user experience, which is one of the main goals of the myFlix application: to display in a simple and intuitive way information about movies to the user.
-
-## Test environment
-
-Project tested using Parcel v2: `parcel src/index.html`
 
 ## Server-side
 
