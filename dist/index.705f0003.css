@@ -1,0 +1,99 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+body a {
+  color: #011efe;
+}
+body a:hover {
+  color: #011be5;
+}
+#container-app {
+  min-height: 100vh;
+  background-color: #20232a;
+  color: #ffffff;
+}
+.main-view {
+  min-height: 90vh;
+  padding-top: 70px;
+}
+.card:nth-child(1) {
+  background-color: #282c34;
+  color: #ffffff;
+  border-color: #17a2b8;
+}
+.film-image {
+  max-width: 300px;
+  width: 100%;
+  border: 2px solid #17a2b8;
+  box-shadow: 0 0 20px 5px rgba(23, 162, 184, 0.5);
+}
+.card-image,
+.form-neon {
+  box-shadow: 0 0 10px 5px rgba(23, 162, 184, 0.3);
+}
+.logo-web {
+  width: 600px;
+}
+.btn-show, .btn-form {
+  box-shadow: 0 0 5px 5px rgba(23, 162, 184, 0.2);
+}
+.btn-form {
+  width: 100px;
+}
+.btn-profile3, .btn-profile2, .btn-profile1 {
+  width: 72px;
+}
+.btn-profile1 {
+  box-shadow: 0 0 5px 5px rgba(23, 162, 184, 0.2);
+}
+.btn-profile2 {
+  box-shadow: 0 0 5px 5px rgba(40, 167, 69, 0.2);
+}
+.btn-profile3 {
+  box-shadow: 0 0 5px 5px rgba(220, 53, 69, 0.2);
+}
+.btn-profile4 {
+  width: 100px;
+  box-shadow: 0 0 5px 5px rgba(255, 193, 7, 0.2);
+}
+.btn-profile5 {
+  width: 100px;
+  box-shadow: 0 0 5px 5px rgba(0, 123, 255, 0.2);
+}
+.btn-show {
+  width: 115px;
+}
+.btn-favorite {
+  width: 50px;
+  box-shadow: 0 0 5px 5px rgba(255, 193, 7, 0.2);
+}
+.btn-watch {
+  width: 50px;
+  box-shadow: 0 0 5px 5px rgba(0, 123, 255, 0.2);
+}
+.btn-delete-user {
+  width: 250px;
+}
+.form-neon,
+.alert-message,
+.profile-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.main-footer a {
+  color: #17a2b8;
+}
+.main-footer a:hover {
+  color: #148ea1;
+}
+.modalUser {
+  background-color: #282c34;
+  color: #ffffff;
+  border: 2px solid #17a2b8;
+  box-shadow: 0 0 5px 2px #17a2b8;
+}
+.modalDeleteUser {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 2px solid #721c24;
+  box-shadow: 0 0 5px 2px #721c24;
+}
+/*# sourceMappingURL=index.705f0003.css.map */

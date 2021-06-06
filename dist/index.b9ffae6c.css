@@ -1,0 +1,19 @@
+
+/* .genre-view {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} */
+
+.main-footer {
+  color: #ffffff;
+}
+.main-footer a {
+  color: #ffffff;
+}
+.main-footer a:hover {
+  color: #e0e0e0;
+}
+
+/*# sourceMappingURL=index.b9ffae6c.css.map */

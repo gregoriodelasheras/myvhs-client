@@ -1,0 +1,55 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Roboto:wght@400;700&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
+body {
+  font-family: "Indie Flower", cursive;
+  background-color: #20232a;
+}
+body a {
+  color: #011efe;
+}
+body a:hover {
+  color: #011be5;
+}
+#container-app {
+  min-height: 100vh;
+  background-color: #20232a;
+  color: #ffffff;
+}
+.main-view {
+  min-height: 90vh;
+  padding-top: 70px;
+}
+.card:nth-child(1) {
+  background-color: #282c34;
+  color: #ffffff;
+  border-color: #17a2b8;
+}
+.film-image {
+  border: 2px solid #17a2b8;
+  box-shadow: 0 0 20px 5px rgba(23, 162, 184, 0.5);
+}
+.card-image,
+.form-neon {
+  box-shadow: 0 0 10px 5px rgba(23, 162, 184, 0.3);
+}
+.logo-web {
+  width: 600px;
+}
+.btn {
+  box-shadow: 0 0 5px 5px rgba(23, 162, 184, 0.2);
+}
+.btn-header, .btn-form {
+  width: 100px;
+}
+.form-neon {
+  max-width: 500px;
+  margin: 0 auto;
+}
+.main-footer a {
+  color: #17a2b8;
+}
+.main-footer a:hover {
+  color: #148ea1;
+}
+/*# sourceMappingURL=index.a27ab1de.css.map */
