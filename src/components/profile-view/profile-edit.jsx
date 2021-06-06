@@ -58,25 +58,19 @@ export function EditView() {
         centered
         backdrop='static'
         keyboard={false}>
-        <Modal.Header className='modalUser'>
-          <Modal.Title id='contained-modal-title-vcenter'>
-            Your data has been updated!
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body className='modalUser'>
+        <Modal.Body className='modalUser text-center'>
+          <p className='h3 my-4'>Your data has been updated!</p>
           <p className='h4 my-3'>
             The new data were successfully entered into our database.
           </p>
           <p>You can now continue your journey back to the 80&apos;s.</p>
-        </Modal.Body>
-        <Modal.Footer className='modalUser justify-content-center'>
           <Button
             variant='outline-info'
-            className='btn-form'
+            className='btn-form my-3'
             onClick={() => RedirectLogin()}>
             Go!
           </Button>
-        </Modal.Footer>
+        </Modal.Body>
       </Modal>
     );
   }
@@ -88,12 +82,8 @@ export function EditView() {
         size='lg'
         aria-labelledby='contained-modal-title-vcenter'
         centered>
-        <Modal.Header className='modalUser'>
-          <Modal.Title id='contained-modal-title-vcenter'>
-            &quot;Houston, we have a problem!&quot;
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body className='modalUser'>
+        <Modal.Body className='modalUser text-center'>
+          <p className='h3 my-4'>&quot;Houston, we have a problem!&quot;</p>
           <p className='h4 my-3'>We are working on it</p>
           <p>
             Sorry, an unexpected error occurred during the update. Our technical
@@ -101,14 +91,12 @@ export function EditView() {
           </p>
           <p>Please try again later.</p>
         </Modal.Body>
-        <Modal.Footer className='modalUser justify-content-center'>
-          <Button
-            variant='outline-info'
-            className='btn-form'
-            onClick={props.onHide}>
-            Close
-          </Button>
-        </Modal.Footer>
+        <Button
+          variant='outline-info'
+          className='btn-form my-3'
+          onClick={props.onHide}>
+          Close
+        </Button>
       </Modal>
     );
   }
