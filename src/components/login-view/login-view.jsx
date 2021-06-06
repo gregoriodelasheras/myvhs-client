@@ -40,7 +40,7 @@ export function LoginView() {
     dispatch(setUser(authData));
     localStorage.setItem('token', JSON.stringify(authData.token));
     localStorage.setItem('user', JSON.stringify(authData.user.username));
-    /* window.open('/movies', '_self'); */
+    window.open('/movies', '_self');
   }
 
   function ModalError(props) {
