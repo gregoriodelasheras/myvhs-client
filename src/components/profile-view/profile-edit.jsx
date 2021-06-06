@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
+import axiosInstance from '../../config';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import axios from '../../config';
+import { setUser } from '../../actions/actions';
 import { useForm } from 'react-hook-form';
 import { Row, Col, Form, Button, Alert, Modal } from 'react-bootstrap';
 
-export default function EditView() {
+export function EditView() {
   const [name, setName] = useState('');
   const [lastName, setLastName] = useState('');
   const [birthday, setBirthday] = useState('');
   const [country, setCountry] = useState('');
   const [email, setEmail] = useState('');
-  /* const [username, setUsername] = useState(''); */
   const [password, setPassword] = useState('');
 
   const [modalRedirectShow, setModalRedirectShow] = React.useState(false);
@@ -25,7 +26,7 @@ export default function EditView() {
   } = useForm();
 
   const OnSubmit = () => {
-    axios
+    axiosInstance
       .put(`/users/${accessUsername}`, {
         name: name,
         lastName: lastName,
@@ -57,25 +58,19 @@ export default function EditView() {
         centered
         backdrop='static'
         keyboard={false}>
-        <Modal.Header className='modalUser'>
-          <Modal.Title id='contained-modal-title-vcenter'>
-            Your data has been updated!
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body className='modalUser'>
+        <Modal.Body className='modalUser text-center'>
+          <p className='h3 my-4'>Your data has been updated!</p>
           <p className='h4 my-3'>
             The new data were successfully entered into our database.
           </p>
           <p>You can now continue your journey back to the 80&apos;s.</p>
-        </Modal.Body>
-        <Modal.Footer className='modalUser justify-content-center'>
           <Button
             variant='outline-info'
-            className='btn-form'
+            className='btn-form my-3'
             onClick={() => RedirectLogin()}>
             Go!
           </Button>
-        </Modal.Footer>
+        </Modal.Body>
       </Modal>
     );
   }
@@ -87,12 +82,8 @@ export default function EditView() {
         size='lg'
         aria-labelledby='contained-modal-title-vcenter'
         centered>
-        <Modal.Header className='modalUser'>
-          <Modal.Title id='contained-modal-title-vcenter'>
-            &quot;Houston, we have a problem!&quot;
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body className='modalUser'>
+        <Modal.Body className='modalUser text-center'>
+          <p className='h3 my-4'>&quot;Houston, we have a problem!&quot;</p>
           <p className='h4 my-3'>We are working on it</p>
           <p>
             Sorry, an unexpected error occurred during the update. Our technical
@@ -100,14 +91,12 @@ export default function EditView() {
           </p>
           <p>Please try again later.</p>
         </Modal.Body>
-        <Modal.Footer className='modalUser justify-content-center'>
-          <Button
-            variant='outline-info'
-            className='btn-form'
-            onClick={props.onHide}>
-            Close
-          </Button>
-        </Modal.Footer>
+        <Button
+          variant='outline-info'
+          className='btn-form my-3'
+          onClick={props.onHide}>
+          Close
+        </Button>
       </Modal>
     );
   }
@@ -124,7 +113,8 @@ export default function EditView() {
                 {...register('name', {
                   required: {
                     value: true,
-                    message: 'You must enter your name in order to register!',
+                    message:
+                      'You must enter your name in order to update your data!',
                   },
                   pattern: {
                     value: /^[A-Za-zÀ-ž\s]+$/i,
@@ -150,7 +140,7 @@ export default function EditView() {
                   required: {
                     value: true,
                     message:
-                      'You must enter your last name in order to register!',
+                      'You must enter your last name in order to update your data!',
                   },
                   pattern: {
                     value: /^[A-Za-zÀ-ž\s]+$/i,
@@ -176,7 +166,7 @@ export default function EditView() {
                   required: {
                     value: true,
                     message:
-                      'You must enter your birthday in order to register!',
+                      'You must enter your birthday in order to update your data!',
                   },
                 })}
                 type='date'
@@ -199,7 +189,7 @@ export default function EditView() {
                   required: {
                     value: true,
                     message:
-                      'You must enter your country in order to register!',
+                      'You must enter your country in order to update your data!',
                   },
                 })}
                 as='select'
@@ -530,7 +520,8 @@ export default function EditView() {
                 {...register('email', {
                   required: {
                     value: true,
-                    message: 'You must enter your e-mail in order to register!',
+                    message:
+                      'You must enter your e-mail in order to update your data!',
                   },
                   pattern: {
                     value: /[a-z0-9._]+@[a-z0-9.-]+\.[a-z]{2,4}/g,
@@ -550,48 +541,13 @@ export default function EditView() {
                 </Alert>
               )}
             </Form.Group>
-            {/*             <Form.Group controlId='formUsername' className='my-4'>
-              <Form.Label>Username:</Form.Label>
-              <Form.Control
-                {...register('username', {
-                  required: {
-                    value: true,
-                    message: 'You need to enter a username to sign up!',
-                  },
-                  minLength: {
-                    value: 6,
-                    message:
-                      'Please enter a valid username (at least 6 characters)',
-                  },
-                  pattern: {
-                    value: /^[A-Za-z0-9_]+$/i,
-                    message:
-                      'Usernames should follow this pattern: A-Z, a-z, 0-9 and special character "_"',
-                  },
-                })}
-                type='text'
-                value={username}
-                className='form-neon'
-                placeholder='Enter a username'
-                onChange={(e) => setUsername(e.target.value)}
-              />
-              {errors.username && (
-                <Alert variant='danger' className='alert-message my-2 p-1'>
-                  {errors.username.message}
-                </Alert>
-              )}
-              <p className='text-muted my-2'>
-                Please enter a username with at least 6 characters (A-Z, a-z,
-                0-9, _ )
-              </p>
-            </Form.Group> */}
             <Form.Group controlId='formPassword' className='my-4'>
               <Form.Label>Password:</Form.Label>
               <Form.Control
                 {...register('password', {
                   required: {
                     value: true,
-                    message: 'You need to enter a password to sign up!',
+                    message: 'You need to enter a password!',
                   },
                   minLength: {
                     value: 8,
@@ -678,5 +634,23 @@ export default function EditView() {
 }
 
 EditView.propTypes = {
+  user: PropTypes.shape({
+    favoriteMovies: PropTypes.array,
+    toWatchMovies: PropTypes.array,
+    _id: PropTypes.string,
+    name: PropTypes.string,
+    lastName: PropTypes.string,
+    birthday: PropTypes.string,
+    country: PropTypes.string,
+    email: PropTypes.string,
+    username: PropTypes.string,
+  }),
+  setUser: PropTypes.func.isRequired,
   onHide: PropTypes.func,
 };
+
+let mapStateToProps = (state) => {
+  return { user: state.user };
+};
+
+export default connect(mapStateToProps, { setUser })(EditView);

@@ -6,6 +6,10 @@ import {
   Route,
   Redirect,
 } from 'react-router-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import moviesApp from './reducers/reducers';
+import { devToolsEnhancer } from 'redux-devtools-extension';
 
 // Style
 import Container from 'react-bootstrap/Container';
@@ -44,6 +48,8 @@ import ActorView from './components/actor-view/actor-view';
 import MainView from './components/main-view/main-view';
 import AboutView from './components/about-view/about-view';
 
+const store = createStore(moviesApp, devToolsEnhancer());
+
 function MyVHSApp() {
   let accessToken = JSON.parse(localStorage.getItem('token'));
   let accessUsername = JSON.parse(localStorage.getItem('user'));
@@ -60,64 +66,64 @@ function MyVHSApp() {
   UserIsLogged();
 
   return (
-    <div className='main-app'>
-      <Header />
-      <Container>
-        <Switch>
-          <Route exact path='/' component={MainView} />
-          <Route exact path='/about' component={AboutView} />
-          <Route exact path='/login' component={LoginView}>
-            {isLogged}
-          </Route>
-          <Route exact path='/register' component={RegistrationView}>
-            {isLogged}
-          </Route>
-          <Route exact path={urlProfile} component={ProfileView}>
-            {isNotLogged}
-          </Route>
-          <Route exact path={`${urlProfile}/edit`} component={EditView}>
-            {isNotLogged}
-          </Route>
-          <Route exact path={`${urlProfile}/favorite`} component={FavoriteView}>
-            {isNotLogged}
-          </Route>
-          <Route exact path={`${urlProfile}/towatch`} component={ToWatchView}>
-            {isNotLogged}
-          </Route>
-          <Route exact path='/movies' component={MovieMain}>
-            {isNotLogged}
-          </Route>
-          <Route exact path='/movies/:movieID' component={MovieView}>
-            {isNotLogged}
-          </Route>
-          <Route exact path='/genres' component={GenreMain}>
-            {isNotLogged}
-          </Route>
-          <Route exact path='/genres/:genreID' component={GenreView}>
-            {isNotLogged}
-          </Route>
-          <Route exact path='/directors' component={DirectorMain}>
-            {isNotLogged}
-          </Route>
-          <Route exact path='/directors/:directorID' component={DirectorView}>
-            {isNotLogged}
-          </Route>
-          <Route exact path='/actors' component={ActorMain}>
-            {isNotLogged}
-          </Route>
-          <Route exact path='/actors/:actorID' component={ActorView}>
-            {isNotLogged}
-          </Route>
-        </Switch>
-      </Container>
-      <Footer />
-    </div>
+    <Provider store={store}>
+      <Router>
+        <Header />
+        <Container>
+          <Switch>
+            <Route exact path='/' component={MainView} />
+            <Route exact path='/about' component={AboutView} />
+            <Route exact path='/login' component={LoginView}>
+              {isLogged}
+            </Route>
+            <Route exact path='/register' component={RegistrationView}>
+              {isLogged}
+            </Route>
+            <Route exact path={urlProfile} component={ProfileView}>
+              {isNotLogged}
+            </Route>
+            <Route exact path={`${urlProfile}/edit`} component={EditView}>
+              {isNotLogged}
+            </Route>
+            <Route
+              exact
+              path={`${urlProfile}/favorite`}
+              component={FavoriteView}>
+              {isNotLogged}
+            </Route>
+            <Route exact path={`${urlProfile}/towatch`} component={ToWatchView}>
+              {isNotLogged}
+            </Route>
+            <Route exact path='/movies' component={MovieMain}>
+              {isNotLogged}
+            </Route>
+            <Route exact path='/movies/:movieID' component={MovieView}>
+              {isNotLogged}
+            </Route>
+            <Route exact path='/genres' component={GenreMain}>
+              {isNotLogged}
+            </Route>
+            <Route exact path='/genres/:genreID' component={GenreView}>
+              {isNotLogged}
+            </Route>
+            <Route exact path='/directors' component={DirectorMain}>
+              {isNotLogged}
+            </Route>
+            <Route exact path='/directors/:directorID' component={DirectorView}>
+              {isNotLogged}
+            </Route>
+            <Route exact path='/actors' component={ActorMain}>
+              {isNotLogged}
+            </Route>
+            <Route exact path='/actors/:actorID' component={ActorView}>
+              {isNotLogged}
+            </Route>
+          </Switch>
+        </Container>
+        <Footer />
+      </Router>
+    </Provider>
   );
 }
 
-ReactDOM.render(
-  <Router>
-    <MyVHSApp />
-  </Router>,
-  document.getElementById('container-app'),
-);
+ReactDOM.render(<MyVHSApp />, document.getElementById('container-app'));

@@ -1,43 +1,62 @@
 import React from 'react';
-import axios from '../../config';
-import { DirectorCard } from '../director-card/director-card';
-import { Row, Col } from 'react-bootstrap';
+import axiosInstance from '../../config';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { setDirectors } from '../../actions/actions';
+import DirectorsList from '../directors-list/directors-list';
+import { Spinner } from 'react-bootstrap';
 
-export default class DirectorMain extends React.Component {
+export class DirectorMain extends React.Component {
   constructor() {
     super();
+
     this.state = {
-      directors: [],
+      loading: true,
     };
   }
 
   componentDidMount() {
-    axios
+    axiosInstance
       .get('/directors')
       .then((response) => {
+        this.props.setDirectors(response.data);
         this.setState({
-          directors: response.data,
+          loading: false,
         });
       })
       .catch(function (error) {
         console.error(error);
+        this.setState({
+          loading: false,
+        });
       });
   }
 
   render() {
-    const { directors } = this.state;
+    const { directors } = this.props;
+    let { loading } = this.state;
 
     return (
       <div className='main-view text-center my-3'>
-        <h1>Directors</h1>
-        <Row>
-          {directors.map((director) => (
-            <Col sm={6} lg={3} className={'my-3'} key={director._id}>
-              <DirectorCard director={director} />
-            </Col>
-          ))}
-        </Row>
+        <h1 className='my-4'>Directors</h1>
+        <DirectorsList directors={directors} />
+        {loading && (
+          <Spinner animation='border' variant='info' role='status'>
+            <span className='sr-only'>Loading...</span>
+          </Spinner>
+        )}
       </div>
     );
   }
 }
+
+DirectorMain.propTypes = {
+  directors: PropTypes.array.isRequired,
+  setDirectors: PropTypes.func.isRequired,
+};
+
+let mapStateToProps = (state) => {
+  return { directors: state.directors };
+};
+
+export default connect(mapStateToProps, { setDirectors })(DirectorMain);

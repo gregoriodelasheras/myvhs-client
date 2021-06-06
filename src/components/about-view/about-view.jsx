@@ -1,16 +1,13 @@
 import React from 'react';
 import { Row, Col, Alert } from 'react-bootstrap';
+import logo from 'url:../../assets/logo.svg';
 
 export default function AboutView() {
   return (
     <div className='main-view text-center d-flex justify-content-center align-items-center'>
       <Row className='align-items-center'>
         <Col>
-          <img
-            src='https://raw.githubusercontent.com/gregoriodelasheras/myVHS-client/69e6feb322c09cf53547384507db20581274f0b2/img/logo.svg'
-            alt='Logo'
-            className='img-fluid logo-web'
-          />
+          <img src={logo} alt='Logo' className='img-fluid logo-web' />
           <p className='h2 my-4'>
             Web App for enthusiasts of 80&apos;s movies.
           </p>

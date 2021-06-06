@@ -1,5 +1,6 @@
 import React from 'react';
 import { Row, Col, Alert } from 'react-bootstrap';
+import logo from 'url:../../assets/logo.svg';
 
 export default function MainView() {
   let infoGuest;
@@ -24,11 +25,7 @@ export default function MainView() {
     <div className='main-view text-center d-flex justify-content-center align-items-center'>
       <Row className='w-100'>
         <Col>
-          <img
-            src='https://raw.githubusercontent.com/gregoriodelasheras/myVHS-client/69e6feb322c09cf53547384507db20581274f0b2/img/logo.svg'
-            alt='Logo'
-            className='img-fluid logo-web'
-          />
+          <img src={logo} alt='Logo' className='img-fluid logo-web' />
           <p className='h1 my-4'>Welcome to myVHS!</p>
           <p className='h4 my-4'>
             Get comfy, grab your favorite snacks and get ready for an exciting

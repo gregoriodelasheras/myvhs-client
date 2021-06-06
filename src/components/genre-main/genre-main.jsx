@@ -1,43 +1,62 @@
 import React from 'react';
-import axios from '../../config';
-import { GenreCard } from '../genre-card/genre-card';
-import { Row, Col } from 'react-bootstrap';
+import axiosInstance from '../../config';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { setGenres } from '../../actions/actions';
+import GenresList from '../genres-list/genres-list';
+import { Spinner } from 'react-bootstrap';
 
-export default class GenreMain extends React.Component {
+export class GenreMain extends React.Component {
   constructor() {
     super();
+
     this.state = {
-      genres: [],
+      loading: true,
     };
   }
 
   componentDidMount() {
-    axios
+    axiosInstance
       .get('/genres')
       .then((response) => {
+        this.props.setGenres(response.data);
         this.setState({
-          genres: response.data,
+          loading: false,
         });
       })
       .catch(function (error) {
         console.log(error);
+        this.setState({
+          loading: false,
+        });
       });
   }
 
   render() {
-    const { genres } = this.state;
+    const { genres } = this.props;
+    let { loading } = this.state;
 
     return (
       <div className='main-view text-center my-3'>
-        <h1>Genres</h1>
-        <Row>
-          {genres.map((genre) => (
-            <Col sm={6} lg={3} className={'my-3'} key={genre._id}>
-              <GenreCard genre={genre} />
-            </Col>
-          ))}
-        </Row>
+        <h1 className='my-4'>Genres</h1>
+        <GenresList genres={genres} />
+        {loading && (
+          <Spinner animation='border' variant='info' role='status'>
+            <span className='sr-only'>Loading...</span>
+          </Spinner>
+        )}
       </div>
     );
   }
 }
+
+GenreMain.propTypes = {
+  genres: PropTypes.array.isRequired,
+  setGenres: PropTypes.func.isRequired,
+};
+
+let mapStateToProps = (state) => {
+  return { genres: state.genres };
+};
+
+export default connect(mapStateToProps, { setGenres })(GenreMain);

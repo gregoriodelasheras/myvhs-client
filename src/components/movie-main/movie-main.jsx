@@ -1,43 +1,62 @@
 import React from 'react';
-import axios from '../../config';
-import { MovieCard } from '../movie-card/movie-card';
-import { Row, Col } from 'react-bootstrap';
+import axiosInstance from '../../config';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { setMovies } from '../../actions/actions';
+import MoviesList from '../movies-list/movies-list';
+import { Spinner } from 'react-bootstrap';
 
-export default class MovieMain extends React.Component {
+export class MovieMain extends React.Component {
   constructor() {
     super();
+
     this.state = {
-      movies: [],
+      loading: true,
     };
   }
 
   componentDidMount() {
-    axios
+    axiosInstance
       .get('/movies')
       .then((response) => {
+        this.props.setMovies(response.data);
         this.setState({
-          movies: response.data,
+          loading: false,
         });
       })
       .catch(function (error) {
         console.log(error);
+        this.setState({
+          loading: false,
+        });
       });
   }
 
   render() {
-    const { movies } = this.state;
+    let { movies } = this.props;
+    let { loading } = this.state;
 
     return (
       <div className='main-view text-center my-3'>
-        <h1>Movies</h1>
-        <Row>
-          {movies.map((movie) => (
-            <Col sm={6} lg={3} className={'my-3'} key={movie._id}>
-              <MovieCard movie={movie} />
-            </Col>
-          ))}
-        </Row>
+        <h1 className='my-4'>Movies</h1>
+        <MoviesList movies={movies} />
+        {loading && (
+          <Spinner animation='border' variant='info' role='status'>
+            <span className='sr-only'>Loading...</span>
+          </Spinner>
+        )}
       </div>
     );
   }
 }
+
+MovieMain.propTypes = {
+  movies: PropTypes.array.isRequired,
+  setMovies: PropTypes.func.isRequired,
+};
+
+let mapStateToProps = (state) => {
+  return { movies: state.movies };
+};
+
+export default connect(mapStateToProps, { setMovies })(MovieMain);

@@ -1,12 +1,14 @@
 import React from 'react';
 import axiosInstance from '../../config';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { setUser } from '../../actions/actions';
 import { Row, Col, Button, ButtonGroup, Alert, Modal } from 'react-bootstrap';
 
-export default class ProfileView extends React.Component {
+export class ProfileView extends React.Component {
   constructor() {
     super();
     this.state = {
-      user: [],
       bday: '',
     };
   }
@@ -16,16 +18,18 @@ export default class ProfileView extends React.Component {
 
     const userResponse = await axiosInstance.get(`/users/${accessUsername}`);
 
-    const [user] = await Promise.all([userResponse]);
+    const [userPromise] = await Promise.all([userResponse]);
+
+    this.props.setUser(userPromise.data);
 
     this.setState({
-      user: user.data,
-      bday: user.data.birthday.slice(0, 10),
+      bday: userPromise.data.birthday.slice(0, 10),
     });
   }
 
   render() {
-    const { user, bday } = this.state;
+    const { bday } = this.state;
+    const { user } = this.props;
 
     function RedirectFavorite() {
       window.open(`/users/${user.username}/favorite`, '_self');
@@ -176,3 +180,24 @@ export default class ProfileView extends React.Component {
     );
   }
 }
+
+ProfileView.propTypes = {
+  user: PropTypes.shape({
+    favoriteMovies: PropTypes.array,
+    toWatchMovies: PropTypes.array,
+    _id: PropTypes.string,
+    name: PropTypes.string,
+    lastName: PropTypes.string,
+    birthday: PropTypes.string,
+    country: PropTypes.string,
+    email: PropTypes.string,
+    username: PropTypes.string,
+  }),
+  setUser: PropTypes.func.isRequired,
+};
+
+let mapStateToProps = (state) => {
+  return { user: state.user };
+};
+
+export default connect(mapStateToProps, { setUser })(ProfileView);
