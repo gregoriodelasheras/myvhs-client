@@ -6,6 +6,8 @@ import {
   Route,
   Redirect,
 } from 'react-router-dom';
+
+// Redux
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import moviesApp from './reducers/reducers';
@@ -24,7 +26,6 @@ import LoginView from './components/login-view/login-view';
 import RegistrationView from './components/registration-view/registration-view';
 import ProfileView from './components/profile-view/profile-view';
 import EditView from './components/profile-view/profile-edit';
-
 import FavoriteView from './components/profile-view/profile-favorite';
 import ToWatchView from './components/profile-view/profile-towatch';
 
@@ -48,6 +49,7 @@ import ActorView from './components/actor-view/actor-view';
 import MainView from './components/main-view/main-view';
 import AboutView from './components/about-view/about-view';
 
+// Redux Store
 const store = createStore(moviesApp, devToolsEnhancer());
 
 function MyVHSApp() {
@@ -57,6 +59,7 @@ function MyVHSApp() {
   let isLogged;
   let isNotLogged;
 
+  // This function allows the user to view different parts of the page depending on whether he/she is logged in or not.
   function UserIsLogged() {
     if (accessToken) {
       isLogged = <Redirect to='/' />;

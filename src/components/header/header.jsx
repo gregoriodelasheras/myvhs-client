@@ -11,7 +11,9 @@ export default function Header() {
   let buttonFav;
   let buttonWat;
 
+  // Shows different buttons if a user is logged in or not
   if (!accessToken) {
+    // User not logged: shows login or signup button
     button1 = (
       <Button href='/login' className='btn-header mx-3' variant='outline-info'>
         Log in
@@ -27,6 +29,7 @@ export default function Header() {
       </Button>
     );
   } else {
+    // User logged: shows app nav menu, favorite, to watch, profile and logout buttons
     buttonMenu = (
       <NavDropdown title='Show' id='basic-nav-dropdown'>
         <NavDropdown.Item href='/movies'>Movies</NavDropdown.Item>
@@ -70,10 +73,12 @@ export default function Header() {
     );
   }
 
+  // Logout removes the username and access token from local storage
   function onLoggedOut() {
     localStorage.clear();
   }
 
+  // Render the navigation bar
   return (
     <div className='main-header fixed-top bg-dark'>
       <Container>

@@ -11,16 +11,19 @@ const mapStateToProps = (state) => {
   return { visibilityFilter };
 };
 
+// Rendering director components: 1. director-main -> * 2. directors-list -> 3. director-card -> 4. director-view
 function DirectorsList(props) {
   const { directors, visibilityFilter } = props;
   let filteredDirectors = directors;
 
+  // Filter directors
   if (visibilityFilter !== '') {
     filteredDirectors = directors.filter((director) =>
       director.name.toLowerCase().includes(visibilityFilter.toLowerCase()),
     );
   }
 
+  // Error catcher
   if (!directors) return <ErrorList />;
 
   return (

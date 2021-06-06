@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { setUser } from '../../actions/actions';
 import { Row, Col, Button, ButtonGroup, Alert, Modal } from 'react-bootstrap';
 
+// Component that allows the user to view their data
 export class ProfileView extends React.Component {
   constructor() {
     super();
@@ -31,22 +32,27 @@ export class ProfileView extends React.Component {
     const { bday } = this.state;
     const { user } = this.props;
 
+    // Redirects to favorite list
     function RedirectFavorite() {
       window.open(`/users/${user.username}/favorite`, '_self');
     }
 
+    // Redirects to the to-watch list
     function RedirectToWatch() {
       window.open(`/users/${user.username}/towatch`, '_self');
     }
 
+    // Redirects to edit profile page
     function RedirectEdit() {
       window.open(`/users/${user.username}/edit`, '_self');
     }
 
+    // Redirects to the view profile page (current page)
     function RedirectShow() {
       window.open(`/users/${user.username}`, '_self');
     }
 
+    // Set modal to alert the user that his account is going to be deleted
     function DeleteUserModal(props) {
       return (
         <Modal
@@ -82,6 +88,7 @@ export class ProfileView extends React.Component {
       );
     }
 
+    // Set Delete button outside to ensure code readability
     function DeleteButton() {
       const [modalShow, setModalShow] = React.useState(false);
 
@@ -102,6 +109,7 @@ export class ProfileView extends React.Component {
       );
     }
 
+    // Send delete request to the API
     function DeleteUser() {
       const urlProfile = `https://myvhs.herokuapp.com/users/${user.username}`;
 

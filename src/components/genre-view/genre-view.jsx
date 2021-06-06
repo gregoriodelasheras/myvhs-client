@@ -4,6 +4,7 @@ import axiosInstance from '../../config';
 import { MovieCard } from '../movie-card/movie-card';
 import { Row, Col, Spinner } from 'react-bootstrap';
 
+// Rendering genre components: 1. genre-main -> 2. genres-list -> 3. genre-card -> * 4. genre-view
 export default class GenreView extends React.Component {
   constructor(props) {
     super(props);
@@ -37,6 +38,7 @@ export default class GenreView extends React.Component {
     let { genre, movies, loading } = this.state;
     let moviesMatched = [];
 
+    // Shows the movies that belong to the genre
     function ShowMovies() {
       movies.map((movie) => {
         if (movie.genre.includes(genre._id)) {

@@ -11,6 +11,7 @@ import {
   Spinner,
 } from 'react-bootstrap';
 
+// Rendering movie components: 1. movie-main -> 2. movies-list -> 3. movie-card -> * 4. movie-view
 export default class MovieView extends React.Component {
   constructor(props) {
     super(props);
@@ -53,11 +54,13 @@ export default class MovieView extends React.Component {
     });
   }
 
+  // Matches the data between the queried movie and the genres DB collection
   getGenreName(id) {
     const genre = this.state.genres.find((genre) => genre._id === id);
     return genre.name;
   }
 
+  // Matches the data between the queried movie and the directors DB collection
   getDirectorName(id) {
     const director = this.state.directors.find(
       (director) => director._id === id,
@@ -65,6 +68,7 @@ export default class MovieView extends React.Component {
     return director?.name;
   }
 
+  // Matches the data between the queried movie and the actors DB collection
   getActorName(id) {
     const actor = this.state.actors.find((actor) => actor._id === id);
     return actor.name;
@@ -76,6 +80,7 @@ export default class MovieView extends React.Component {
     const urlFavorite = `https://myvhs.herokuapp.com/users/${user.username}/favorites/${movieID}`;
     const urlToWatch = `https://myvhs.herokuapp.com/users/${user.username}/towatch/${movieID}`;
 
+    // Add or remove movies from favorites list
     function ToggleFavoriteMovie() {
       if (user.favoriteMovies.includes(movieID)) {
         RemoveFavoriteMovie();
@@ -84,6 +89,7 @@ export default class MovieView extends React.Component {
       }
     }
 
+    // Add or remove movies from to-watch list
     function ToggleToWatchMovie() {
       if (user.toWatchMovies.includes(movieID)) {
         RemoveToWatchMovie();
@@ -146,6 +152,7 @@ export default class MovieView extends React.Component {
         });
     }
 
+    // Add interaction buttons (show more, favorites and to-watch)
     const btnFavorite = (
       <OverlayTrigger
         placement='top'

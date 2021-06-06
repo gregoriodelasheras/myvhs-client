@@ -6,6 +6,7 @@ import { setGenres } from '../../actions/actions';
 import GenresList from '../genres-list/genres-list';
 import { Spinner } from 'react-bootstrap';
 
+// Rendering genre components: * 1. genre-main -> 2. genres-list -> 3. genre-card -> 4. genre-view
 export class GenreMain extends React.Component {
   constructor() {
     super();

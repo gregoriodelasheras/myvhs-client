@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Card, Button } from 'react-bootstrap';
 
+// Rendering director components: 1. director-main -> 2. directors-list -> * 3. director-card -> 4. director-view
 export class DirectorCard extends React.Component {
   render() {
     const { director } = this.props;

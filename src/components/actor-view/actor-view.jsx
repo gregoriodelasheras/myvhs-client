@@ -4,6 +4,7 @@ import axiosInstance from '../../config';
 import { MovieCard } from '../movie-card/movie-card';
 import { Row, Col, Spinner } from 'react-bootstrap';
 
+// Rendering actor components: 1. actor-main -> 2. actors-list -> 3. actor-card -> * 4. actor-view
 export default class ActorView extends React.Component {
   constructor(props) {
     super(props);
@@ -36,6 +37,7 @@ export default class ActorView extends React.Component {
     let actorDead;
     let moviesMatched = [];
 
+    // Shows date of death if the actress or actor is dead
     function ActorIsDead() {
       if (actor.deathYear) {
         actorDead = (
@@ -47,6 +49,7 @@ export default class ActorView extends React.Component {
       }
     }
 
+    // Shows the movies that the actress or actor has starred in
     function ShowMovies() {
       movies.map((movie) => {
         if (movie.actors.includes(actor._id)) {

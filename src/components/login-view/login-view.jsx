@@ -10,16 +10,20 @@ export function LoginView() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  // React-Bootstrap Modal
   const [modalErrorShow, setModalErrorShow] = React.useState(false);
 
+  // React-Redux
   const dispatch = useDispatch();
 
+  // React-Hook-Form
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
+  // API authentication request
   const OnSubmit = () => {
     axiosInstance
       .post('/login', {
@@ -36,6 +40,7 @@ export function LoginView() {
       });
   };
 
+  // Dispatch data to the Redux store, save username and token in local storage and redirect to the movie page
   function onLogged(authData) {
     dispatch(setUser(authData));
     localStorage.setItem('token', JSON.stringify(authData.token));
@@ -43,6 +48,7 @@ export function LoginView() {
     window.open('/movies', '_self');
   }
 
+  // Set Modal to display errors to the user
   function ModalError(props) {
     return (
       <Modal

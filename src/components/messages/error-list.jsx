@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Notifies the user if there are errors when displaying the list of actors, directors, genres or movies
 export default function ErrorList() {
   return (
     <div>

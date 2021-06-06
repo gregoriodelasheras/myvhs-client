@@ -3,6 +3,7 @@ import axiosInstance from '../../config';
 import { MovieCard } from '../movie-card/movie-card';
 import { Row, Col, Alert } from 'react-bootstrap';
 
+// Component that allows the user to view or remove movies from their favorite list
 export default class FavoriteView extends React.Component {
   constructor() {
     super();
@@ -33,6 +34,7 @@ export default class FavoriteView extends React.Component {
       <Row className='justify-content-md-center'>{moviesMatched}</Row>
     );
 
+    // Show movies that the user has added to his or her favorite list
     function ShowMovies() {
       movies.map((movie) => {
         if (user.favoriteMovies.includes(movie._id)) {
@@ -44,6 +46,7 @@ export default class FavoriteView extends React.Component {
         }
       });
 
+      // Show special message to the user if the list is empty
       if (moviesMatched.length === 0) {
         favoriteView = (
           <Row className='justify-content-md-center text-center'>

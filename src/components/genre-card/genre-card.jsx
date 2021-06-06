@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Card, Button } from 'react-bootstrap';
 
+// Rendering genre components: 1. genre-main -> 2. genres-list -> * 3. genre-card -> 4. genre-view
 export class GenreCard extends React.Component {
   render() {
     const { genre } = this.props;

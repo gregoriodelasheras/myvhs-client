@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Card, Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 
+// Rendering movie components: 1. movie-main -> 2. movies-list -> * 3. movie-card -> 4. movie-view
 export class MovieCard extends React.Component {
   constructor() {
     super();
@@ -31,6 +32,7 @@ export class MovieCard extends React.Component {
     const urlFavorite = `https://myvhs.herokuapp.com/users/${user.username}/favorites/${movieID}`;
     const urlToWatch = `https://myvhs.herokuapp.com/users/${user.username}/towatch/${movieID}`;
 
+    // Add or remove movies from favorites list
     function ToggleFavoriteMovie() {
       if (user.favoriteMovies.includes(movieID)) {
         RemoveFavoriteMovie();
@@ -39,6 +41,7 @@ export class MovieCard extends React.Component {
       }
     }
 
+    // Add or remove movies from to-watch list
     function ToggleToWatchMovie() {
       if (user.toWatchMovies.includes(movieID)) {
         RemoveToWatchMovie();
@@ -101,6 +104,7 @@ export class MovieCard extends React.Component {
         });
     }
 
+    // Add interaction buttons (show more, favorites and to-watch)
     const btnShow = (
       <Link to={`/movies/${movieID}`}>
         <Button className='btn-show m-2' variant='outline-info'>

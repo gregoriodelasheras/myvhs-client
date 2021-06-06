@@ -3,6 +3,7 @@ import axiosInstance from '../../config';
 import { MovieCard } from '../movie-card/movie-card';
 import { Row, Col, Alert } from 'react-bootstrap';
 
+// Component that allows the user to view or remove movies from their to-watch list
 export default class ToWatchView extends React.Component {
   constructor() {
     super();
@@ -33,6 +34,7 @@ export default class ToWatchView extends React.Component {
       <Row className='justify-content-md-center'>{moviesMatched}</Row>
     );
 
+    // Show movies that the user has added to his or her to-watch list
     function ShowMovies() {
       movies.map((movie) => {
         if (user.toWatchMovies.includes(movie._id)) {
@@ -44,6 +46,7 @@ export default class ToWatchView extends React.Component {
         }
       });
 
+      // Show special message to the user if the list is empty
       if (moviesMatched.length === 0) {
         towatchView = (
           <Row className='justify-content-md-center text-center'>

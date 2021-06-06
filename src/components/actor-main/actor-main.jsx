@@ -6,6 +6,7 @@ import { setActors } from '../../actions/actions';
 import ActorsList from '../actors-list/actors-list';
 import { Spinner } from 'react-bootstrap';
 
+// Rendering actor components: * 1. actor-main -> 2. actors-list -> 3. actor-card -> 4. actor-view
 export class ActorMain extends React.Component {
   constructor() {
     super();

@@ -6,6 +6,7 @@ import { setDirectors } from '../../actions/actions';
 import DirectorsList from '../directors-list/directors-list';
 import { Spinner } from 'react-bootstrap';
 
+// Rendering director components: * 1. director-main -> 2. director-list -> 3. director-card -> 4. director-view
 export class DirectorMain extends React.Component {
   constructor() {
     super();

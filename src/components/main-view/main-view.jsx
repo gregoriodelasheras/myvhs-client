@@ -6,6 +6,7 @@ export default function MainView() {
   let infoGuest;
   let accessToken = localStorage.getItem('token');
 
+  // Show special message for users who are not logged in
   if (!accessToken) {
     infoGuest = (
       <Alert className='alert-info' variant='alert'>

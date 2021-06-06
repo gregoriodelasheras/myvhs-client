@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { setFilter } from '../../actions/actions';
 import { Form } from 'react-bootstrap';
 
+// Filter items from the lists of actors, directors, genres and movies
 function VisibilityFilterInput(props) {
   return (
     <Form.Control

@@ -11,16 +11,19 @@ const mapStateToProps = (state) => {
   return { visibilityFilter };
 };
 
+// Rendering genre components: 1. genre-main -> * 2. genres-list -> 3. genre-card -> 4. genre-view
 function GenresList(props) {
   const { genres, visibilityFilter } = props;
   let filteredGenres = genres;
 
+  // Filter genres
   if (visibilityFilter !== '') {
     filteredGenres = genres.filter((genre) =>
       genre.name.toLowerCase().includes(visibilityFilter.toLowerCase()),
     );
   }
 
+  // Error catcher
   if (!genres) return <ErrorList />;
 
   return (

@@ -6,6 +6,7 @@ import { setMovies } from '../../actions/actions';
 import MoviesList from '../movies-list/movies-list';
 import { Spinner } from 'react-bootstrap';
 
+// Rendering movie components: * 1. movie-main -> 2. movies-list -> 3. movie-card -> 4. movie-view
 export class MovieMain extends React.Component {
   constructor() {
     super();

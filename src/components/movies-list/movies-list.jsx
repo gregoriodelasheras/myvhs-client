@@ -11,16 +11,19 @@ const mapStateToProps = (state) => {
   return { visibilityFilter };
 };
 
+// Rendering movie components: 1. movie-main -> * 2. movies-list -> 3. movie-card -> 4. movie-view
 function MoviesList(props) {
   const { movies, visibilityFilter } = props;
   let filteredMovies = movies;
 
+  // Filter movies
   if (visibilityFilter !== '') {
     filteredMovies = movies.filter((movie) =>
       movie.title.toLowerCase().includes(visibilityFilter.toLowerCase()),
     );
   }
 
+  // Error catcher
   if (!movies) return <ErrorList />;
 
   return (

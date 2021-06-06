@@ -2,6 +2,7 @@ import React from 'react';
 import { Row, Col, Alert } from 'react-bootstrap';
 import logo from 'url:../../assets/logo.svg';
 
+// Component containing the "About" page
 export default function AboutView() {
   return (
     <div className='main-view text-center d-flex justify-content-center align-items-center'>

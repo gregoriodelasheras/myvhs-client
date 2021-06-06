@@ -6,6 +6,7 @@ import { setUser } from '../../actions/actions';
 import { useForm } from 'react-hook-form';
 import { Row, Col, Form, Button, Alert, Modal } from 'react-bootstrap';
 
+// Component that allows the user to update their data
 export function EditView() {
   const [name, setName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -14,10 +15,14 @@ export function EditView() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  // React-Bootstrap Modal
   const [modalRedirectShow, setModalRedirectShow] = React.useState(false);
   const [modalErrorShow, setModalErrorShow] = React.useState(false);
+
+  // Authorization and authentication
   const accessUsername = JSON.parse(localStorage.getItem('user'));
 
+  // React-Hook-Form
   const {
     register,
     handleSubmit,
@@ -25,6 +30,7 @@ export function EditView() {
     formState: { errors },
   } = useForm();
 
+  // API authentication request
   const OnSubmit = () => {
     axiosInstance
       .put(`/users/${accessUsername}`, {
@@ -45,10 +51,12 @@ export function EditView() {
       });
   };
 
-  function RedirectLogin() {
+  // Redirects the user to the profile view after successful data update
+  function RedirectProfile() {
     window.open(`/users/${accessUsername}`, '_self');
   }
 
+  // Set Modal to inform the user about the success of the data update request
   function ModalRedirect(props) {
     return (
       <Modal
@@ -67,7 +75,7 @@ export function EditView() {
           <Button
             variant='outline-info'
             className='btn-form my-3'
-            onClick={() => RedirectLogin()}>
+            onClick={() => RedirectProfile()}>
             Go!
           </Button>
         </Modal.Body>
@@ -75,6 +83,7 @@ export function EditView() {
     );
   }
 
+  // Set Modal to display errors to the user
   function ModalError(props) {
     return (
       <Modal

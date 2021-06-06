@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Card, Button } from 'react-bootstrap';
 
+// Rendering actor components: 1. actor-main -> 2. actors-list -> * 3. actor-card -> 4. actor-view
 export class ActorCard extends React.Component {
   render() {
     const { actor } = this.props;

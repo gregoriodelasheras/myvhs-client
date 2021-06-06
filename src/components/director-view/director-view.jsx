@@ -4,6 +4,7 @@ import axiosInstance from '../../config';
 import { MovieCard } from '../movie-card/movie-card';
 import { Row, Col, Spinner } from 'react-bootstrap';
 
+// Rendering director components: 1. director-main -> 2. directors-list -> 3. director-card -> * 4. director-view
 export default class DirectorView extends React.Component {
   constructor(props) {
     super(props);
@@ -40,6 +41,7 @@ export default class DirectorView extends React.Component {
     let directorDead;
     let moviesMatched = [];
 
+    // Shows date of death if the director is dead
     function DirectorIsDead() {
       if (director.deathYear) {
         directorDead = (
@@ -51,6 +53,7 @@ export default class DirectorView extends React.Component {
       }
     }
 
+    // Shows the movies that the director has directed
     function ShowMovies() {
       movies.map((movie) => {
         if (movie.director.includes(director._id)) {

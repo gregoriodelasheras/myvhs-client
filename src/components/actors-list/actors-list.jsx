@@ -11,16 +11,19 @@ const mapStateToProps = (state) => {
   return { visibilityFilter };
 };
 
+// Rendering actor components: 1. actor-main -> * 2. actors-list -> 3. actor-card -> 4. actor-view
 function ActorsList(props) {
   const { actors, visibilityFilter } = props;
   let filteredActors = actors;
 
+  // Filter actors
   if (visibilityFilter !== '') {
     filteredActors = actors.filter((actor) =>
       actor.name.toLowerCase().includes(visibilityFilter.toLowerCase()),
     );
   }
 
+  // Error catcher
   if (!actors) return <ErrorList />;
 
   return (

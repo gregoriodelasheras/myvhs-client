@@ -4,6 +4,7 @@ import axiosInstance from '../../config';
 import { useForm } from 'react-hook-form';
 import { Row, Col, Form, Button, Alert, Modal } from 'react-bootstrap';
 
+// Component that allows the user to sign up to the page
 export default function RegistrationView() {
   const [name, setName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -13,9 +14,11 @@ export default function RegistrationView() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  // React-Bootstrap Modal
   const [modalRedirectShow, setModalRedirectShow] = React.useState(false);
   const [modalErrorShow, setModalErrorShow] = React.useState(false);
 
+  // React-Hook-Form
   const {
     register,
     handleSubmit,
@@ -23,6 +26,7 @@ export default function RegistrationView() {
     formState: { errors },
   } = useForm();
 
+  // API authentication request
   const OnSubmit = () => {
     axiosInstance
       .post('/users', {
@@ -43,10 +47,12 @@ export default function RegistrationView() {
       });
   };
 
+  // Redirects the user to the login view after successful posting data to the API
   function RedirectLogin() {
     window.open('/login', '_self');
   }
 
+  // Set Modal to inform the user about the success of the data posting request
   function ModalRedirect(props) {
     return (
       <Modal
@@ -82,6 +88,7 @@ export default function RegistrationView() {
     );
   }
 
+  // Set Modal to display errors to the user
   function ModalError(props) {
     return (
       <Modal

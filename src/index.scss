@@ -1,12 +1,13 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
 
-// Color palette (Steam Punk)
+// Color palette (Pancho Steam Punk)
 $primary-dark: #20232a;
 $primary-light: #282c34;
 $secondary: #17a2b8;
 $font: #ffffff;
 $link: #011efe;
 
+// Global
 body {
   a {
     color: $link;
@@ -22,9 +23,14 @@ body {
   color: $font;
 }
 
+// Main
 .main-view {
   min-height: 90vh;
   padding-top: 70px;
+}
+
+.logo-web {
+  width: 600px;
 }
 
 .card:nth-child(1) {
@@ -45,10 +51,17 @@ body {
   box-shadow: 0 0 10px 5px rgba(23, 162, 184, 0.3);
 }
 
-.logo-web {
-  width: 600px;
+// Footer
+.main-footer {
+  a {
+    color: $secondary;
+    &:hover {
+      color: darken($secondary, 5%);
+    }
+  }
 }
 
+// Buttons
 %btn {
   box-shadow: 0 0 5px 5px rgba(23, 162, 184, 0.2);
 }
@@ -104,20 +117,12 @@ body {
   width: 250px;
 }
 
+// Utilities
 .form-neon,
 .alert-message,
 .profile-container {
   max-width: 500px;
   margin: 0 auto;
-}
-
-.main-footer {
-  a {
-    color: $secondary;
-    &:hover {
-      color: darken($secondary, 5%);
-    }
-  }
 }
 
 .modalUser {
