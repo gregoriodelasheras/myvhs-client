@@ -4,26 +4,47 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { setDirectors } from '../../actions/actions';
 import DirectorsList from '../directors-list/directors-list';
+import { Spinner } from 'react-bootstrap';
 
 export class DirectorMain extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      loading: true,
+    };
+  }
+
   componentDidMount() {
     axiosInstance
       .get('/directors')
       .then((response) => {
         this.props.setDirectors(response.data);
+        this.setState({
+          loading: false,
+        });
       })
       .catch(function (error) {
         console.error(error);
+        this.setState({
+          loading: false,
+        });
       });
   }
 
   render() {
     const { directors } = this.props;
+    let { loading } = this.state;
 
     return (
       <div className='main-view text-center my-3'>
         <h1 className='my-4'>Directors</h1>
         <DirectorsList directors={directors} />
+        {loading && (
+          <Spinner animation='border' variant='info' role='status'>
+            <span className='sr-only'>Loading...</span>
+          </Spinner>
+        )}
       </div>
     );
   }

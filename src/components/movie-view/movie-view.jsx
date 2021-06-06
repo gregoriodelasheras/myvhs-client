@@ -2,7 +2,14 @@ import React from 'react';
 import axiosInstance from '../../config';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Row, Col, Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import {
+  Row,
+  Col,
+  Button,
+  OverlayTrigger,
+  Tooltip,
+  Spinner,
+} from 'react-bootstrap';
 
 export default class MovieView extends React.Component {
   constructor(props) {
@@ -14,6 +21,7 @@ export default class MovieView extends React.Component {
       directors: [],
       actors: [],
       user: [],
+      loading: true,
     };
   }
 
@@ -41,6 +49,7 @@ export default class MovieView extends React.Component {
       directors: directors.data,
       actors: actors.data,
       user: user.data,
+      loading: false,
     });
   }
 
@@ -62,8 +71,7 @@ export default class MovieView extends React.Component {
   }
 
   render() {
-    let { movie } = this.state;
-    const { user } = this.state;
+    let { movie, user, loading } = this.state;
     const movieID = movie._id;
     const urlFavorite = `https://myvhs.herokuapp.com/users/${user.username}/favorites/${movieID}`;
     const urlToWatch = `https://myvhs.herokuapp.com/users/${user.username}/towatch/${movieID}`;
@@ -179,6 +187,11 @@ export default class MovieView extends React.Component {
             {btnWatch}
           </Col>
           <Col className='movie-view text-center' md={6}>
+            {loading && (
+              <Spinner animation='border' variant='info' role='status'>
+                <span className='sr-only'>Loading...</span>
+              </Spinner>
+            )}
             <div className='movie-title my-4'>
               <h1 className='value'>{movie.title}</h1>
             </div>

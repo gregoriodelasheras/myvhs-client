@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import axiosInstance from '../../config';
 import { MovieCard } from '../movie-card/movie-card';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Spinner } from 'react-bootstrap';
 
 export default class GenreView extends React.Component {
   constructor(props) {
@@ -11,6 +11,7 @@ export default class GenreView extends React.Component {
     this.state = {
       genre: [],
       movies: [],
+      loading: true,
     };
   }
 
@@ -28,11 +29,12 @@ export default class GenreView extends React.Component {
     this.setState({
       genre: genres.data,
       movies: movies.data,
+      loading: false,
     });
   }
 
   render() {
-    let { genre, movies } = this.state;
+    let { genre, movies, loading } = this.state;
     let moviesMatched = [];
 
     function ShowMovies() {
@@ -69,6 +71,11 @@ export default class GenreView extends React.Component {
             <div className='my-4'>
               <p className='label h3 font-weight-bold'>Movies</p>
             </div>
+            {loading && (
+              <Spinner animation='border' variant='info' role='status'>
+                <span className='sr-only'>Loading...</span>
+              </Spinner>
+            )}
           </Col>
         </Row>
         <Row className='justify-content-center'>{moviesMatched}</Row>

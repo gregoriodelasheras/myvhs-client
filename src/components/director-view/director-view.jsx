@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import axiosInstance from '../../config';
 import { MovieCard } from '../movie-card/movie-card';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Spinner } from 'react-bootstrap';
 
 export default class DirectorView extends React.Component {
   constructor(props) {
@@ -11,6 +11,7 @@ export default class DirectorView extends React.Component {
     this.state = {
       director: [],
       movies: [],
+      loading: true,
     };
   }
 
@@ -30,11 +31,12 @@ export default class DirectorView extends React.Component {
     this.setState({
       director: director.data,
       movies: movies.data,
+      loading: false,
     });
   }
 
   render() {
-    let { director, movies } = this.state;
+    let { director, movies, loading } = this.state;
     let directorDead;
     let moviesMatched = [];
 
@@ -89,6 +91,11 @@ export default class DirectorView extends React.Component {
             <div className='my-4'>
               <p className='label h3 font-weight-bold'>Movies:</p>
             </div>
+            {loading && (
+              <Spinner animation='border' variant='info' role='status'>
+                <span className='sr-only'>Loading...</span>
+              </Spinner>
+            )}
           </Col>
         </Row>
         <Row className='justify-content-center'>{moviesMatched}</Row>
