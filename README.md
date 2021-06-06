@@ -1,6 +1,9 @@
 <!-- PROJECT LOGO -->
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8443ece5-3b1d-43f7-b387-a22ed92083c6/deploy-status)](https://app.netlify.com/sites/myvhs/deploys)
+
 <p align="center">
-  <a href="https://gregoriodelasheras.github.io/myVHS/">
+  <a href="https://myvhs.netlify.app/">
     <img src="src/assets/logo-readme.svg" alt="Logo" width="600">
   </a>
   <p align="center">
@@ -75,6 +78,7 @@ The development of this application was organized through a Kanban board. You ca
 ## Dependencies
 
 - axios
+- parcel v2
 - prop-types
 - react
 - react-bootstrap
@@ -87,7 +91,6 @@ The development of this application was organized through a Kanban board. You ca
 
 ## Dev Dependencies
 
-- parcel v2
 - eslint
 
 ## Why React?
