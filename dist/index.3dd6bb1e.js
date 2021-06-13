@@ -871,6 +871,7 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactDom = require("react-dom");
 var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
 var _reactRouterDom = require("react-router-dom");
+// Redux
 var _redux = require("redux");
 var _reactRedux = require("react-redux");
 var _reducers = require("./reducers/reducers");
@@ -923,6 +924,7 @@ var _mainView = require("./components/main-view/main-view");
 var _mainViewDefault = parcelHelpers.interopDefault(_mainView);
 var _aboutView = require("./components/about-view/about-view");
 var _aboutViewDefault = parcelHelpers.interopDefault(_aboutView);
+// Redux Store
 const store = _redux.createStore(_reducersDefault.default, _reduxDevtoolsExtension.devToolsEnhancer());
 function MyVHSApp() {
     let accessToken = JSON.parse(localStorage.getItem('token'));
@@ -930,12 +932,13 @@ function MyVHSApp() {
     let urlProfile = `/users/${accessUsername}`;
     let isLogged;
     let isNotLogged;
+    // This function allows the user to view different parts of the page depending on whether he/she is logged in or not.
     function UserIsLogged() {
         if (accessToken) isLogged = /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Redirect, {
             to: "/",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\index.jsx",
-                lineNumber: 62
+                lineNumber: 65
             },
             __self: this
         });
@@ -943,7 +946,7 @@ function MyVHSApp() {
             to: "/",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\index.jsx",
-                lineNumber: 63
+                lineNumber: 66
             },
             __self: this
         });
@@ -953,31 +956,31 @@ function MyVHSApp() {
         store: store,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\index.jsx",
-            lineNumber: 69
+            lineNumber: 72
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.BrowserRouter, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\index.jsx",
-            lineNumber: 70
+            lineNumber: 73
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_headerDefault.default, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\index.jsx",
-            lineNumber: 71
+            lineNumber: 74
         },
         __self: this
     }), /*#__PURE__*/ _reactDefault.default.createElement(_containerDefault.default, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\index.jsx",
-            lineNumber: 72
+            lineNumber: 75
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Switch, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\index.jsx",
-            lineNumber: 73
+            lineNumber: 76
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -986,7 +989,7 @@ function MyVHSApp() {
         component: _mainViewDefault.default,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\index.jsx",
-            lineNumber: 74
+            lineNumber: 77
         },
         __self: this
     }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -995,7 +998,7 @@ function MyVHSApp() {
         component: _aboutViewDefault.default,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\index.jsx",
-            lineNumber: 75
+            lineNumber: 78
         },
         __self: this
     }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -1004,7 +1007,7 @@ function MyVHSApp() {
         component: _loginViewDefault.default,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\index.jsx",
-            lineNumber: 76
+            lineNumber: 79
         },
         __self: this
     }, isLogged), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -1013,7 +1016,7 @@ function MyVHSApp() {
         component: _registrationViewDefault.default,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\index.jsx",
-            lineNumber: 79
+            lineNumber: 82
         },
         __self: this
     }, isLogged), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -1022,7 +1025,7 @@ function MyVHSApp() {
         component: _profileViewDefault.default,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\index.jsx",
-            lineNumber: 82
+            lineNumber: 85
         },
         __self: this
     }, isNotLogged), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -1031,7 +1034,7 @@ function MyVHSApp() {
         component: _profileEditDefault.default,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\index.jsx",
-            lineNumber: 85
+            lineNumber: 88
         },
         __self: this
     }, isNotLogged), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -1040,7 +1043,7 @@ function MyVHSApp() {
         component: _profileFavoriteDefault.default,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\index.jsx",
-            lineNumber: 88
+            lineNumber: 91
         },
         __self: this
     }, isNotLogged), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -1049,7 +1052,7 @@ function MyVHSApp() {
         component: _profileTowatchDefault.default,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\index.jsx",
-            lineNumber: 94
+            lineNumber: 97
         },
         __self: this
     }, isNotLogged), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -1058,7 +1061,7 @@ function MyVHSApp() {
         component: _movieMainDefault.default,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\index.jsx",
-            lineNumber: 97
+            lineNumber: 100
         },
         __self: this
     }, isNotLogged), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -1067,7 +1070,7 @@ function MyVHSApp() {
         component: _movieViewDefault.default,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\index.jsx",
-            lineNumber: 100
+            lineNumber: 103
         },
         __self: this
     }, isNotLogged), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -1076,7 +1079,7 @@ function MyVHSApp() {
         component: _genreMainDefault.default,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\index.jsx",
-            lineNumber: 103
+            lineNumber: 106
         },
         __self: this
     }, isNotLogged), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -1085,7 +1088,7 @@ function MyVHSApp() {
         component: _genreViewDefault.default,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\index.jsx",
-            lineNumber: 106
+            lineNumber: 109
         },
         __self: this
     }, isNotLogged), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -1094,7 +1097,7 @@ function MyVHSApp() {
         component: _directorMainDefault.default,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\index.jsx",
-            lineNumber: 109
+            lineNumber: 112
         },
         __self: this
     }, isNotLogged), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -1103,7 +1106,7 @@ function MyVHSApp() {
         component: _directorViewDefault.default,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\index.jsx",
-            lineNumber: 112
+            lineNumber: 115
         },
         __self: this
     }, isNotLogged), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -1112,7 +1115,7 @@ function MyVHSApp() {
         component: _actorMainDefault.default,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\index.jsx",
-            lineNumber: 115
+            lineNumber: 118
         },
         __self: this
     }, isNotLogged), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
@@ -1121,13 +1124,13 @@ function MyVHSApp() {
         component: _actorViewDefault.default,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\index.jsx",
-            lineNumber: 118
+            lineNumber: 121
         },
         __self: this
     }, isNotLogged))), /*#__PURE__*/ _reactDefault.default.createElement(_footerDefault.default, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\index.jsx",
-            lineNumber: 123
+            lineNumber: 126
         },
         __self: this
     }))));
@@ -1136,7 +1139,7 @@ _c = MyVHSApp;
 _reactDomDefault.default.render(/*#__PURE__*/ _reactDefault.default.createElement(MyVHSApp, {
     __source: {
         fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\index.jsx",
-        lineNumber: 129
+        lineNumber: 132
     },
     __self: undefined
 }), document.getElementById('container-app'));
@@ -27373,14 +27376,16 @@ function Header() {
     let button2;
     let buttonFav;
     let buttonWat;
+    // Shows different buttons if a user is logged in or not
     if (!accessToken) {
+        // User not logged: shows login or signup button
         button1 = /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Button, {
             href: "/login",
             className: "btn-header mx-3",
             variant: "outline-info",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\header\\header.jsx",
-                lineNumber: 16
+                lineNumber: 18
             },
             __self: this
         }, "Log in");
@@ -27391,45 +27396,46 @@ function Header() {
             onClick: onLoggedOut,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\header\\header.jsx",
-                lineNumber: 21
+                lineNumber: 23
             },
             __self: this
         }, "Sign up");
     } else {
+        // User logged: shows app nav menu, favorite, to watch, profile and logout buttons
         buttonMenu = /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.NavDropdown, {
             title: "Show",
             id: "basic-nav-dropdown",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\header\\header.jsx",
-                lineNumber: 31
+                lineNumber: 34
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.NavDropdown.Item, {
             href: "/movies",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\header\\header.jsx",
-                lineNumber: 32
+                lineNumber: 35
             },
             __self: this
         }, "Movies"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.NavDropdown.Item, {
             href: "/genres",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\header\\header.jsx",
-                lineNumber: 33
+                lineNumber: 36
             },
             __self: this
         }, "Genres"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.NavDropdown.Item, {
             href: "/directors",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\header\\header.jsx",
-                lineNumber: 34
+                lineNumber: 37
             },
             __self: this
         }, "Directors"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.NavDropdown.Item, {
             href: "/actors",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\header\\header.jsx",
-                lineNumber: 35
+                lineNumber: 38
             },
             __self: this
         }, "Actors"));
@@ -27439,7 +27445,7 @@ function Header() {
             variant: "outline-warning",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\header\\header.jsx",
-                lineNumber: 39
+                lineNumber: 42
             },
             __self: this
         }, "Favorite");
@@ -27449,7 +27455,7 @@ function Header() {
             variant: "outline-primary",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\header\\header.jsx",
-                lineNumber: 47
+                lineNumber: 50
             },
             __self: this
         }, "To Watch");
@@ -27459,7 +27465,7 @@ function Header() {
             variant: "outline-info",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\header\\header.jsx",
-                lineNumber: 55
+                lineNumber: 58
             },
             __self: this
         }, accessUsername);
@@ -27470,25 +27476,27 @@ function Header() {
             onClick: onLoggedOut,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\header\\header.jsx",
-                lineNumber: 63
+                lineNumber: 66
             },
             __self: this
         }, "Log out");
     }
+    // Logout removes the username and access token from local storage
     function onLoggedOut() {
         localStorage.clear();
     }
+    // Render the navigation bar
     return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
         className: "main-header fixed-top bg-dark",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\header\\header.jsx",
-            lineNumber: 78
+            lineNumber: 83
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Container, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\header\\header.jsx",
-            lineNumber: 79
+            lineNumber: 84
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Navbar, {
@@ -27497,21 +27505,21 @@ function Header() {
         expand: "lg",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\header\\header.jsx",
-            lineNumber: 80
+            lineNumber: 85
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Navbar.Brand, {
         href: "/",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\header\\header.jsx",
-            lineNumber: 81
+            lineNumber: 86
         },
         __self: this
     }, "myVHS"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Navbar.Toggle, {
         "aria-controls": "basic-navbar-nav",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\header\\header.jsx",
-            lineNumber: 82
+            lineNumber: 87
         },
         __self: this
     }), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Navbar.Collapse, {
@@ -27519,42 +27527,42 @@ function Header() {
         id: "basic-navbar-nav",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\header\\header.jsx",
-            lineNumber: 83
+            lineNumber: 88
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Nav, {
         className: "mr-auto",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\header\\header.jsx",
-            lineNumber: 84
+            lineNumber: 89
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Nav.Link, {
         href: "/",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\header\\header.jsx",
-            lineNumber: 85
+            lineNumber: 90
         },
         __self: this
     }, "Home"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Nav.Link, {
         href: "/about",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\header\\header.jsx",
-            lineNumber: 86
+            lineNumber: 91
         },
         __self: this
     }, "About"), buttonMenu), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Nav, {
         className: "justify-content-center flex-row py-2",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\header\\header.jsx",
-            lineNumber: 89
+            lineNumber: 94
         },
         __self: this
     }, buttonFav, buttonWat), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Nav, {
         className: "justify-content-center flex-row py-2",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\header\\header.jsx",
-            lineNumber: 93
+            lineNumber: 98
         },
         __self: this
     }, button1, button2))))));
@@ -38648,7 +38656,7 @@ function Footer() {
         },
         __self: this
     }, "Latest version:", ' ', /*#__PURE__*/ _reactDefault.default.createElement("a", {
-        href: "https://github.com/gregoriodelasheras/myVHS-client/releases/latest",
+        href: "https://github.com/gregoriodelasheras/myvhs-client/releases/latest",
         target: "_blank",
         rel: "noreferrer",
         __source: {
@@ -38694,9 +38702,13 @@ function LoginView() {
     _s();
     const [username, setUsername] = _react.useState('');
     const [password, setPassword] = _react.useState('');
+    // React-Bootstrap Modal
     const [modalErrorShow, setModalErrorShow] = _reactDefault.default.useState(false);
+    // React-Redux
     const dispatch = _reactRedux.useDispatch();
+    // React-Hook-Form
     const { register , handleSubmit , formState: { errors  } ,  } = _reactHookForm.useForm();
+    // API authentication request
     const OnSubmit = ()=>{
         _configDefault.default.post('/login', {
             username: username,
@@ -38709,12 +38721,14 @@ function LoginView() {
             setModalErrorShow(true);
         });
     };
+    // Dispatch data to the Redux store, save username and token in local storage and redirect to the movie page
     function onLogged(authData) {
         dispatch(_actions.setUser(authData));
         localStorage.setItem('token', JSON.stringify(authData.token));
         localStorage.setItem('user', JSON.stringify(authData.user.username));
         window.open('/movies', '_self');
     }
+    // Set Modal to display errors to the user
     function ModalError(props) {
         return(/*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Modal, {
             ...props,
@@ -38723,54 +38737,54 @@ function LoginView() {
             centered: true,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\login-view\\login-view.jsx",
-                lineNumber: 48
+                lineNumber: 54
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Modal.Header, {
             className: "modalUser",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\login-view\\login-view.jsx",
-                lineNumber: 53
+                lineNumber: 59
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Modal.Title, {
             id: "contained-modal-title-vcenter",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\login-view\\login-view.jsx",
-                lineNumber: 54
+                lineNumber: 60
             },
             __self: this
         }, "\"Houston, we have a problem!\"")), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Modal.Body, {
             className: "modalUser",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\login-view\\login-view.jsx",
-                lineNumber: 58
+                lineNumber: 64
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
             className: "h4 my-3",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\login-view\\login-view.jsx",
-                lineNumber: 59
+                lineNumber: 65
             },
             __self: this
         }, "We haven't found you \u{1f605}"), /*#__PURE__*/ _reactDefault.default.createElement("p", {
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\login-view\\login-view.jsx",
-                lineNumber: 60
+                lineNumber: 66
             },
             __self: this
         }, "Sorry. The username entered doesn't exist or the password is incorrect."), /*#__PURE__*/ _reactDefault.default.createElement("p", {
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\login-view\\login-view.jsx",
-                lineNumber: 64
+                lineNumber: 70
             },
             __self: this
         }, "Please try again!")), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Modal.Footer, {
             className: "modalUser justify-content-center",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\login-view\\login-view.jsx",
-                lineNumber: 66
+                lineNumber: 72
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Button, {
@@ -38779,7 +38793,7 @@ function LoginView() {
             onClick: props.onHide,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\login-view\\login-view.jsx",
-                lineNumber: 67
+                lineNumber: 73
             },
             __self: this
         }, "Close"))));
@@ -38788,34 +38802,34 @@ function LoginView() {
         className: "main-view text-center d-flex justify-content-center align-items-center",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\login-view\\login-view.jsx",
-            lineNumber: 79
+            lineNumber: 85
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Row, {
         className: "w-100",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\login-view\\login-view.jsx",
-            lineNumber: 80
+            lineNumber: 86
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\login-view\\login-view.jsx",
-            lineNumber: 81
+            lineNumber: 87
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form, {
         onSubmit: handleSubmit(OnSubmit),
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\login-view\\login-view.jsx",
-            lineNumber: 82
+            lineNumber: 88
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
         className: "mb-4",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\login-view\\login-view.jsx",
-            lineNumber: 83
+            lineNumber: 89
         },
         __self: this
     }, "Login"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Group, {
@@ -38823,13 +38837,13 @@ function LoginView() {
         className: "my-4",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\login-view\\login-view.jsx",
-            lineNumber: 84
+            lineNumber: 90
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Label, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\login-view\\login-view.jsx",
-            lineNumber: 85
+            lineNumber: 91
         },
         __self: this
     }, "Username:"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Control, {
@@ -38855,7 +38869,7 @@ function LoginView() {
         ,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\login-view\\login-view.jsx",
-            lineNumber: 86
+            lineNumber: 92
         },
         __self: this
     }), errors.username && /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert, {
@@ -38863,7 +38877,7 @@ function LoginView() {
         className: "alert-message my-2 p-1",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\login-view\\login-view.jsx",
-            lineNumber: 110
+            lineNumber: 116
         },
         __self: this
     }, errors.username.message)), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Group, {
@@ -38871,13 +38885,13 @@ function LoginView() {
         className: "my-4",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\login-view\\login-view.jsx",
-            lineNumber: 115
+            lineNumber: 121
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Label, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\login-view\\login-view.jsx",
-            lineNumber: 116
+            lineNumber: 122
         },
         __self: this
     }, "Password:"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Control, {
@@ -38903,7 +38917,7 @@ function LoginView() {
         ,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\login-view\\login-view.jsx",
-            lineNumber: 117
+            lineNumber: 123
         },
         __self: this
     }), errors.password && /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert, {
@@ -38911,7 +38925,7 @@ function LoginView() {
         className: "alert-message my-2 p-1",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\login-view\\login-view.jsx",
-            lineNumber: 141
+            lineNumber: 147
         },
         __self: this
     }, errors.password.message)), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Button, {
@@ -38920,7 +38934,7 @@ function LoginView() {
         className: "btn-form",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\login-view\\login-view.jsx",
-            lineNumber: 146
+            lineNumber: 152
         },
         __self: this
     }, "Submit")), /*#__PURE__*/ _reactDefault.default.createElement(ModalError, {
@@ -38929,7 +38943,7 @@ function LoginView() {
         ,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\login-view\\login-view.jsx",
-            lineNumber: 150
+            lineNumber: 156
         },
         __self: this
     })))));
@@ -38962,6 +38976,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
+// Global axios connection to handle API requests providing Tokens
 const instance = _axiosDefault.default.create({
     baseURL: 'https://myvhs.herokuapp.com'
 });
@@ -41519,9 +41534,12 @@ function RegistrationView() {
     const [email, setEmail] = _react.useState('');
     const [username, setUsername] = _react.useState('');
     const [password, setPassword] = _react.useState('');
+    // React-Bootstrap Modal
     const [modalRedirectShow, setModalRedirectShow] = _reactDefault.default.useState(false);
     const [modalErrorShow, setModalErrorShow] = _reactDefault.default.useState(false);
+    // React-Hook-Form
     const { register , handleSubmit , getValues , formState: { errors  } ,  } = _reactHookForm.useForm();
+    // API authentication request
     const OnSubmit = ()=>{
         _configDefault.default.post('/users', {
             name: name,
@@ -41538,9 +41556,11 @@ function RegistrationView() {
             setModalErrorShow(true);
         });
     };
+    // Redirects the user to the login view after successful posting data to the API
     function RedirectLogin() {
         window.open('/login', '_self');
     }
+    // Set Modal to inform the user about the success of the data posting request
     function ModalRedirect(props) {
         return(/*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Modal, {
             ...props,
@@ -41551,54 +41571,54 @@ function RegistrationView() {
             keyboard: false,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-                lineNumber: 52
+                lineNumber: 58
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Modal.Header, {
             className: "modalUser",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-                lineNumber: 59
+                lineNumber: 65
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Modal.Title, {
             id: "contained-modal-title-vcenter",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-                lineNumber: 60
+                lineNumber: 66
             },
             __self: this
         }, "Everything is ready!")), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Modal.Body, {
             className: "modalUser",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-                lineNumber: 64
+                lineNumber: 70
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
             className: "h4 my-3",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-                lineNumber: 65
+                lineNumber: 71
             },
             __self: this
         }, "Thank you for signing up with us! \u{1f973}"), /*#__PURE__*/ _reactDefault.default.createElement("p", {
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-                lineNumber: 66
+                lineNumber: 72
             },
             __self: this
         }, "The registration was successful! After closing this message you will be redirected to the main page. Now you can login with your profile and start exploring the wonderful world of 80's movies!"), /*#__PURE__*/ _reactDefault.default.createElement("p", {
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-                lineNumber: 71
+                lineNumber: 77
             },
             __self: this
         }, "So what are you waiting for? On your marks, get set...")), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Modal.Footer, {
             className: "modalUser justify-content-center",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-                lineNumber: 73
+                lineNumber: 79
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Button, {
@@ -41608,11 +41628,12 @@ function RegistrationView() {
             ,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-                lineNumber: 74
+                lineNumber: 80
             },
             __self: this
         }, "Go!"))));
     }
+    // Set Modal to display errors to the user
     function ModalError(props) {
         return(/*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Modal, {
             ...props,
@@ -41621,48 +41642,48 @@ function RegistrationView() {
             centered: true,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-                lineNumber: 87
+                lineNumber: 94
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Modal.Header, {
             className: "modalUser",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-                lineNumber: 92
+                lineNumber: 99
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Modal.Title, {
             id: "contained-modal-title-vcenter",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-                lineNumber: 93
+                lineNumber: 100
             },
             __self: this
         }, "\"Houston, we have a problem!\"")), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Modal.Body, {
             className: "modalUser",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-                lineNumber: 97
+                lineNumber: 104
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
             className: "h4 my-3",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-                lineNumber: 98
+                lineNumber: 105
             },
             __self: this
         }, "Your username already exists! \u{1f62c}"), /*#__PURE__*/ _reactDefault.default.createElement("p", {
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-                lineNumber: 99
+                lineNumber: 106
             },
             __self: this
         }, "Sorry, the username is already registered. Please enter another one.")), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Modal.Footer, {
             className: "modalUser justify-content-center",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-                lineNumber: 103
+                lineNumber: 110
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Button, {
@@ -41671,7 +41692,7 @@ function RegistrationView() {
             onClick: props.onHide,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-                lineNumber: 104
+                lineNumber: 111
             },
             __self: this
         }, "Close"))));
@@ -41680,33 +41701,33 @@ function RegistrationView() {
         className: "main-view text-center",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 116
+            lineNumber: 123
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Row, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 117
+            lineNumber: 124
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 118
+            lineNumber: 125
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form, {
         onSubmit: handleSubmit(OnSubmit),
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 119
+            lineNumber: 126
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
         className: "my-4",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 120
+            lineNumber: 127
         },
         __self: this
     }, "Sign Up"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Group, {
@@ -41714,13 +41735,13 @@ function RegistrationView() {
         className: "my-4",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 121
+            lineNumber: 128
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Label, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 122
+            lineNumber: 129
         },
         __self: this
     }, "Name:"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Control, {
@@ -41742,7 +41763,7 @@ function RegistrationView() {
         ,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 123
+            lineNumber: 130
         },
         __self: this
     }), errors.name && /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert, {
@@ -41750,7 +41771,7 @@ function RegistrationView() {
         className: "alert-message my-2 p-1",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 141
+            lineNumber: 148
         },
         __self: this
     }, errors.name.message)), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Group, {
@@ -41758,13 +41779,13 @@ function RegistrationView() {
         className: "my-4",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 146
+            lineNumber: 153
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Label, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 147
+            lineNumber: 154
         },
         __self: this
     }, "Last Name:"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Control, {
@@ -41786,7 +41807,7 @@ function RegistrationView() {
         ,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 148
+            lineNumber: 155
         },
         __self: this
     }), errors.lastName && /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert, {
@@ -41794,7 +41815,7 @@ function RegistrationView() {
         className: "alert-message my-2 p-1",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 167
+            lineNumber: 174
         },
         __self: this
     }, errors.lastName.message)), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Group, {
@@ -41802,13 +41823,13 @@ function RegistrationView() {
         className: "my-4",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 172
+            lineNumber: 179
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Label, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 173
+            lineNumber: 180
         },
         __self: this
     }, "Birthday:"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Control, {
@@ -41825,7 +41846,7 @@ function RegistrationView() {
         ,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 174
+            lineNumber: 181
         },
         __self: this
     }), errors.birthday && /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert, {
@@ -41833,7 +41854,7 @@ function RegistrationView() {
         className: "alert-message my-2 p-1",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 188
+            lineNumber: 195
         },
         __self: this
     }, errors.birthday.message)), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Group, {
@@ -41841,19 +41862,19 @@ function RegistrationView() {
         className: "my-4",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 193
+            lineNumber: 200
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 194
+            lineNumber: 201
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Label, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 195
+            lineNumber: 202
         },
         __self: this
     }, "Country:")), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Control, {
@@ -41870,1722 +41891,1722 @@ function RegistrationView() {
         ,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 197
+            lineNumber: 204
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 209
+            lineNumber: 216
         },
         __self: this
     }, "Choose country"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Afghanistan",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 210
+            lineNumber: 217
         },
         __self: this
     }, "Afghanistan"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "\xc5land Islands",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 211
+            lineNumber: 218
         },
         __self: this
     }, "\xc5land Islands"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Albania",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 212
+            lineNumber: 219
         },
         __self: this
     }, "Albania"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Algeria",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 213
+            lineNumber: 220
         },
         __self: this
     }, "Algeria"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "American Samoa",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 214
+            lineNumber: 221
         },
         __self: this
     }, "American Samoa"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Andorra",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 215
+            lineNumber: 222
         },
         __self: this
     }, "Andorra"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Angola",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 216
+            lineNumber: 223
         },
         __self: this
     }, "Angola"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Anguilla",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 217
+            lineNumber: 224
         },
         __self: this
     }, "Anguilla"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Antarctica",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 218
+            lineNumber: 225
         },
         __self: this
     }, "Antarctica"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Antigua and Barbuda",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 219
+            lineNumber: 226
         },
         __self: this
     }, "Antigua and Barbuda"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Argentina",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 220
+            lineNumber: 227
         },
         __self: this
     }, "Argentina"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Armenia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 221
+            lineNumber: 228
         },
         __self: this
     }, "Armenia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Aruba",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 222
+            lineNumber: 229
         },
         __self: this
     }, "Aruba"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Australia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 223
+            lineNumber: 230
         },
         __self: this
     }, "Australia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Austria",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 224
+            lineNumber: 231
         },
         __self: this
     }, "Austria"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Azerbaijan",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 225
+            lineNumber: 232
         },
         __self: this
     }, "Azerbaijan"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Bahamas",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 226
+            lineNumber: 233
         },
         __self: this
     }, "Bahamas"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Bahrain",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 227
+            lineNumber: 234
         },
         __self: this
     }, "Bahrain"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Bangladesh",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 228
+            lineNumber: 235
         },
         __self: this
     }, "Bangladesh"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Barbados",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 229
+            lineNumber: 236
         },
         __self: this
     }, "Barbados"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Belarus",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 230
+            lineNumber: 237
         },
         __self: this
     }, "Belarus"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Belgium",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 231
+            lineNumber: 238
         },
         __self: this
     }, "Belgium"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Belize",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 232
+            lineNumber: 239
         },
         __self: this
     }, "Belize"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Benin",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 233
+            lineNumber: 240
         },
         __self: this
     }, "Benin"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Bermuda",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 234
+            lineNumber: 241
         },
         __self: this
     }, "Bermuda"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Bhutan",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 235
+            lineNumber: 242
         },
         __self: this
     }, "Bhutan"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Bolivia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 236
+            lineNumber: 243
         },
         __self: this
     }, "Bolivia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Bosnia and Herzegovina",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 237
+            lineNumber: 244
         },
         __self: this
     }, "Bosnia and Herzegovina"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Botswana",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 240
+            lineNumber: 247
         },
         __self: this
     }, "Botswana"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Bouvet Island",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 241
+            lineNumber: 248
         },
         __self: this
     }, "Bouvet Island"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Brazil",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 242
+            lineNumber: 249
         },
         __self: this
     }, "Brazil"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "British Indian Ocean Territory",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 243
+            lineNumber: 250
         },
         __self: this
     }, "British Indian Ocean Territory"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Brunei Darussalam",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 246
+            lineNumber: 253
         },
         __self: this
     }, "Brunei Darussalam"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Bulgaria",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 247
+            lineNumber: 254
         },
         __self: this
     }, "Bulgaria"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Burkina Faso",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 248
+            lineNumber: 255
         },
         __self: this
     }, "Burkina Faso"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Burundi",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 249
+            lineNumber: 256
         },
         __self: this
     }, "Burundi"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Cambodia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 250
+            lineNumber: 257
         },
         __self: this
     }, "Cambodia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Cameroon",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 251
+            lineNumber: 258
         },
         __self: this
     }, "Cameroon"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Canada",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 252
+            lineNumber: 259
         },
         __self: this
     }, "Canada"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Cape Verde",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 253
+            lineNumber: 260
         },
         __self: this
     }, "Cape Verde"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Cayman Islands",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 254
+            lineNumber: 261
         },
         __self: this
     }, "Cayman Islands"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Central African Republic",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 255
+            lineNumber: 262
         },
         __self: this
     }, "Central African Republic"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Chad",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 258
+            lineNumber: 265
         },
         __self: this
     }, "Chad"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Chile",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 259
+            lineNumber: 266
         },
         __self: this
     }, "Chile"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "China",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 260
+            lineNumber: 267
         },
         __self: this
     }, "China"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Christmas Island",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 261
+            lineNumber: 268
         },
         __self: this
     }, "Christmas Island"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Cocos (Keeling) Islands",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 262
+            lineNumber: 269
         },
         __self: this
     }, "Cocos (Keeling) Islands"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Colombia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 265
+            lineNumber: 272
         },
         __self: this
     }, "Colombia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Comoros",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 266
+            lineNumber: 273
         },
         __self: this
     }, "Comoros"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Congo",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 267
+            lineNumber: 274
         },
         __self: this
     }, "Congo"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Congo, The Democratic Republic of The",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 268
+            lineNumber: 275
         },
         __self: this
     }, "Congo, The Democratic Republic of The"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Cook Islands",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 271
+            lineNumber: 278
         },
         __self: this
     }, "Cook Islands"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Costa Rica",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 272
+            lineNumber: 279
         },
         __self: this
     }, "Costa Rica"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Cote D'ivoire",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 273
+            lineNumber: 280
         },
         __self: this
     }, "Cote D`ivoire"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Croatia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 274
+            lineNumber: 281
         },
         __self: this
     }, "Croatia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Cuba",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 275
+            lineNumber: 282
         },
         __self: this
     }, "Cuba"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Cyprus",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 276
+            lineNumber: 283
         },
         __self: this
     }, "Cyprus"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Czech Republic",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 277
+            lineNumber: 284
         },
         __self: this
     }, "Czech Republic"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Denmark",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 278
+            lineNumber: 285
         },
         __self: this
     }, "Denmark"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Djibouti",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 279
+            lineNumber: 286
         },
         __self: this
     }, "Djibouti"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Dominica",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 280
+            lineNumber: 287
         },
         __self: this
     }, "Dominica"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Dominican Republic",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 281
+            lineNumber: 288
         },
         __self: this
     }, "Dominican Republic"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Ecuador",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 282
+            lineNumber: 289
         },
         __self: this
     }, "Ecuador"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Egypt",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 283
+            lineNumber: 290
         },
         __self: this
     }, "Egypt"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "El Salvador",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 284
+            lineNumber: 291
         },
         __self: this
     }, "El Salvador"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Equatorial Guinea",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 285
+            lineNumber: 292
         },
         __self: this
     }, "Equatorial Guinea"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Eritrea",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 286
+            lineNumber: 293
         },
         __self: this
     }, "Eritrea"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Estonia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 287
+            lineNumber: 294
         },
         __self: this
     }, "Estonia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Ethiopia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 288
+            lineNumber: 295
         },
         __self: this
     }, "Ethiopia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Falkland Islands (Malvinas)",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 289
+            lineNumber: 296
         },
         __self: this
     }, "Falkland Islands (Malvinas)"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Faroe Islands",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 292
+            lineNumber: 299
         },
         __self: this
     }, "Faroe Islands"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Fiji",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 293
+            lineNumber: 300
         },
         __self: this
     }, "Fiji"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Finland",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 294
+            lineNumber: 301
         },
         __self: this
     }, "Finland"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "France",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 295
+            lineNumber: 302
         },
         __self: this
     }, "France"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "French Guiana",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 296
+            lineNumber: 303
         },
         __self: this
     }, "French Guiana"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "French Polynesia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 297
+            lineNumber: 304
         },
         __self: this
     }, "French Polynesia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "French Southern Territories",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 298
+            lineNumber: 305
         },
         __self: this
     }, "French Southern Territories"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Gabon",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 301
+            lineNumber: 308
         },
         __self: this
     }, "Gabon"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Gambia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 302
+            lineNumber: 309
         },
         __self: this
     }, "Gambia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Georgia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 303
+            lineNumber: 310
         },
         __self: this
     }, "Georgia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Germany",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 304
+            lineNumber: 311
         },
         __self: this
     }, "Germany"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Ghana",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 305
+            lineNumber: 312
         },
         __self: this
     }, "Ghana"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Gibraltar",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 306
+            lineNumber: 313
         },
         __self: this
     }, "Gibraltar"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Greece",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 307
+            lineNumber: 314
         },
         __self: this
     }, "Greece"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Greenland",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 308
+            lineNumber: 315
         },
         __self: this
     }, "Greenland"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Grenada",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 309
+            lineNumber: 316
         },
         __self: this
     }, "Grenada"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Guadeloupe",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 310
+            lineNumber: 317
         },
         __self: this
     }, "Guadeloupe"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Guam",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 311
+            lineNumber: 318
         },
         __self: this
     }, "Guam"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Guatemala",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 312
+            lineNumber: 319
         },
         __self: this
     }, "Guatemala"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Guernsey",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 313
+            lineNumber: 320
         },
         __self: this
     }, "Guernsey"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Guinea",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 314
+            lineNumber: 321
         },
         __self: this
     }, "Guinea"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Guinea-bissau",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 315
+            lineNumber: 322
         },
         __self: this
     }, "Guinea-bissau"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Guyana",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 316
+            lineNumber: 323
         },
         __self: this
     }, "Guyana"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Haiti",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 317
+            lineNumber: 324
         },
         __self: this
     }, "Haiti"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Heard Island and Mcdonald Islands",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 318
+            lineNumber: 325
         },
         __self: this
     }, "Heard Island and Mcdonald Islands"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Holy See (Vatican City State)",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 321
+            lineNumber: 328
         },
         __self: this
     }, "Holy See (Vatican City State)"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Honduras",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 324
+            lineNumber: 331
         },
         __self: this
     }, "Honduras"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Hong Kong",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 325
+            lineNumber: 332
         },
         __self: this
     }, "Hong Kong"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Hungary",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 326
+            lineNumber: 333
         },
         __self: this
     }, "Hungary"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Iceland",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 327
+            lineNumber: 334
         },
         __self: this
     }, "Iceland"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "India",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 328
+            lineNumber: 335
         },
         __self: this
     }, "India"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Indonesia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 329
+            lineNumber: 336
         },
         __self: this
     }, "Indonesia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Iran, Islamic Republic of",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 330
+            lineNumber: 337
         },
         __self: this
     }, "Iran, Islamic Republic of"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Iraq",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 333
+            lineNumber: 340
         },
         __self: this
     }, "Iraq"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Ireland",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 334
+            lineNumber: 341
         },
         __self: this
     }, "Ireland"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Isle of Man",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 335
+            lineNumber: 342
         },
         __self: this
     }, "Isle of Man"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Israel",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 336
+            lineNumber: 343
         },
         __self: this
     }, "Israel"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Italy",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 337
+            lineNumber: 344
         },
         __self: this
     }, "Italy"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Jamaica",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 338
+            lineNumber: 345
         },
         __self: this
     }, "Jamaica"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Japan",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 339
+            lineNumber: 346
         },
         __self: this
     }, "Japan"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Jersey",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 340
+            lineNumber: 347
         },
         __self: this
     }, "Jersey"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Jordan",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 341
+            lineNumber: 348
         },
         __self: this
     }, "Jordan"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Kazakhstan",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 342
+            lineNumber: 349
         },
         __self: this
     }, "Kazakhstan"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Kenya",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 343
+            lineNumber: 350
         },
         __self: this
     }, "Kenya"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Kiribati",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 344
+            lineNumber: 351
         },
         __self: this
     }, "Kiribati"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Korea, Democratic People's Republic of",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 345
+            lineNumber: 352
         },
         __self: this
     }, "Korea, Democratic People`s Republic of"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Korea, Republic of",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 348
+            lineNumber: 355
         },
         __self: this
     }, "Korea, Republic of"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Kuwait",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 349
+            lineNumber: 356
         },
         __self: this
     }, "Kuwait"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Kyrgyzstan",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 350
+            lineNumber: 357
         },
         __self: this
     }, "Kyrgyzstan"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Lao People's Democratic Republic",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 351
+            lineNumber: 358
         },
         __self: this
     }, "Lao People`s Democratic Republic"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Latvia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 354
+            lineNumber: 361
         },
         __self: this
     }, "Latvia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Lebanon",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 355
+            lineNumber: 362
         },
         __self: this
     }, "Lebanon"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Lesotho",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 356
+            lineNumber: 363
         },
         __self: this
     }, "Lesotho"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Liberia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 357
+            lineNumber: 364
         },
         __self: this
     }, "Liberia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Libyan Arab Jamahiriya",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 358
+            lineNumber: 365
         },
         __self: this
     }, "Libyan Arab Jamahiriya"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Liechtenstein",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 361
+            lineNumber: 368
         },
         __self: this
     }, "Liechtenstein"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Lithuania",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 362
+            lineNumber: 369
         },
         __self: this
     }, "Lithuania"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Luxembourg",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 363
+            lineNumber: 370
         },
         __self: this
     }, "Luxembourg"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Macao",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 364
+            lineNumber: 371
         },
         __self: this
     }, "Macao"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Macedonia, The Former Yugoslav Republic of",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 365
+            lineNumber: 372
         },
         __self: this
     }, "Macedonia, The Former Yugoslav Republic of"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Madagascar",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 368
+            lineNumber: 375
         },
         __self: this
     }, "Madagascar"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Malawi",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 369
+            lineNumber: 376
         },
         __self: this
     }, "Malawi"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Malaysia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 370
+            lineNumber: 377
         },
         __self: this
     }, "Malaysia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Maldives",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 371
+            lineNumber: 378
         },
         __self: this
     }, "Maldives"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Mali",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 372
+            lineNumber: 379
         },
         __self: this
     }, "Mali"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Malta",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 373
+            lineNumber: 380
         },
         __self: this
     }, "Malta"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Marshall Islands",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 374
+            lineNumber: 381
         },
         __self: this
     }, "Marshall Islands"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Martinique",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 375
+            lineNumber: 382
         },
         __self: this
     }, "Martinique"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Mauritania",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 376
+            lineNumber: 383
         },
         __self: this
     }, "Mauritania"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Mauritius",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 377
+            lineNumber: 384
         },
         __self: this
     }, "Mauritius"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Mayotte",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 378
+            lineNumber: 385
         },
         __self: this
     }, "Mayotte"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Mexico",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 379
+            lineNumber: 386
         },
         __self: this
     }, "Mexico"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Micronesia, Federated States of",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 380
+            lineNumber: 387
         },
         __self: this
     }, "Micronesia, Federated States of"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Moldova, Republic of",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 383
+            lineNumber: 390
         },
         __self: this
     }, "Moldova, Republic of"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Monaco",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 386
+            lineNumber: 393
         },
         __self: this
     }, "Monaco"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Mongolia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 387
+            lineNumber: 394
         },
         __self: this
     }, "Mongolia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Montenegro",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 388
+            lineNumber: 395
         },
         __self: this
     }, "Montenegro"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Montserrat",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 389
+            lineNumber: 396
         },
         __self: this
     }, "Montserrat"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Morocco",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 390
+            lineNumber: 397
         },
         __self: this
     }, "Morocco"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Mozambique",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 391
+            lineNumber: 398
         },
         __self: this
     }, "Mozambique"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Myanmar",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 392
+            lineNumber: 399
         },
         __self: this
     }, "Myanmar"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Namibia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 393
+            lineNumber: 400
         },
         __self: this
     }, "Namibia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Nauru",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 394
+            lineNumber: 401
         },
         __self: this
     }, "Nauru"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Nepal",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 395
+            lineNumber: 402
         },
         __self: this
     }, "Nepal"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Netherlands",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 396
+            lineNumber: 403
         },
         __self: this
     }, "Netherlands"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Netherlands Antilles",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 397
+            lineNumber: 404
         },
         __self: this
     }, "Netherlands Antilles"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "New Caledonia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 400
+            lineNumber: 407
         },
         __self: this
     }, "New Caledonia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "New Zealand",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 401
+            lineNumber: 408
         },
         __self: this
     }, "New Zealand"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Nicaragua",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 402
+            lineNumber: 409
         },
         __self: this
     }, "Nicaragua"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Niger",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 403
+            lineNumber: 410
         },
         __self: this
     }, "Niger"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Nigeria",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 404
+            lineNumber: 411
         },
         __self: this
     }, "Nigeria"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Niue",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 405
+            lineNumber: 412
         },
         __self: this
     }, "Niue"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Norfolk Island",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 406
+            lineNumber: 413
         },
         __self: this
     }, "Norfolk Island"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Northern Mariana Islands",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 407
+            lineNumber: 414
         },
         __self: this
     }, "Northern Mariana Islands"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Norway",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 410
+            lineNumber: 417
         },
         __self: this
     }, "Norway"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Oman",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 411
+            lineNumber: 418
         },
         __self: this
     }, "Oman"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Pakistan",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 412
+            lineNumber: 419
         },
         __self: this
     }, "Pakistan"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Palau",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 413
+            lineNumber: 420
         },
         __self: this
     }, "Palau"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Palestinian Territory, Occupied",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 414
+            lineNumber: 421
         },
         __self: this
     }, "Palestinian Territory, Occupied"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Panama",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 417
+            lineNumber: 424
         },
         __self: this
     }, "Panama"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Papua New Guinea",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 418
+            lineNumber: 425
         },
         __self: this
     }, "Papua New Guinea"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Paraguay",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 419
+            lineNumber: 426
         },
         __self: this
     }, "Paraguay"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Peru",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 420
+            lineNumber: 427
         },
         __self: this
     }, "Peru"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Philippines",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 421
+            lineNumber: 428
         },
         __self: this
     }, "Philippines"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Pitcairn",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 422
+            lineNumber: 429
         },
         __self: this
     }, "Pitcairn"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Poland",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 423
+            lineNumber: 430
         },
         __self: this
     }, "Poland"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Portugal",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 424
+            lineNumber: 431
         },
         __self: this
     }, "Portugal"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Puerto Rico",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 425
+            lineNumber: 432
         },
         __self: this
     }, "Puerto Rico"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Qatar",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 426
+            lineNumber: 433
         },
         __self: this
     }, "Qatar"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Reunion",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 427
+            lineNumber: 434
         },
         __self: this
     }, "Reunion"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Romania",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 428
+            lineNumber: 435
         },
         __self: this
     }, "Romania"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Russian Federation",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 429
+            lineNumber: 436
         },
         __self: this
     }, "Russian Federation"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Rwanda",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 430
+            lineNumber: 437
         },
         __self: this
     }, "Rwanda"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Saint Helena",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 431
+            lineNumber: 438
         },
         __self: this
     }, "Saint Helena"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Saint Kitts and Nevis",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 432
+            lineNumber: 439
         },
         __self: this
     }, "Saint Kitts and Nevis"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Saint Lucia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 435
+            lineNumber: 442
         },
         __self: this
     }, "Saint Lucia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Saint Pierre and Miquelon",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 436
+            lineNumber: 443
         },
         __self: this
     }, "Saint Pierre and Miquelon"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Saint Vincent and The Grenadines",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 439
+            lineNumber: 446
         },
         __self: this
     }, "Saint Vincent and The Grenadines"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Samoa",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 442
+            lineNumber: 449
         },
         __self: this
     }, "Samoa"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "San Marino",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 443
+            lineNumber: 450
         },
         __self: this
     }, "San Marino"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Sao Tome and Principe",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 444
+            lineNumber: 451
         },
         __self: this
     }, "Sao Tome and Principe"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Saudi Arabia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 447
+            lineNumber: 454
         },
         __self: this
     }, "Saudi Arabia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Senegal",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 448
+            lineNumber: 455
         },
         __self: this
     }, "Senegal"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Serbia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 449
+            lineNumber: 456
         },
         __self: this
     }, "Serbia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Seychelles",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 450
+            lineNumber: 457
         },
         __self: this
     }, "Seychelles"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Sierra Leone",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 451
+            lineNumber: 458
         },
         __self: this
     }, "Sierra Leone"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Singapore",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 452
+            lineNumber: 459
         },
         __self: this
     }, "Singapore"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Slovakia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 453
+            lineNumber: 460
         },
         __self: this
     }, "Slovakia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Slovenia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 454
+            lineNumber: 461
         },
         __self: this
     }, "Slovenia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Solomon Islands",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 455
+            lineNumber: 462
         },
         __self: this
     }, "Solomon Islands"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Somalia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 456
+            lineNumber: 463
         },
         __self: this
     }, "Somalia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "South Africa",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 457
+            lineNumber: 464
         },
         __self: this
     }, "South Africa"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "South Georgia and The South Sandwich Islands",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 458
+            lineNumber: 465
         },
         __self: this
     }, "South Georgia and The South Sandwich Islands"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Spain",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 461
+            lineNumber: 468
         },
         __self: this
     }, "Spain"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Sri Lanka",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 462
+            lineNumber: 469
         },
         __self: this
     }, "Sri Lanka"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Sudan",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 463
+            lineNumber: 470
         },
         __self: this
     }, "Sudan"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Suriname",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 464
+            lineNumber: 471
         },
         __self: this
     }, "Suriname"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Svalbard and Jan Mayen",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 465
+            lineNumber: 472
         },
         __self: this
     }, "Svalbard and Jan Mayen"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Swaziland",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 468
+            lineNumber: 475
         },
         __self: this
     }, "Swaziland"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Sweden",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 469
+            lineNumber: 476
         },
         __self: this
     }, "Sweden"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Switzerland",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 470
+            lineNumber: 477
         },
         __self: this
     }, "Switzerland"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Syrian Arab Republic",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 471
+            lineNumber: 478
         },
         __self: this
     }, "Syrian Arab Republic"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Taiwan, Province of China",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 474
+            lineNumber: 481
         },
         __self: this
     }, "Taiwan, Province of China"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Tajikistan",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 477
+            lineNumber: 484
         },
         __self: this
     }, "Tajikistan"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Tanzania, United Republic of",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 478
+            lineNumber: 485
         },
         __self: this
     }, "Tanzania, United Republic of"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Thailand",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 481
+            lineNumber: 488
         },
         __self: this
     }, "Thailand"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Timor-leste",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 482
+            lineNumber: 489
         },
         __self: this
     }, "Timor-leste"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Togo",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 483
+            lineNumber: 490
         },
         __self: this
     }, "Togo"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Tokelau",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 484
+            lineNumber: 491
         },
         __self: this
     }, "Tokelau"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Tonga",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 485
+            lineNumber: 492
         },
         __self: this
     }, "Tonga"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Trinidad and Tobago",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 486
+            lineNumber: 493
         },
         __self: this
     }, "Trinidad and Tobago"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Tunisia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 487
+            lineNumber: 494
         },
         __self: this
     }, "Tunisia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Turkey",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 488
+            lineNumber: 495
         },
         __self: this
     }, "Turkey"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Turkmenistan",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 489
+            lineNumber: 496
         },
         __self: this
     }, "Turkmenistan"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Turks and Caicos Islands",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 490
+            lineNumber: 497
         },
         __self: this
     }, "Turks and Caicos Islands"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Tuvalu",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 493
+            lineNumber: 500
         },
         __self: this
     }, "Tuvalu"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Uganda",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 494
+            lineNumber: 501
         },
         __self: this
     }, "Uganda"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Ukraine",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 495
+            lineNumber: 502
         },
         __self: this
     }, "Ukraine"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "United Arab Emirates",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 496
+            lineNumber: 503
         },
         __self: this
     }, "United Arab Emirates"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "United Kingdom",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 499
+            lineNumber: 506
         },
         __self: this
     }, "United Kingdom"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "United States",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 500
+            lineNumber: 507
         },
         __self: this
     }, "United States"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "United States Minor Outlying Islands",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 501
+            lineNumber: 508
         },
         __self: this
     }, "United States Minor Outlying Islands"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Uruguay",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 504
+            lineNumber: 511
         },
         __self: this
     }, "Uruguay"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Uzbekistan",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 505
+            lineNumber: 512
         },
         __self: this
     }, "Uzbekistan"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Vanuatu",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 506
+            lineNumber: 513
         },
         __self: this
     }, "Vanuatu"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Venezuela",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 507
+            lineNumber: 514
         },
         __self: this
     }, "Venezuela"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Viet Nam",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 508
+            lineNumber: 515
         },
         __self: this
     }, "Viet Nam"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Virgin Islands, British",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 509
+            lineNumber: 516
         },
         __self: this
     }, "Virgin Islands, British"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Virgin Islands, U.S.",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 512
+            lineNumber: 519
         },
         __self: this
     }, "Virgin Islands, U.S."), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Wallis and Futuna",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 515
+            lineNumber: 522
         },
         __self: this
     }, "Wallis and Futuna"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Western Sahara",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 516
+            lineNumber: 523
         },
         __self: this
     }, "Western Sahara"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Yemen",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 517
+            lineNumber: 524
         },
         __self: this
     }, "Yemen"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Zambia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 518
+            lineNumber: 525
         },
         __self: this
     }, "Zambia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Zimbabwe",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 519
+            lineNumber: 526
         },
         __self: this
     }, "Zimbabwe")), errors.country && /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert, {
@@ -43593,7 +43614,7 @@ function RegistrationView() {
         className: "alert-message my-2 p-1",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 522
+            lineNumber: 529
         },
         __self: this
     }, errors.country.message)), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Group, {
@@ -43601,13 +43622,13 @@ function RegistrationView() {
         className: "my-4",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 527
+            lineNumber: 534
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Label, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 528
+            lineNumber: 535
         },
         __self: this
     }, "E-mail:"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Control, {
@@ -43629,7 +43650,7 @@ function RegistrationView() {
         ,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 529
+            lineNumber: 536
         },
         __self: this
     }), errors.email && /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert, {
@@ -43637,7 +43658,7 @@ function RegistrationView() {
         className: "alert-message my-2 p-1",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 548
+            lineNumber: 555
         },
         __self: this
     }, errors.email.message)), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Group, {
@@ -43645,13 +43666,13 @@ function RegistrationView() {
         className: "my-4",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 553
+            lineNumber: 560
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Label, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 554
+            lineNumber: 561
         },
         __self: this
     }, "Username:"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Control, {
@@ -43677,7 +43698,7 @@ function RegistrationView() {
         ,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 555
+            lineNumber: 562
         },
         __self: this
     }), errors.username && /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert, {
@@ -43685,14 +43706,14 @@ function RegistrationView() {
         className: "alert-message my-2 p-1",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 579
+            lineNumber: 586
         },
         __self: this
     }, errors.username.message), /*#__PURE__*/ _reactDefault.default.createElement("p", {
         className: "text-muted my-2",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 583
+            lineNumber: 590
         },
         __self: this
     }, "Please enter a username with at least 6 characters (A-Z, a-z, 0-9, _ )")), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Group, {
@@ -43700,13 +43721,13 @@ function RegistrationView() {
         className: "my-4",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 588
+            lineNumber: 595
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Label, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 589
+            lineNumber: 596
         },
         __self: this
     }, "Password:"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Control, {
@@ -43732,7 +43753,7 @@ function RegistrationView() {
         ,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 590
+            lineNumber: 597
         },
         __self: this
     }), errors.password && /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert, {
@@ -43740,14 +43761,14 @@ function RegistrationView() {
         className: "alert-message my-2 p-1",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 614
+            lineNumber: 621
         },
         __self: this
     }, errors.password.message), /*#__PURE__*/ _reactDefault.default.createElement("p", {
         className: "text-muted my-2",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 618
+            lineNumber: 625
         },
         __self: this
     }, "Please enter a password with at least 8 characters (A-Z, a-z, 0-9, @#$%!?)")), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Group, {
@@ -43755,13 +43776,13 @@ function RegistrationView() {
         className: "my-4",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 623
+            lineNumber: 630
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Label, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 624
+            lineNumber: 631
         },
         __self: this
     }, "Confirm Password:"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Control, {
@@ -43790,7 +43811,7 @@ function RegistrationView() {
         className: "form-neon",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 625
+            lineNumber: 632
         },
         __self: this
     }), errors.passwordConfirmation && /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert, {
@@ -43798,14 +43819,14 @@ function RegistrationView() {
         className: "alert-message my-2 p-1",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 653
+            lineNumber: 660
         },
         __self: this
     }, errors.passwordConfirmation.message), /*#__PURE__*/ _reactDefault.default.createElement("p", {
         className: "text-muted my-2",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 657
+            lineNumber: 664
         },
         __self: this
     }, "Please re-enter your password.")), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Button, {
@@ -43814,7 +43835,7 @@ function RegistrationView() {
         className: "btn-form",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 659
+            lineNumber: 666
         },
         __self: this
     }, "Submit")), /*#__PURE__*/ _reactDefault.default.createElement(ModalRedirect, {
@@ -43823,7 +43844,7 @@ function RegistrationView() {
         ,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 666
+            lineNumber: 673
         },
         __self: this
     }), /*#__PURE__*/ _reactDefault.default.createElement(ModalError, {
@@ -43832,7 +43853,7 @@ function RegistrationView() {
         ,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\registration-view\\registration-view.jsx",
-            lineNumber: 670
+            lineNumber: 677
         },
         __self: this
     })))));
@@ -43862,6 +43883,7 @@ helpers.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+// Component that allows the user to view their data
 parcelHelpers.export(exports, "ProfileView", ()=>ProfileView
 );
 var _react = require("react");
@@ -43895,18 +43917,23 @@ class ProfileView extends _reactDefault.default.Component {
         var _s = $RefreshSig$();
         const { bday  } = this.state;
         const { user  } = this.props;
+        // Redirects to favorite list
         function RedirectFavorite() {
             window.open(`/users/${user.username}/favorite`, '_self');
         }
+        // Redirects to the to-watch list
         function RedirectToWatch() {
             window.open(`/users/${user.username}/towatch`, '_self');
         }
+        // Redirects to edit profile page
         function RedirectEdit() {
             window.open(`/users/${user.username}/edit`, '_self');
         }
+        // Redirects to the view profile page (current page)
         function RedirectShow() {
             window.open(`/users/${user.username}`, '_self');
         }
+        // Set modal to alert the user that his account is going to be deleted
         function DeleteUserModal(props) {
             return(/*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Modal, {
                 ...props,
@@ -43915,41 +43942,41 @@ class ProfileView extends _reactDefault.default.Component {
                 centered: true,
                 __source: {
                     fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
-                    lineNumber: 52
+                    lineNumber: 58
                 },
                 __self: this
             }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Modal.Body, {
                 className: "modalDeleteUser text-center",
                 __source: {
                     fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
-                    lineNumber: 57
+                    lineNumber: 63
                 },
                 __self: this
             }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
                 className: "h3 my-4",
                 __source: {
                     fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
-                    lineNumber: 58
+                    lineNumber: 64
                 },
                 __self: this
             }, "\u26a0 Warning! \u26a0"), /*#__PURE__*/ _reactDefault.default.createElement("p", {
                 className: "h5 my-3",
                 __source: {
                     fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
-                    lineNumber: 59
+                    lineNumber: 65
                 },
                 __self: this
             }, "You are very close to delete your profile \u{1f631}"), /*#__PURE__*/ _reactDefault.default.createElement("p", {
                 __source: {
                     fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
-                    lineNumber: 62
+                    lineNumber: 68
                 },
                 __self: this
             }, "You will lose all your data and lists of your favorite and to-be-watched movies. Of course, you will always be welcome back in the future."), /*#__PURE__*/ _reactDefault.default.createElement("p", {
                 className: "h5",
                 __source: {
                     fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
-                    lineNumber: 67
+                    lineNumber: 73
                 },
                 __self: this
             }, "Are you sure you want to do it?"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Button, {
@@ -43958,7 +43985,7 @@ class ProfileView extends _reactDefault.default.Component {
                 onClick: props.onHide,
                 __source: {
                     fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
-                    lineNumber: 68
+                    lineNumber: 74
                 },
                 __self: this
             }, "No! Please take me back!"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Button, {
@@ -43968,11 +43995,12 @@ class ProfileView extends _reactDefault.default.Component {
                 ,
                 __source: {
                     fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
-                    lineNumber: 74
+                    lineNumber: 80
                 },
                 __self: this
             }, "Yes! I want to delete my profile!"))));
         }
+        // Set Delete button outside to ensure code readability
         function DeleteButton() {
             _s();
             const [modalShow, setModalShow] = _reactDefault.default.useState(false);
@@ -43983,7 +44011,7 @@ class ProfileView extends _reactDefault.default.Component {
                 ,
                 __source: {
                     fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
-                    lineNumber: 90
+                    lineNumber: 97
                 },
                 __self: this
             }, "Delete"), /*#__PURE__*/ _reactDefault.default.createElement(DeleteUserModal, {
@@ -43992,12 +44020,13 @@ class ProfileView extends _reactDefault.default.Component {
                 ,
                 __source: {
                     fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
-                    lineNumber: 97
+                    lineNumber: 104
                 },
                 __self: this
             })));
         }
         _s(DeleteButton, "xuPPltV/3J92+XaNotdpXxySp+I=");
+        // Send delete request to the API
         function DeleteUser() {
             const urlProfile = `https://myvhs.herokuapp.com/users/${user.username}`;
             _configDefault.default.delete(urlProfile).then(()=>{
@@ -44011,34 +44040,34 @@ class ProfileView extends _reactDefault.default.Component {
             className: "main-view profile-container text-center",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 120
+                lineNumber: 128
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Row, {
             className: "justify-content-md-center",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 121
+                lineNumber: 129
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, {
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 122
+                lineNumber: 130
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
             className: "my-4",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 123
+                lineNumber: 131
             },
             __self: this
         }, "Profile"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.ButtonGroup, {
             className: "mb-4",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 124
+                lineNumber: 132
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Button, {
@@ -44048,7 +44077,7 @@ class ProfileView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 125
+                lineNumber: 133
             },
             __self: this
         }, "Edit"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Button, {
@@ -44058,13 +44087,13 @@ class ProfileView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 131
+                lineNumber: 139
             },
             __self: this
         }, "Show"), /*#__PURE__*/ _reactDefault.default.createElement(DeleteButton, {
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 137
+                lineNumber: 145
             },
             __self: this
         })), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert, {
@@ -44072,53 +44101,11 @@ class ProfileView extends _reactDefault.default.Component {
             variant: "alert",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 139
+                lineNumber: 147
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "username",
-            __source: {
-                fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 140
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
-            className: "font-weight-bold my-2",
-            __source: {
-                fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 141
-            },
-            __self: this
-        }, "Username: "), /*#__PURE__*/ _reactDefault.default.createElement("p", {
-            className: "mb-4",
-            __source: {
-                fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 142
-            },
-            __self: this
-        }, user.username)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
-            className: "name",
-            __source: {
-                fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 144
-            },
-            __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
-            className: "font-weight-bold my-2",
-            __source: {
-                fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 145
-            },
-            __self: this
-        }, "Name: "), /*#__PURE__*/ _reactDefault.default.createElement("p", {
-            className: "mb-4",
-            __source: {
-                fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 146
-            },
-            __self: this
-        }, user.name)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
-            className: "lastName",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
                 lineNumber: 148
@@ -44131,15 +44118,15 @@ class ProfileView extends _reactDefault.default.Component {
                 lineNumber: 149
             },
             __self: this
-        }, "Last Name: "), /*#__PURE__*/ _reactDefault.default.createElement("p", {
+        }, "Username: "), /*#__PURE__*/ _reactDefault.default.createElement("p", {
             className: "mb-4",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
                 lineNumber: 150
             },
             __self: this
-        }, user.lastName)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
-            className: "birthday",
+        }, user.username)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "name",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
                 lineNumber: 152
@@ -44152,15 +44139,15 @@ class ProfileView extends _reactDefault.default.Component {
                 lineNumber: 153
             },
             __self: this
-        }, "Birthday: "), /*#__PURE__*/ _reactDefault.default.createElement("p", {
+        }, "Name: "), /*#__PURE__*/ _reactDefault.default.createElement("p", {
             className: "mb-4",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
                 lineNumber: 154
             },
             __self: this
-        }, bday)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
-            className: "country",
+        }, user.name)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "lastName",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
                 lineNumber: 156
@@ -44173,15 +44160,15 @@ class ProfileView extends _reactDefault.default.Component {
                 lineNumber: 157
             },
             __self: this
-        }, "Country: "), /*#__PURE__*/ _reactDefault.default.createElement("p", {
+        }, "Last Name: "), /*#__PURE__*/ _reactDefault.default.createElement("p", {
             className: "mb-4",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
                 lineNumber: 158
             },
             __self: this
-        }, user.country)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
-            className: "email",
+        }, user.lastName)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "birthday",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
                 lineNumber: 160
@@ -44194,11 +44181,53 @@ class ProfileView extends _reactDefault.default.Component {
                 lineNumber: 161
             },
             __self: this
-        }, "E-mail: "), /*#__PURE__*/ _reactDefault.default.createElement("p", {
+        }, "Birthday: "), /*#__PURE__*/ _reactDefault.default.createElement("p", {
             className: "mb-4",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
                 lineNumber: 162
+            },
+            __self: this
+        }, bday)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "country",
+            __source: {
+                fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
+                lineNumber: 164
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            className: "font-weight-bold my-2",
+            __source: {
+                fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
+                lineNumber: 165
+            },
+            __self: this
+        }, "Country: "), /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            className: "mb-4",
+            __source: {
+                fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
+                lineNumber: 166
+            },
+            __self: this
+        }, user.country)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "email",
+            __source: {
+                fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
+                lineNumber: 168
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            className: "font-weight-bold my-2",
+            __source: {
+                fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
+                lineNumber: 169
+            },
+            __self: this
+        }, "E-mail: "), /*#__PURE__*/ _reactDefault.default.createElement("p", {
+            className: "mb-4",
+            __source: {
+                fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
+                lineNumber: 170
             },
             __self: this
         }, user.email))), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Button, {
@@ -44208,7 +44237,7 @@ class ProfileView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 165
+                lineNumber: 173
             },
             __self: this
         }, "Favorite"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Button, {
@@ -44218,7 +44247,7 @@ class ProfileView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-view.jsx",
-                lineNumber: 171
+                lineNumber: 179
             },
             __self: this
         }, "To Watch")))));
@@ -44261,6 +44290,7 @@ helpers.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+// Component that allows the user to update their data
 parcelHelpers.export(exports, "EditView", ()=>EditView
 );
 var _react = require("react");
@@ -44282,10 +44312,14 @@ function EditView() {
     const [country, setCountry] = _react.useState('');
     const [email, setEmail] = _react.useState('');
     const [password, setPassword] = _react.useState('');
+    // React-Bootstrap Modal
     const [modalRedirectShow, setModalRedirectShow] = _reactDefault.default.useState(false);
     const [modalErrorShow, setModalErrorShow] = _reactDefault.default.useState(false);
+    // Authorization and authentication
     const accessUsername = JSON.parse(localStorage.getItem('user'));
+    // React-Hook-Form
     const { register , handleSubmit , getValues , formState: { errors  } ,  } = _reactHookForm.useForm();
+    // API authentication request
     const OnSubmit = ()=>{
         _configDefault.default.put(`/users/${accessUsername}`, {
             name: name,
@@ -44302,9 +44336,11 @@ function EditView() {
             setModalErrorShow(true);
         });
     };
-    function RedirectLogin() {
+    // Redirects the user to the profile view after successful data update
+    function RedirectProfile() {
         window.open(`/users/${accessUsername}`, '_self');
     }
+    // Set Modal to inform the user about the success of the data update request
     function ModalRedirect(props) {
         return(/*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Modal, {
             ...props,
@@ -44315,48 +44351,49 @@ function EditView() {
             keyboard: false,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-                lineNumber: 54
+                lineNumber: 62
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Modal.Body, {
             className: "modalUser text-center",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-                lineNumber: 61
+                lineNumber: 69
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
             className: "h3 my-4",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-                lineNumber: 62
+                lineNumber: 70
             },
             __self: this
         }, "Your data has been updated!"), /*#__PURE__*/ _reactDefault.default.createElement("p", {
             className: "h4 my-3",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-                lineNumber: 63
+                lineNumber: 71
             },
             __self: this
         }, "The new data were successfully entered into our database."), /*#__PURE__*/ _reactDefault.default.createElement("p", {
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-                lineNumber: 66
+                lineNumber: 74
             },
             __self: this
         }, "You can now continue your journey back to the 80's."), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Button, {
             variant: "outline-info",
             className: "btn-form my-3",
-            onClick: ()=>RedirectLogin()
+            onClick: ()=>RedirectProfile()
             ,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-                lineNumber: 67
+                lineNumber: 75
             },
             __self: this
         }, "Go!"))));
     }
+    // Set Modal to display errors to the user
     function ModalError(props) {
         return(/*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Modal, {
             ...props,
@@ -44365,40 +44402,40 @@ function EditView() {
             centered: true,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-                lineNumber: 80
+                lineNumber: 89
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Modal.Body, {
             className: "modalUser text-center",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-                lineNumber: 85
+                lineNumber: 94
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
             className: "h3 my-4",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-                lineNumber: 86
+                lineNumber: 95
             },
             __self: this
         }, "\"Houston, we have a problem!\""), /*#__PURE__*/ _reactDefault.default.createElement("p", {
             className: "h4 my-3",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-                lineNumber: 87
+                lineNumber: 96
             },
             __self: this
         }, "We are working on it"), /*#__PURE__*/ _reactDefault.default.createElement("p", {
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-                lineNumber: 88
+                lineNumber: 97
             },
             __self: this
         }, "Sorry, an unexpected error occurred during the update. Our technical team is already working on it from our moonbase."), /*#__PURE__*/ _reactDefault.default.createElement("p", {
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-                lineNumber: 92
+                lineNumber: 101
             },
             __self: this
         }, "Please try again later.")), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Button, {
@@ -44407,7 +44444,7 @@ function EditView() {
             onClick: props.onHide,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-                lineNumber: 94
+                lineNumber: 103
             },
             __self: this
         }, "Close")));
@@ -44416,33 +44453,33 @@ function EditView() {
         className: "main-view text-center",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 105
+            lineNumber: 114
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Row, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 106
+            lineNumber: 115
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 107
+            lineNumber: 116
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form, {
         onSubmit: handleSubmit(OnSubmit),
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 108
+            lineNumber: 117
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
         className: "my-4",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 109
+            lineNumber: 118
         },
         __self: this
     }, "Edit Profile"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Group, {
@@ -44450,13 +44487,13 @@ function EditView() {
         className: "my-4",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 110
+            lineNumber: 119
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Label, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 111
+            lineNumber: 120
         },
         __self: this
     }, "Name:"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Control, {
@@ -44478,7 +44515,7 @@ function EditView() {
         ,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 112
+            lineNumber: 121
         },
         __self: this
     }), errors.name && /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert, {
@@ -44486,7 +44523,7 @@ function EditView() {
         className: "alert-message my-2 p-1",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 131
+            lineNumber: 140
         },
         __self: this
     }, errors.name.message)), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Group, {
@@ -44494,13 +44531,13 @@ function EditView() {
         className: "my-4",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 136
+            lineNumber: 145
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Label, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 137
+            lineNumber: 146
         },
         __self: this
     }, "Last Name:"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Control, {
@@ -44522,7 +44559,7 @@ function EditView() {
         ,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 138
+            lineNumber: 147
         },
         __self: this
     }), errors.lastName && /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert, {
@@ -44530,7 +44567,7 @@ function EditView() {
         className: "alert-message my-2 p-1",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 157
+            lineNumber: 166
         },
         __self: this
     }, errors.lastName.message)), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Group, {
@@ -44538,13 +44575,13 @@ function EditView() {
         className: "my-4",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 162
+            lineNumber: 171
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Label, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 163
+            lineNumber: 172
         },
         __self: this
     }, "Birthday:"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Control, {
@@ -44561,7 +44598,7 @@ function EditView() {
         ,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 164
+            lineNumber: 173
         },
         __self: this
     }), errors.birthday && /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert, {
@@ -44569,7 +44606,7 @@ function EditView() {
         className: "alert-message my-2 p-1",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 178
+            lineNumber: 187
         },
         __self: this
     }, errors.birthday.message)), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Group, {
@@ -44577,19 +44614,19 @@ function EditView() {
         className: "my-4",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 183
+            lineNumber: 192
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 184
+            lineNumber: 193
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Label, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 185
+            lineNumber: 194
         },
         __self: this
     }, "Country:")), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Control, {
@@ -44606,1722 +44643,1722 @@ function EditView() {
         ,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 187
+            lineNumber: 196
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 199
+            lineNumber: 208
         },
         __self: this
     }, "Choose country"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Afghanistan",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 200
+            lineNumber: 209
         },
         __self: this
     }, "Afghanistan"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "\xc5land Islands",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 201
+            lineNumber: 210
         },
         __self: this
     }, "\xc5land Islands"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Albania",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 202
+            lineNumber: 211
         },
         __self: this
     }, "Albania"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Algeria",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 203
+            lineNumber: 212
         },
         __self: this
     }, "Algeria"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "American Samoa",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 204
+            lineNumber: 213
         },
         __self: this
     }, "American Samoa"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Andorra",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 205
+            lineNumber: 214
         },
         __self: this
     }, "Andorra"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Angola",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 206
+            lineNumber: 215
         },
         __self: this
     }, "Angola"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Anguilla",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 207
+            lineNumber: 216
         },
         __self: this
     }, "Anguilla"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Antarctica",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 208
+            lineNumber: 217
         },
         __self: this
     }, "Antarctica"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Antigua and Barbuda",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 209
+            lineNumber: 218
         },
         __self: this
     }, "Antigua and Barbuda"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Argentina",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 210
+            lineNumber: 219
         },
         __self: this
     }, "Argentina"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Armenia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 211
+            lineNumber: 220
         },
         __self: this
     }, "Armenia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Aruba",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 212
+            lineNumber: 221
         },
         __self: this
     }, "Aruba"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Australia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 213
+            lineNumber: 222
         },
         __self: this
     }, "Australia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Austria",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 214
+            lineNumber: 223
         },
         __self: this
     }, "Austria"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Azerbaijan",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 215
+            lineNumber: 224
         },
         __self: this
     }, "Azerbaijan"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Bahamas",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 216
+            lineNumber: 225
         },
         __self: this
     }, "Bahamas"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Bahrain",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 217
+            lineNumber: 226
         },
         __self: this
     }, "Bahrain"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Bangladesh",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 218
+            lineNumber: 227
         },
         __self: this
     }, "Bangladesh"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Barbados",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 219
+            lineNumber: 228
         },
         __self: this
     }, "Barbados"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Belarus",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 220
+            lineNumber: 229
         },
         __self: this
     }, "Belarus"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Belgium",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 221
+            lineNumber: 230
         },
         __self: this
     }, "Belgium"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Belize",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 222
+            lineNumber: 231
         },
         __self: this
     }, "Belize"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Benin",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 223
+            lineNumber: 232
         },
         __self: this
     }, "Benin"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Bermuda",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 224
+            lineNumber: 233
         },
         __self: this
     }, "Bermuda"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Bhutan",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 225
+            lineNumber: 234
         },
         __self: this
     }, "Bhutan"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Bolivia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 226
+            lineNumber: 235
         },
         __self: this
     }, "Bolivia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Bosnia and Herzegovina",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 227
+            lineNumber: 236
         },
         __self: this
     }, "Bosnia and Herzegovina"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Botswana",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 230
+            lineNumber: 239
         },
         __self: this
     }, "Botswana"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Bouvet Island",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 231
+            lineNumber: 240
         },
         __self: this
     }, "Bouvet Island"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Brazil",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 232
+            lineNumber: 241
         },
         __self: this
     }, "Brazil"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "British Indian Ocean Territory",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 233
+            lineNumber: 242
         },
         __self: this
     }, "British Indian Ocean Territory"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Brunei Darussalam",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 236
+            lineNumber: 245
         },
         __self: this
     }, "Brunei Darussalam"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Bulgaria",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 237
+            lineNumber: 246
         },
         __self: this
     }, "Bulgaria"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Burkina Faso",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 238
+            lineNumber: 247
         },
         __self: this
     }, "Burkina Faso"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Burundi",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 239
+            lineNumber: 248
         },
         __self: this
     }, "Burundi"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Cambodia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 240
+            lineNumber: 249
         },
         __self: this
     }, "Cambodia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Cameroon",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 241
+            lineNumber: 250
         },
         __self: this
     }, "Cameroon"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Canada",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 242
+            lineNumber: 251
         },
         __self: this
     }, "Canada"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Cape Verde",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 243
+            lineNumber: 252
         },
         __self: this
     }, "Cape Verde"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Cayman Islands",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 244
+            lineNumber: 253
         },
         __self: this
     }, "Cayman Islands"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Central African Republic",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 245
+            lineNumber: 254
         },
         __self: this
     }, "Central African Republic"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Chad",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 248
+            lineNumber: 257
         },
         __self: this
     }, "Chad"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Chile",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 249
+            lineNumber: 258
         },
         __self: this
     }, "Chile"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "China",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 250
+            lineNumber: 259
         },
         __self: this
     }, "China"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Christmas Island",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 251
+            lineNumber: 260
         },
         __self: this
     }, "Christmas Island"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Cocos (Keeling) Islands",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 252
+            lineNumber: 261
         },
         __self: this
     }, "Cocos (Keeling) Islands"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Colombia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 255
+            lineNumber: 264
         },
         __self: this
     }, "Colombia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Comoros",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 256
+            lineNumber: 265
         },
         __self: this
     }, "Comoros"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Congo",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 257
+            lineNumber: 266
         },
         __self: this
     }, "Congo"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Congo, The Democratic Republic of The",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 258
+            lineNumber: 267
         },
         __self: this
     }, "Congo, The Democratic Republic of The"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Cook Islands",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 261
+            lineNumber: 270
         },
         __self: this
     }, "Cook Islands"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Costa Rica",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 262
+            lineNumber: 271
         },
         __self: this
     }, "Costa Rica"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Cote D'ivoire",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 263
+            lineNumber: 272
         },
         __self: this
     }, "Cote D`ivoire"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Croatia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 264
+            lineNumber: 273
         },
         __self: this
     }, "Croatia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Cuba",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 265
+            lineNumber: 274
         },
         __self: this
     }, "Cuba"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Cyprus",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 266
+            lineNumber: 275
         },
         __self: this
     }, "Cyprus"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Czech Republic",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 267
+            lineNumber: 276
         },
         __self: this
     }, "Czech Republic"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Denmark",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 268
+            lineNumber: 277
         },
         __self: this
     }, "Denmark"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Djibouti",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 269
+            lineNumber: 278
         },
         __self: this
     }, "Djibouti"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Dominica",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 270
+            lineNumber: 279
         },
         __self: this
     }, "Dominica"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Dominican Republic",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 271
+            lineNumber: 280
         },
         __self: this
     }, "Dominican Republic"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Ecuador",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 272
+            lineNumber: 281
         },
         __self: this
     }, "Ecuador"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Egypt",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 273
+            lineNumber: 282
         },
         __self: this
     }, "Egypt"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "El Salvador",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 274
+            lineNumber: 283
         },
         __self: this
     }, "El Salvador"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Equatorial Guinea",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 275
+            lineNumber: 284
         },
         __self: this
     }, "Equatorial Guinea"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Eritrea",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 276
+            lineNumber: 285
         },
         __self: this
     }, "Eritrea"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Estonia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 277
+            lineNumber: 286
         },
         __self: this
     }, "Estonia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Ethiopia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 278
+            lineNumber: 287
         },
         __self: this
     }, "Ethiopia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Falkland Islands (Malvinas)",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 279
+            lineNumber: 288
         },
         __self: this
     }, "Falkland Islands (Malvinas)"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Faroe Islands",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 282
+            lineNumber: 291
         },
         __self: this
     }, "Faroe Islands"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Fiji",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 283
+            lineNumber: 292
         },
         __self: this
     }, "Fiji"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Finland",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 284
+            lineNumber: 293
         },
         __self: this
     }, "Finland"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "France",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 285
+            lineNumber: 294
         },
         __self: this
     }, "France"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "French Guiana",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 286
+            lineNumber: 295
         },
         __self: this
     }, "French Guiana"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "French Polynesia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 287
+            lineNumber: 296
         },
         __self: this
     }, "French Polynesia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "French Southern Territories",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 288
+            lineNumber: 297
         },
         __self: this
     }, "French Southern Territories"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Gabon",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 291
+            lineNumber: 300
         },
         __self: this
     }, "Gabon"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Gambia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 292
+            lineNumber: 301
         },
         __self: this
     }, "Gambia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Georgia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 293
+            lineNumber: 302
         },
         __self: this
     }, "Georgia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Germany",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 294
+            lineNumber: 303
         },
         __self: this
     }, "Germany"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Ghana",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 295
+            lineNumber: 304
         },
         __self: this
     }, "Ghana"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Gibraltar",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 296
+            lineNumber: 305
         },
         __self: this
     }, "Gibraltar"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Greece",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 297
+            lineNumber: 306
         },
         __self: this
     }, "Greece"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Greenland",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 298
+            lineNumber: 307
         },
         __self: this
     }, "Greenland"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Grenada",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 299
+            lineNumber: 308
         },
         __self: this
     }, "Grenada"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Guadeloupe",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 300
+            lineNumber: 309
         },
         __self: this
     }, "Guadeloupe"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Guam",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 301
+            lineNumber: 310
         },
         __self: this
     }, "Guam"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Guatemala",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 302
+            lineNumber: 311
         },
         __self: this
     }, "Guatemala"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Guernsey",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 303
+            lineNumber: 312
         },
         __self: this
     }, "Guernsey"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Guinea",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 304
+            lineNumber: 313
         },
         __self: this
     }, "Guinea"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Guinea-bissau",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 305
+            lineNumber: 314
         },
         __self: this
     }, "Guinea-bissau"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Guyana",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 306
+            lineNumber: 315
         },
         __self: this
     }, "Guyana"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Haiti",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 307
+            lineNumber: 316
         },
         __self: this
     }, "Haiti"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Heard Island and Mcdonald Islands",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 308
+            lineNumber: 317
         },
         __self: this
     }, "Heard Island and Mcdonald Islands"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Holy See (Vatican City State)",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 311
+            lineNumber: 320
         },
         __self: this
     }, "Holy See (Vatican City State)"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Honduras",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 314
+            lineNumber: 323
         },
         __self: this
     }, "Honduras"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Hong Kong",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 315
+            lineNumber: 324
         },
         __self: this
     }, "Hong Kong"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Hungary",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 316
+            lineNumber: 325
         },
         __self: this
     }, "Hungary"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Iceland",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 317
+            lineNumber: 326
         },
         __self: this
     }, "Iceland"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "India",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 318
+            lineNumber: 327
         },
         __self: this
     }, "India"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Indonesia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 319
+            lineNumber: 328
         },
         __self: this
     }, "Indonesia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Iran, Islamic Republic of",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 320
+            lineNumber: 329
         },
         __self: this
     }, "Iran, Islamic Republic of"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Iraq",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 323
+            lineNumber: 332
         },
         __self: this
     }, "Iraq"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Ireland",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 324
+            lineNumber: 333
         },
         __self: this
     }, "Ireland"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Isle of Man",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 325
+            lineNumber: 334
         },
         __self: this
     }, "Isle of Man"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Israel",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 326
+            lineNumber: 335
         },
         __self: this
     }, "Israel"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Italy",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 327
+            lineNumber: 336
         },
         __self: this
     }, "Italy"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Jamaica",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 328
+            lineNumber: 337
         },
         __self: this
     }, "Jamaica"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Japan",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 329
+            lineNumber: 338
         },
         __self: this
     }, "Japan"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Jersey",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 330
+            lineNumber: 339
         },
         __self: this
     }, "Jersey"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Jordan",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 331
+            lineNumber: 340
         },
         __self: this
     }, "Jordan"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Kazakhstan",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 332
+            lineNumber: 341
         },
         __self: this
     }, "Kazakhstan"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Kenya",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 333
+            lineNumber: 342
         },
         __self: this
     }, "Kenya"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Kiribati",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 334
+            lineNumber: 343
         },
         __self: this
     }, "Kiribati"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Korea, Democratic People's Republic of",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 335
+            lineNumber: 344
         },
         __self: this
     }, "Korea, Democratic People`s Republic of"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Korea, Republic of",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 338
+            lineNumber: 347
         },
         __self: this
     }, "Korea, Republic of"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Kuwait",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 339
+            lineNumber: 348
         },
         __self: this
     }, "Kuwait"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Kyrgyzstan",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 340
+            lineNumber: 349
         },
         __self: this
     }, "Kyrgyzstan"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Lao People's Democratic Republic",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 341
+            lineNumber: 350
         },
         __self: this
     }, "Lao People`s Democratic Republic"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Latvia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 344
+            lineNumber: 353
         },
         __self: this
     }, "Latvia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Lebanon",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 345
+            lineNumber: 354
         },
         __self: this
     }, "Lebanon"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Lesotho",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 346
+            lineNumber: 355
         },
         __self: this
     }, "Lesotho"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Liberia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 347
+            lineNumber: 356
         },
         __self: this
     }, "Liberia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Libyan Arab Jamahiriya",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 348
+            lineNumber: 357
         },
         __self: this
     }, "Libyan Arab Jamahiriya"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Liechtenstein",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 351
+            lineNumber: 360
         },
         __self: this
     }, "Liechtenstein"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Lithuania",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 352
+            lineNumber: 361
         },
         __self: this
     }, "Lithuania"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Luxembourg",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 353
+            lineNumber: 362
         },
         __self: this
     }, "Luxembourg"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Macao",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 354
+            lineNumber: 363
         },
         __self: this
     }, "Macao"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Macedonia, The Former Yugoslav Republic of",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 355
+            lineNumber: 364
         },
         __self: this
     }, "Macedonia, The Former Yugoslav Republic of"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Madagascar",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 358
+            lineNumber: 367
         },
         __self: this
     }, "Madagascar"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Malawi",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 359
+            lineNumber: 368
         },
         __self: this
     }, "Malawi"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Malaysia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 360
+            lineNumber: 369
         },
         __self: this
     }, "Malaysia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Maldives",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 361
+            lineNumber: 370
         },
         __self: this
     }, "Maldives"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Mali",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 362
+            lineNumber: 371
         },
         __self: this
     }, "Mali"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Malta",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 363
+            lineNumber: 372
         },
         __self: this
     }, "Malta"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Marshall Islands",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 364
+            lineNumber: 373
         },
         __self: this
     }, "Marshall Islands"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Martinique",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 365
+            lineNumber: 374
         },
         __self: this
     }, "Martinique"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Mauritania",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 366
+            lineNumber: 375
         },
         __self: this
     }, "Mauritania"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Mauritius",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 367
+            lineNumber: 376
         },
         __self: this
     }, "Mauritius"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Mayotte",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 368
+            lineNumber: 377
         },
         __self: this
     }, "Mayotte"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Mexico",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 369
+            lineNumber: 378
         },
         __self: this
     }, "Mexico"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Micronesia, Federated States of",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 370
+            lineNumber: 379
         },
         __self: this
     }, "Micronesia, Federated States of"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Moldova, Republic of",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 373
+            lineNumber: 382
         },
         __self: this
     }, "Moldova, Republic of"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Monaco",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 376
+            lineNumber: 385
         },
         __self: this
     }, "Monaco"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Mongolia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 377
+            lineNumber: 386
         },
         __self: this
     }, "Mongolia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Montenegro",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 378
+            lineNumber: 387
         },
         __self: this
     }, "Montenegro"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Montserrat",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 379
+            lineNumber: 388
         },
         __self: this
     }, "Montserrat"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Morocco",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 380
+            lineNumber: 389
         },
         __self: this
     }, "Morocco"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Mozambique",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 381
+            lineNumber: 390
         },
         __self: this
     }, "Mozambique"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Myanmar",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 382
+            lineNumber: 391
         },
         __self: this
     }, "Myanmar"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Namibia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 383
+            lineNumber: 392
         },
         __self: this
     }, "Namibia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Nauru",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 384
+            lineNumber: 393
         },
         __self: this
     }, "Nauru"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Nepal",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 385
+            lineNumber: 394
         },
         __self: this
     }, "Nepal"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Netherlands",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 386
+            lineNumber: 395
         },
         __self: this
     }, "Netherlands"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Netherlands Antilles",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 387
+            lineNumber: 396
         },
         __self: this
     }, "Netherlands Antilles"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "New Caledonia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 390
+            lineNumber: 399
         },
         __self: this
     }, "New Caledonia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "New Zealand",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 391
+            lineNumber: 400
         },
         __self: this
     }, "New Zealand"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Nicaragua",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 392
+            lineNumber: 401
         },
         __self: this
     }, "Nicaragua"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Niger",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 393
+            lineNumber: 402
         },
         __self: this
     }, "Niger"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Nigeria",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 394
+            lineNumber: 403
         },
         __self: this
     }, "Nigeria"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Niue",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 395
+            lineNumber: 404
         },
         __self: this
     }, "Niue"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Norfolk Island",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 396
+            lineNumber: 405
         },
         __self: this
     }, "Norfolk Island"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Northern Mariana Islands",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 397
+            lineNumber: 406
         },
         __self: this
     }, "Northern Mariana Islands"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Norway",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 400
+            lineNumber: 409
         },
         __self: this
     }, "Norway"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Oman",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 401
+            lineNumber: 410
         },
         __self: this
     }, "Oman"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Pakistan",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 402
+            lineNumber: 411
         },
         __self: this
     }, "Pakistan"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Palau",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 403
+            lineNumber: 412
         },
         __self: this
     }, "Palau"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Palestinian Territory, Occupied",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 404
+            lineNumber: 413
         },
         __self: this
     }, "Palestinian Territory, Occupied"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Panama",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 407
+            lineNumber: 416
         },
         __self: this
     }, "Panama"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Papua New Guinea",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 408
+            lineNumber: 417
         },
         __self: this
     }, "Papua New Guinea"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Paraguay",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 409
+            lineNumber: 418
         },
         __self: this
     }, "Paraguay"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Peru",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 410
+            lineNumber: 419
         },
         __self: this
     }, "Peru"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Philippines",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 411
+            lineNumber: 420
         },
         __self: this
     }, "Philippines"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Pitcairn",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 412
+            lineNumber: 421
         },
         __self: this
     }, "Pitcairn"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Poland",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 413
+            lineNumber: 422
         },
         __self: this
     }, "Poland"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Portugal",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 414
+            lineNumber: 423
         },
         __self: this
     }, "Portugal"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Puerto Rico",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 415
+            lineNumber: 424
         },
         __self: this
     }, "Puerto Rico"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Qatar",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 416
+            lineNumber: 425
         },
         __self: this
     }, "Qatar"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Reunion",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 417
+            lineNumber: 426
         },
         __self: this
     }, "Reunion"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Romania",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 418
+            lineNumber: 427
         },
         __self: this
     }, "Romania"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Russian Federation",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 419
+            lineNumber: 428
         },
         __self: this
     }, "Russian Federation"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Rwanda",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 420
+            lineNumber: 429
         },
         __self: this
     }, "Rwanda"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Saint Helena",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 421
+            lineNumber: 430
         },
         __self: this
     }, "Saint Helena"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Saint Kitts and Nevis",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 422
+            lineNumber: 431
         },
         __self: this
     }, "Saint Kitts and Nevis"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Saint Lucia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 425
+            lineNumber: 434
         },
         __self: this
     }, "Saint Lucia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Saint Pierre and Miquelon",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 426
+            lineNumber: 435
         },
         __self: this
     }, "Saint Pierre and Miquelon"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Saint Vincent and The Grenadines",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 429
+            lineNumber: 438
         },
         __self: this
     }, "Saint Vincent and The Grenadines"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Samoa",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 432
+            lineNumber: 441
         },
         __self: this
     }, "Samoa"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "San Marino",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 433
+            lineNumber: 442
         },
         __self: this
     }, "San Marino"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Sao Tome and Principe",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 434
+            lineNumber: 443
         },
         __self: this
     }, "Sao Tome and Principe"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Saudi Arabia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 437
+            lineNumber: 446
         },
         __self: this
     }, "Saudi Arabia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Senegal",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 438
+            lineNumber: 447
         },
         __self: this
     }, "Senegal"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Serbia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 439
+            lineNumber: 448
         },
         __self: this
     }, "Serbia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Seychelles",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 440
+            lineNumber: 449
         },
         __self: this
     }, "Seychelles"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Sierra Leone",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 441
+            lineNumber: 450
         },
         __self: this
     }, "Sierra Leone"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Singapore",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 442
+            lineNumber: 451
         },
         __self: this
     }, "Singapore"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Slovakia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 443
+            lineNumber: 452
         },
         __self: this
     }, "Slovakia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Slovenia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 444
+            lineNumber: 453
         },
         __self: this
     }, "Slovenia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Solomon Islands",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 445
+            lineNumber: 454
         },
         __self: this
     }, "Solomon Islands"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Somalia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 446
+            lineNumber: 455
         },
         __self: this
     }, "Somalia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "South Africa",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 447
+            lineNumber: 456
         },
         __self: this
     }, "South Africa"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "South Georgia and The South Sandwich Islands",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 448
+            lineNumber: 457
         },
         __self: this
     }, "South Georgia and The South Sandwich Islands"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Spain",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 451
+            lineNumber: 460
         },
         __self: this
     }, "Spain"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Sri Lanka",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 452
+            lineNumber: 461
         },
         __self: this
     }, "Sri Lanka"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Sudan",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 453
+            lineNumber: 462
         },
         __self: this
     }, "Sudan"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Suriname",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 454
+            lineNumber: 463
         },
         __self: this
     }, "Suriname"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Svalbard and Jan Mayen",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 455
+            lineNumber: 464
         },
         __self: this
     }, "Svalbard and Jan Mayen"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Swaziland",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 458
+            lineNumber: 467
         },
         __self: this
     }, "Swaziland"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Sweden",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 459
+            lineNumber: 468
         },
         __self: this
     }, "Sweden"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Switzerland",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 460
+            lineNumber: 469
         },
         __self: this
     }, "Switzerland"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Syrian Arab Republic",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 461
+            lineNumber: 470
         },
         __self: this
     }, "Syrian Arab Republic"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Taiwan, Province of China",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 464
+            lineNumber: 473
         },
         __self: this
     }, "Taiwan, Province of China"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Tajikistan",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 467
+            lineNumber: 476
         },
         __self: this
     }, "Tajikistan"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Tanzania, United Republic of",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 468
+            lineNumber: 477
         },
         __self: this
     }, "Tanzania, United Republic of"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Thailand",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 471
+            lineNumber: 480
         },
         __self: this
     }, "Thailand"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Timor-leste",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 472
+            lineNumber: 481
         },
         __self: this
     }, "Timor-leste"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Togo",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 473
+            lineNumber: 482
         },
         __self: this
     }, "Togo"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Tokelau",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 474
+            lineNumber: 483
         },
         __self: this
     }, "Tokelau"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Tonga",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 475
+            lineNumber: 484
         },
         __self: this
     }, "Tonga"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Trinidad and Tobago",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 476
+            lineNumber: 485
         },
         __self: this
     }, "Trinidad and Tobago"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Tunisia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 477
+            lineNumber: 486
         },
         __self: this
     }, "Tunisia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Turkey",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 478
+            lineNumber: 487
         },
         __self: this
     }, "Turkey"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Turkmenistan",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 479
+            lineNumber: 488
         },
         __self: this
     }, "Turkmenistan"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Turks and Caicos Islands",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 480
+            lineNumber: 489
         },
         __self: this
     }, "Turks and Caicos Islands"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Tuvalu",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 483
+            lineNumber: 492
         },
         __self: this
     }, "Tuvalu"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Uganda",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 484
+            lineNumber: 493
         },
         __self: this
     }, "Uganda"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Ukraine",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 485
+            lineNumber: 494
         },
         __self: this
     }, "Ukraine"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "United Arab Emirates",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 486
+            lineNumber: 495
         },
         __self: this
     }, "United Arab Emirates"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "United Kingdom",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 489
+            lineNumber: 498
         },
         __self: this
     }, "United Kingdom"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "United States",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 490
+            lineNumber: 499
         },
         __self: this
     }, "United States"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "United States Minor Outlying Islands",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 491
+            lineNumber: 500
         },
         __self: this
     }, "United States Minor Outlying Islands"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Uruguay",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 494
+            lineNumber: 503
         },
         __self: this
     }, "Uruguay"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Uzbekistan",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 495
+            lineNumber: 504
         },
         __self: this
     }, "Uzbekistan"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Vanuatu",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 496
+            lineNumber: 505
         },
         __self: this
     }, "Vanuatu"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Venezuela",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 497
+            lineNumber: 506
         },
         __self: this
     }, "Venezuela"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Viet Nam",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 498
+            lineNumber: 507
         },
         __self: this
     }, "Viet Nam"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Virgin Islands, British",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 499
+            lineNumber: 508
         },
         __self: this
     }, "Virgin Islands, British"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Virgin Islands, U.S.",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 502
+            lineNumber: 511
         },
         __self: this
     }, "Virgin Islands, U.S."), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Wallis and Futuna",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 505
+            lineNumber: 514
         },
         __self: this
     }, "Wallis and Futuna"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Western Sahara",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 506
+            lineNumber: 515
         },
         __self: this
     }, "Western Sahara"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Yemen",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 507
+            lineNumber: 516
         },
         __self: this
     }, "Yemen"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Zambia",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 508
+            lineNumber: 517
         },
         __self: this
     }, "Zambia"), /*#__PURE__*/ _reactDefault.default.createElement("option", {
         value: "Zimbabwe",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 509
+            lineNumber: 518
         },
         __self: this
     }, "Zimbabwe")), errors.country && /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert, {
@@ -46329,7 +46366,7 @@ function EditView() {
         className: "alert-message my-2 p-1",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 512
+            lineNumber: 521
         },
         __self: this
     }, errors.country.message)), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Group, {
@@ -46337,13 +46374,13 @@ function EditView() {
         className: "my-4",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 517
+            lineNumber: 526
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Label, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 518
+            lineNumber: 527
         },
         __self: this
     }, "E-mail:"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Control, {
@@ -46365,7 +46402,7 @@ function EditView() {
         ,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 519
+            lineNumber: 528
         },
         __self: this
     }), errors.email && /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert, {
@@ -46373,7 +46410,7 @@ function EditView() {
         className: "alert-message my-2 p-1",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 539
+            lineNumber: 548
         },
         __self: this
     }, errors.email.message)), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Group, {
@@ -46381,13 +46418,13 @@ function EditView() {
         className: "my-4",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 544
+            lineNumber: 553
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Label, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 545
+            lineNumber: 554
         },
         __self: this
     }, "Password:"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Control, {
@@ -46413,7 +46450,7 @@ function EditView() {
         ,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 546
+            lineNumber: 555
         },
         __self: this
     }), errors.password && /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert, {
@@ -46421,14 +46458,14 @@ function EditView() {
         className: "alert-message my-2 p-1",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 570
+            lineNumber: 579
         },
         __self: this
     }, errors.password.message), /*#__PURE__*/ _reactDefault.default.createElement("p", {
         className: "text-muted my-2",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 574
+            lineNumber: 583
         },
         __self: this
     }, "Please enter a password with at least 8 characters (A-Z, a-z, 0-9, @#$%!?)")), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Group, {
@@ -46436,13 +46473,13 @@ function EditView() {
         className: "my-4",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 579
+            lineNumber: 588
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Label, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 580
+            lineNumber: 589
         },
         __self: this
     }, "Confirm Password:"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Control, {
@@ -46471,7 +46508,7 @@ function EditView() {
         className: "form-neon",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 581
+            lineNumber: 590
         },
         __self: this
     }), errors.passwordConfirmation && /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert, {
@@ -46479,14 +46516,14 @@ function EditView() {
         className: "alert-message my-2 p-1",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 609
+            lineNumber: 618
         },
         __self: this
     }, errors.passwordConfirmation.message), /*#__PURE__*/ _reactDefault.default.createElement("p", {
         className: "text-muted my-2",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 613
+            lineNumber: 622
         },
         __self: this
     }, "Please re-enter your password.")), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Button, {
@@ -46495,7 +46532,7 @@ function EditView() {
         className: "btn-form",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 615
+            lineNumber: 624
         },
         __self: this
     }, "Submit")), /*#__PURE__*/ _reactDefault.default.createElement(ModalRedirect, {
@@ -46504,7 +46541,7 @@ function EditView() {
         ,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 622
+            lineNumber: 631
         },
         __self: this
     }), /*#__PURE__*/ _reactDefault.default.createElement(ModalError, {
@@ -46513,7 +46550,7 @@ function EditView() {
         ,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-edit.jsx",
-            lineNumber: 626
+            lineNumber: 635
         },
         __self: this
     })))));
@@ -46596,10 +46633,11 @@ class FavoriteView extends _reactDefault.default.Component {
             className: "justify-content-md-center",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-favorite.jsx",
-                lineNumber: 33
+                lineNumber: 34
             },
             __self: this
         }, moviesMatched);
+        // Show movies that the user has added to his or her favorite list
         function ShowMovies() {
             movies.map((movie)=>{
                 if (user.favoriteMovies.includes(movie._id)) moviesMatched.push(/*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, {
@@ -46609,29 +46647,30 @@ class FavoriteView extends _reactDefault.default.Component {
                     key: movie._id,
                     __source: {
                         fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-favorite.jsx",
-                        lineNumber: 40
+                        lineNumber: 42
                     },
                     __self: this
                 }, /*#__PURE__*/ _reactDefault.default.createElement(_movieCard.MovieCard, {
                     movie: movie,
                     __source: {
                         fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-favorite.jsx",
-                        lineNumber: 41
+                        lineNumber: 43
                     },
                     __self: this
                 })));
             });
+            // Show special message to the user if the list is empty
             if (moviesMatched.length === 0) favoriteView = /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Row, {
                 className: "justify-content-md-center text-center",
                 __source: {
                     fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-favorite.jsx",
-                    lineNumber: 49
+                    lineNumber: 52
                 },
                 __self: this
             }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, {
                 __source: {
                     fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-favorite.jsx",
-                    lineNumber: 50
+                    lineNumber: 53
                 },
                 __self: this
             }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert, {
@@ -46639,28 +46678,28 @@ class FavoriteView extends _reactDefault.default.Component {
                 variant: "alert",
                 __source: {
                     fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-favorite.jsx",
-                    lineNumber: 51
+                    lineNumber: 54
                 },
                 __self: this
             }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
                 className: "h5",
                 __source: {
                     fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-favorite.jsx",
-                    lineNumber: 52
+                    lineNumber: 55
                 },
                 __self: this
             }, "Hey, it's looking a little empty around here!"), /*#__PURE__*/ _reactDefault.default.createElement("p", {
                 className: "h5",
                 __source: {
                     fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-favorite.jsx",
-                    lineNumber: 55
+                    lineNumber: 58
                 },
                 __self: this
             }, "Why don't you add your", ' ', /*#__PURE__*/ _reactDefault.default.createElement("a", {
                 href: "/movies",
                 __source: {
                     fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-favorite.jsx",
-                    lineNumber: 57
+                    lineNumber: 60
                 },
                 __self: this
             }, "favorite movie"), " from 1987?"))));
@@ -46670,14 +46709,14 @@ class FavoriteView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-favorite.jsx",
-                lineNumber: 69
+                lineNumber: 72
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Row, {
             className: "justify-content-md-center",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-favorite.jsx",
-                lineNumber: 70
+                lineNumber: 73
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, {
@@ -46685,14 +46724,14 @@ class FavoriteView extends _reactDefault.default.Component {
             md: 8,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-favorite.jsx",
-                lineNumber: 71
+                lineNumber: 74
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
             className: "my-4",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-favorite.jsx",
-                lineNumber: 72
+                lineNumber: 75
             },
             __self: this
         }, "My favorite movies"))), favoriteView));
@@ -46714,6 +46753,7 @@ helpers.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+// Rendering movie components: 1. movie-main -> 2. movies-list -> * 3. movie-card -> 4. movie-view
 parcelHelpers.export(exports, "MovieCard", ()=>MovieCard
 );
 var _react = require("react");
@@ -46747,10 +46787,12 @@ class MovieCard extends _reactDefault.default.Component {
         const movieID = movie._id;
         const urlFavorite = `https://myvhs.herokuapp.com/users/${user.username}/favorites/${movieID}`;
         const urlToWatch = `https://myvhs.herokuapp.com/users/${user.username}/towatch/${movieID}`;
+        // Add or remove movies from favorites list
         function ToggleFavoriteMovie() {
             if (user.favoriteMovies.includes(movieID)) RemoveFavoriteMovie();
             else AddFavoriteMovie();
         }
+        // Add or remove movies from to-watch list
         function ToggleToWatchMovie() {
             if (user.toWatchMovies.includes(movieID)) RemoveToWatchMovie();
             else AddToWatchMovie();
@@ -46793,11 +46835,12 @@ class MovieCard extends _reactDefault.default.Component {
                 console.log(error);
             });
         }
+        // Add interaction buttons (show more, favorites and to-watch)
         const btnShow = /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
             to: `/movies/${movieID}`,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-card\\movie-card.jsx",
-                lineNumber: 105
+                lineNumber: 109
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Button, {
@@ -46805,7 +46848,7 @@ class MovieCard extends _reactDefault.default.Component {
             variant: "outline-info",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-card\\movie-card.jsx",
-                lineNumber: 106
+                lineNumber: 110
             },
             __self: this
         }, "Show more"));
@@ -46816,7 +46859,7 @@ class MovieCard extends _reactDefault.default.Component {
             }, "Favorite"),
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-card\\movie-card.jsx",
-                lineNumber: 113
+                lineNumber: 117
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Button, {
@@ -46826,7 +46869,7 @@ class MovieCard extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-card\\movie-card.jsx",
-                lineNumber: 116
+                lineNumber: 120
             },
             __self: this
         }, "\u2605"));
@@ -46837,7 +46880,7 @@ class MovieCard extends _reactDefault.default.Component {
             }, "To Watch"),
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-card\\movie-card.jsx",
-                lineNumber: 126
+                lineNumber: 130
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Button, {
@@ -46847,7 +46890,7 @@ class MovieCard extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-card\\movie-card.jsx",
-                lineNumber: 129
+                lineNumber: 133
             },
             __self: this
         }, "\u25ef"));
@@ -46855,7 +46898,7 @@ class MovieCard extends _reactDefault.default.Component {
             className: "card-image h-100",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-card\\movie-card.jsx",
-                lineNumber: 139
+                lineNumber: 143
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Img, {
@@ -46863,53 +46906,53 @@ class MovieCard extends _reactDefault.default.Component {
             src: movie.imagePath,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-card\\movie-card.jsx",
-                lineNumber: 140
+                lineNumber: 144
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Body, {
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-card\\movie-card.jsx",
-                lineNumber: 141
+                lineNumber: 145
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Title, {
             className: "text-center",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-card\\movie-card.jsx",
-                lineNumber: 142
+                lineNumber: 146
             },
             __self: this
         }, movie.title), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Text, {
             className: "text-center",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-card\\movie-card.jsx",
-                lineNumber: 143
+                lineNumber: 147
             },
             __self: this
         }, movie.releaseYear), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Text, {
             className: "font-italic",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-card\\movie-card.jsx",
-                lineNumber: 144
+                lineNumber: 148
             },
             __self: this
         }, movie.description)), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Footer, {
             className: "text-center",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-card\\movie-card.jsx",
-                lineNumber: 146
+                lineNumber: 150
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-card\\movie-card.jsx",
-                lineNumber: 147
+                lineNumber: 151
             },
             __self: this
         }, btnShow), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-card\\movie-card.jsx",
-                lineNumber: 148
+                lineNumber: 152
             },
             __self: this
         }, btnFavorite, btnWatch))));
@@ -46973,10 +47016,11 @@ class ToWatchView extends _reactDefault.default.Component {
             className: "justify-content-md-center",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-towatch.jsx",
-                lineNumber: 33
+                lineNumber: 34
             },
             __self: this
         }, moviesMatched);
+        // Show movies that the user has added to his or her to-watch list
         function ShowMovies() {
             movies.map((movie)=>{
                 if (user.toWatchMovies.includes(movie._id)) moviesMatched.push(/*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, {
@@ -46986,29 +47030,30 @@ class ToWatchView extends _reactDefault.default.Component {
                     key: movie._id,
                     __source: {
                         fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-towatch.jsx",
-                        lineNumber: 40
+                        lineNumber: 42
                     },
                     __self: this
                 }, /*#__PURE__*/ _reactDefault.default.createElement(_movieCard.MovieCard, {
                     movie: movie,
                     __source: {
                         fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-towatch.jsx",
-                        lineNumber: 41
+                        lineNumber: 43
                     },
                     __self: this
                 })));
             });
+            // Show special message to the user if the list is empty
             if (moviesMatched.length === 0) towatchView = /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Row, {
                 className: "justify-content-md-center text-center",
                 __source: {
                     fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-towatch.jsx",
-                    lineNumber: 49
+                    lineNumber: 52
                 },
                 __self: this
             }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, {
                 __source: {
                     fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-towatch.jsx",
-                    lineNumber: 50
+                    lineNumber: 53
                 },
                 __self: this
             }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert, {
@@ -47016,28 +47061,28 @@ class ToWatchView extends _reactDefault.default.Component {
                 variant: "alert",
                 __source: {
                     fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-towatch.jsx",
-                    lineNumber: 51
+                    lineNumber: 54
                 },
                 __self: this
             }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
                 className: "h5",
                 __source: {
                     fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-towatch.jsx",
-                    lineNumber: 52
+                    lineNumber: 55
                 },
                 __self: this
             }, "Hey, it's looking a little empty around here!"), /*#__PURE__*/ _reactDefault.default.createElement("p", {
                 className: "h5",
                 __source: {
                     fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-towatch.jsx",
-                    lineNumber: 55
+                    lineNumber: 58
                 },
                 __self: this
             }, "Why don't you add ", /*#__PURE__*/ _reactDefault.default.createElement("a", {
                 href: "/movies",
                 __source: {
                     fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-towatch.jsx",
-                    lineNumber: 56
+                    lineNumber: 59
                 },
                 __self: this
             }, "some movies"), " to watch this weekend?"))));
@@ -47047,14 +47092,14 @@ class ToWatchView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-towatch.jsx",
-                lineNumber: 69
+                lineNumber: 72
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Row, {
             className: "justify-content-md-center",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-towatch.jsx",
-                lineNumber: 70
+                lineNumber: 73
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, {
@@ -47062,14 +47107,14 @@ class ToWatchView extends _reactDefault.default.Component {
             md: 8,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-towatch.jsx",
-                lineNumber: 71
+                lineNumber: 74
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
             className: "my-4",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\profile-view\\profile-towatch.jsx",
-                lineNumber: 72
+                lineNumber: 75
             },
             __self: this
         }, "Movies to watch"))), towatchView));
@@ -47091,6 +47136,7 @@ helpers.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+// Rendering movie components: * 1. movie-main -> 2. movies-list -> 3. movie-card -> 4. movie-view
 parcelHelpers.export(exports, "MovieMain", ()=>MovieMain
 );
 var _react = require("react");
@@ -47131,21 +47177,21 @@ class MovieMain extends _reactDefault.default.Component {
             className: "main-view text-center my-3",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-main\\movie-main.jsx",
-                lineNumber: 40
+                lineNumber: 41
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
             className: "my-4",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-main\\movie-main.jsx",
-                lineNumber: 41
+                lineNumber: 42
             },
             __self: this
         }, "Movies"), /*#__PURE__*/ _reactDefault.default.createElement(_moviesListDefault.default, {
             movies: movies,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-main\\movie-main.jsx",
-                lineNumber: 42
+                lineNumber: 43
             },
             __self: this
         }), loading && /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Spinner, {
@@ -47154,14 +47200,14 @@ class MovieMain extends _reactDefault.default.Component {
             role: "status",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-main\\movie-main.jsx",
-                lineNumber: 44
+                lineNumber: 45
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "sr-only",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-main\\movie-main.jsx",
-                lineNumber: 45
+                lineNumber: 46
             },
             __self: this
         }, "Loading..."))));
@@ -47211,42 +47257,45 @@ const mapStateToProps = (state)=>{
         visibilityFilter
     };
 };
+// Rendering movie components: 1. movie-main -> * 2. movies-list -> 3. movie-card -> 4. movie-view
 function MoviesList(props) {
     const { movies , visibilityFilter  } = props;
     let filteredMovies = movies;
+    // Filter movies
     if (visibilityFilter !== '') filteredMovies = movies.filter((movie)=>movie.title.toLowerCase().includes(visibilityFilter.toLowerCase())
     );
+    // Error catcher
     if (!movies) return(/*#__PURE__*/ _reactDefault.default.createElement(_errorListDefault.default, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movies-list\\movies-list.jsx",
-            lineNumber: 24
+            lineNumber: 27
         },
         __self: this
     }));
     return(/*#__PURE__*/ _reactDefault.default.createElement(_reactDefault.default.Fragment, null, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Row, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movies-list\\movies-list.jsx",
-            lineNumber: 28
+            lineNumber: 31
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, {
         className: "my-3",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movies-list\\movies-list.jsx",
-            lineNumber: 29
+            lineNumber: 32
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_visibilityFilterInputDefault.default, {
         visibilityFilter: visibilityFilter,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movies-list\\movies-list.jsx",
-            lineNumber: 30
+            lineNumber: 33
         },
         __self: this
     }))), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Row, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movies-list\\movies-list.jsx",
-            lineNumber: 33
+            lineNumber: 36
         },
         __self: this
     }, filteredMovies.map((movie)=>/*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, {
@@ -47256,14 +47305,14 @@ function MoviesList(props) {
             key: movie._id,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movies-list\\movies-list.jsx",
-                lineNumber: 35
+                lineNumber: 38
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_movieCard.MovieCard, {
             movie: movie,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movies-list\\movies-list.jsx",
-                lineNumber: 36
+                lineNumber: 39
             },
             __self: this
         }))
@@ -47299,6 +47348,7 @@ var _propTypes = require("prop-types");
 var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _actions = require("../../actions/actions");
 var _reactBootstrap = require("react-bootstrap");
+// Filter items from the lists of actors, directors, genres and movies
 function VisibilityFilterInput(props) {
     return(/*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form.Control, {
         onChange: (e)=>props.setFilter(e.target.value)
@@ -47307,7 +47357,7 @@ function VisibilityFilterInput(props) {
         placeholder: "Search for a movie here!",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\visibility-filter-input\\visibility-filter-input.jsx",
-            lineNumber: 9
+            lineNumber: 10
         },
         __self: this
     }));
@@ -47343,32 +47393,32 @@ function ErrorList() {
     return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\messages\\error-list.jsx",
-            lineNumber: 5
+            lineNumber: 6
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement("h2", {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\messages\\error-list.jsx",
-            lineNumber: 6
+            lineNumber: 7
         },
         __self: this
     }, "\"Houston, we have a problem!\""), /*#__PURE__*/ _reactDefault.default.createElement("p", {
         className: "h4",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\messages\\error-list.jsx",
-            lineNumber: 7
+            lineNumber: 8
         },
         __self: this
     }, "We are working on it"), /*#__PURE__*/ _reactDefault.default.createElement("p", {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\messages\\error-list.jsx",
-            lineNumber: 8
+            lineNumber: 9
         },
         __self: this
     }, "Sorry, an unexpected error occurred during the update. Our technical team is already working on it from our moonbase."), /*#__PURE__*/ _reactDefault.default.createElement("p", {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\messages\\error-list.jsx",
-            lineNumber: 12
+            lineNumber: 13
         },
         __self: this
     }, "Please try again later.")));
@@ -47436,16 +47486,19 @@ class MovieView extends _reactDefault.default.Component {
             loading: false
         });
     }
+    // Matches the data between the queried movie and the genres DB collection
     getGenreName(id) {
         const genre = this.state.genres.find((genre1)=>genre1._id === id
         );
         return genre.name;
     }
+    // Matches the data between the queried movie and the directors DB collection
     getDirectorName(id) {
         const director = this.state.directors.find((director1)=>director1._id === id
         );
         return director?.name;
     }
+    // Matches the data between the queried movie and the actors DB collection
     getActorName(id) {
         const actor = this.state.actors.find((actor1)=>actor1._id === id
         );
@@ -47456,10 +47509,12 @@ class MovieView extends _reactDefault.default.Component {
         const movieID = movie._id;
         const urlFavorite = `https://myvhs.herokuapp.com/users/${user.username}/favorites/${movieID}`;
         const urlToWatch = `https://myvhs.herokuapp.com/users/${user.username}/towatch/${movieID}`;
+        // Add or remove movies from favorites list
         function ToggleFavoriteMovie() {
             if (user.favoriteMovies.includes(movieID)) RemoveFavoriteMovie();
             else AddFavoriteMovie();
         }
+        // Add or remove movies from to-watch list
         function ToggleToWatchMovie() {
             if (user.toWatchMovies.includes(movieID)) RemoveToWatchMovie();
             else AddToWatchMovie();
@@ -47502,6 +47557,7 @@ class MovieView extends _reactDefault.default.Component {
                 console.log(error);
             });
         }
+        // Add interaction buttons (show more, favorites and to-watch)
         const btnFavorite = /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.OverlayTrigger, {
             placement: "top",
             overlay: /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Tooltip, {
@@ -47509,7 +47565,7 @@ class MovieView extends _reactDefault.default.Component {
             }, "Favorite"),
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 150
+                lineNumber: 157
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Button, {
@@ -47519,7 +47575,7 @@ class MovieView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 153
+                lineNumber: 160
             },
             __self: this
         }, "\u2605"));
@@ -47530,7 +47586,7 @@ class MovieView extends _reactDefault.default.Component {
             }, "To Watch"),
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 163
+                lineNumber: 170
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Button, {
@@ -47540,7 +47596,7 @@ class MovieView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 166
+                lineNumber: 173
             },
             __self: this
         }, "\u25ef"));
@@ -47548,14 +47604,14 @@ class MovieView extends _reactDefault.default.Component {
             className: "main-view text-center d-flex justify-content-center align-items-center",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 176
+                lineNumber: 183
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Row, {
             className: "align-items-center",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 177
+                lineNumber: 184
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, {
@@ -47563,14 +47619,14 @@ class MovieView extends _reactDefault.default.Component {
             md: 6,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 178
+                lineNumber: 185
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "movie-image",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 179
+                lineNumber: 186
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("img", {
@@ -47578,7 +47634,7 @@ class MovieView extends _reactDefault.default.Component {
             className: "film-image mt-5 mb-3",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 180
+                lineNumber: 187
             },
             __self: this
         })), btnFavorite, btnWatch), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, {
@@ -47586,7 +47642,7 @@ class MovieView extends _reactDefault.default.Component {
             md: 6,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 185
+                lineNumber: 192
             },
             __self: this
         }, loading && /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Spinner, {
@@ -47595,98 +47651,98 @@ class MovieView extends _reactDefault.default.Component {
             role: "status",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 187
+                lineNumber: 194
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "sr-only",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 188
+                lineNumber: 195
             },
             __self: this
         }, "Loading...")), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "movie-title my-4",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 191
+                lineNumber: 198
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
             className: "value",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 192
+                lineNumber: 199
             },
             __self: this
         }, movie.title)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "movie-description my-4",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 194
+                lineNumber: 201
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "value font-italic",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 195
+                lineNumber: 202
             },
             __self: this
         }, movie.description)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "movie-year my-4",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 197
+                lineNumber: 204
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "label font-weight-bold",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 198
+                lineNumber: 205
             },
             __self: this
         }, "Release Year: "), /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "value",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 199
+                lineNumber: 206
             },
             __self: this
         }, movie.releaseYear)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "movie-time my-4",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 201
+                lineNumber: 208
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "label font-weight-bold",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 202
+                lineNumber: 209
             },
             __self: this
         }, "Run Time: "), /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "value",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 203
+                lineNumber: 210
             },
             __self: this
         }, movie.runTime)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "movie-genres my-4",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 205
+                lineNumber: 212
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
             className: "label font-weight-bold",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 206
+                lineNumber: 213
             },
             __self: this
         }, "Genres: "), movie.genre && movie.genre.map((genre, index)=>/*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
@@ -47694,7 +47750,7 @@ class MovieView extends _reactDefault.default.Component {
                 to: `/genres/${genre}`,
                 __source: {
                     fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                    lineNumber: 209
+                    lineNumber: 216
                 },
                 __self: this
             }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Button, {
@@ -47703,7 +47759,7 @@ class MovieView extends _reactDefault.default.Component {
                 size: "sm",
                 __source: {
                     fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                    lineNumber: 210
+                    lineNumber: 217
                 },
                 __self: this
             }, this.getGenreName(genre)))
@@ -47711,21 +47767,21 @@ class MovieView extends _reactDefault.default.Component {
             className: "movie-director my-4",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 216
+                lineNumber: 223
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
             className: "label font-weight-bold",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 217
+                lineNumber: 224
             },
             __self: this
         }, "Director: "), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
             to: `/directors/${movie.director}`,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 218
+                lineNumber: 225
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Button, {
@@ -47734,21 +47790,21 @@ class MovieView extends _reactDefault.default.Component {
             size: "sm",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 219
+                lineNumber: 226
             },
             __self: this
         }, this.getDirectorName(movie.director)))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "movie-actors my-4",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 224
+                lineNumber: 231
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
             className: "label font-weight-bold",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                lineNumber: 225
+                lineNumber: 232
             },
             __self: this
         }, "Main Cast: "), movie.actors && movie.actors.map((actor, index)=>/*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
@@ -47756,7 +47812,7 @@ class MovieView extends _reactDefault.default.Component {
                 to: `/actors/${actor}`,
                 __source: {
                     fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                    lineNumber: 228
+                    lineNumber: 235
                 },
                 __self: this
             }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Button, {
@@ -47765,7 +47821,7 @@ class MovieView extends _reactDefault.default.Component {
                 size: "sm",
                 __source: {
                     fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\movie-view\\movie-view.jsx",
-                    lineNumber: 229
+                    lineNumber: 236
                 },
                 __self: this
             }, this.getActorName(actor)))
@@ -47791,6 +47847,7 @@ helpers.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+// Rendering genre components: * 1. genre-main -> 2. genres-list -> 3. genre-card -> 4. genre-view
 parcelHelpers.export(exports, "GenreMain", ()=>GenreMain
 );
 var _react = require("react");
@@ -47831,21 +47888,21 @@ class GenreMain extends _reactDefault.default.Component {
             className: "main-view text-center my-3",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genre-main\\genre-main.jsx",
-                lineNumber: 40
+                lineNumber: 41
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
             className: "my-4",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genre-main\\genre-main.jsx",
-                lineNumber: 41
+                lineNumber: 42
             },
             __self: this
         }, "Genres"), /*#__PURE__*/ _reactDefault.default.createElement(_genresListDefault.default, {
             genres: genres,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genre-main\\genre-main.jsx",
-                lineNumber: 42
+                lineNumber: 43
             },
             __self: this
         }), loading && /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Spinner, {
@@ -47854,14 +47911,14 @@ class GenreMain extends _reactDefault.default.Component {
             role: "status",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genre-main\\genre-main.jsx",
-                lineNumber: 44
+                lineNumber: 45
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "sr-only",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genre-main\\genre-main.jsx",
-                lineNumber: 45
+                lineNumber: 46
             },
             __self: this
         }, "Loading..."))));
@@ -47911,42 +47968,45 @@ const mapStateToProps = (state)=>{
         visibilityFilter
     };
 };
+// Rendering genre components: 1. genre-main -> * 2. genres-list -> 3. genre-card -> 4. genre-view
 function GenresList(props) {
     const { genres , visibilityFilter  } = props;
     let filteredGenres = genres;
+    // Filter genres
     if (visibilityFilter !== '') filteredGenres = genres.filter((genre)=>genre.name.toLowerCase().includes(visibilityFilter.toLowerCase())
     );
+    // Error catcher
     if (!genres) return(/*#__PURE__*/ _reactDefault.default.createElement(_errorListDefault.default, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genres-list\\genres-list.jsx",
-            lineNumber: 24
+            lineNumber: 27
         },
         __self: this
     }));
     return(/*#__PURE__*/ _reactDefault.default.createElement(_reactDefault.default.Fragment, null, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Row, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genres-list\\genres-list.jsx",
-            lineNumber: 28
+            lineNumber: 31
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, {
         className: "my-3",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genres-list\\genres-list.jsx",
-            lineNumber: 29
+            lineNumber: 32
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_visibilityFilterInputDefault.default, {
         visibilityFilter: visibilityFilter,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genres-list\\genres-list.jsx",
-            lineNumber: 30
+            lineNumber: 33
         },
         __self: this
     }))), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Row, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genres-list\\genres-list.jsx",
-            lineNumber: 33
+            lineNumber: 36
         },
         __self: this
     }, filteredGenres.map((genre)=>/*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, {
@@ -47956,14 +48016,14 @@ function GenresList(props) {
             key: genre._id,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genres-list\\genres-list.jsx",
-                lineNumber: 35
+                lineNumber: 38
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_genreCard.GenreCard, {
             genre: genre,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genres-list\\genres-list.jsx",
-                lineNumber: 36
+                lineNumber: 39
             },
             __self: this
         }))
@@ -47992,6 +48052,7 @@ helpers.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+// Rendering genre components: 1. genre-main -> 2. genres-list -> * 3. genre-card -> 4. genre-view
 parcelHelpers.export(exports, "GenreCard", ()=>GenreCard
 );
 var _react = require("react");
@@ -48007,7 +48068,7 @@ class GenreCard extends _reactDefault.default.Component {
             className: "card-image h-100",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genre-card\\genre-card.jsx",
-                lineNumber: 11
+                lineNumber: 12
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Img, {
@@ -48016,41 +48077,41 @@ class GenreCard extends _reactDefault.default.Component {
             className: "p-3",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genre-card\\genre-card.jsx",
-                lineNumber: 12
+                lineNumber: 13
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Body, {
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genre-card\\genre-card.jsx",
-                lineNumber: 13
+                lineNumber: 14
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Title, {
             className: "text-center",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genre-card\\genre-card.jsx",
-                lineNumber: 14
+                lineNumber: 15
             },
             __self: this
         }, genre.name)), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Footer, {
             className: "text-center",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genre-card\\genre-card.jsx",
-                lineNumber: 16
+                lineNumber: 17
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
             to: `/genres/${genre._id}`,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genre-card\\genre-card.jsx",
-                lineNumber: 17
+                lineNumber: 18
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Button, {
             variant: "outline-info",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genre-card\\genre-card.jsx",
-                lineNumber: 18
+                lineNumber: 19
             },
             __self: this
         }, "Show more")))));
@@ -48112,6 +48173,7 @@ class GenreView extends _reactDefault.default.Component {
     render() {
         let { genre , movies , loading  } = this.state;
         let moviesMatched = [];
+        // Shows the movies that belong to the genre
         function ShowMovies() {
             movies.map((movie)=>{
                 if (movie.genre.includes(genre._id)) moviesMatched.push(/*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, {
@@ -48121,14 +48183,14 @@ class GenreView extends _reactDefault.default.Component {
                     key: movie._id,
                     __source: {
                         fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genre-view\\genre-view.jsx",
-                        lineNumber: 44
+                        lineNumber: 46
                     },
                     __self: this
                 }, /*#__PURE__*/ _reactDefault.default.createElement(_movieCard.MovieCard, {
                     movie: movie,
                     __source: {
                         fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genre-view\\genre-view.jsx",
-                        lineNumber: 45
+                        lineNumber: 47
                     },
                     __self: this
                 })));
@@ -48139,14 +48201,14 @@ class GenreView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genre-view\\genre-view.jsx",
-                lineNumber: 55
+                lineNumber: 57
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Row, {
             className: "justify-content-md-center",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genre-view\\genre-view.jsx",
-                lineNumber: 56
+                lineNumber: 58
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, {
@@ -48154,14 +48216,14 @@ class GenreView extends _reactDefault.default.Component {
             md: 8,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genre-view\\genre-view.jsx",
-                lineNumber: 57
+                lineNumber: 59
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "genre-image",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genre-view\\genre-view.jsx",
-                lineNumber: 58
+                lineNumber: 60
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("img", {
@@ -48169,49 +48231,49 @@ class GenreView extends _reactDefault.default.Component {
             className: "film-image mt-5 mb-3 p-3",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genre-view\\genre-view.jsx",
-                lineNumber: 59
+                lineNumber: 61
             },
             __self: this
         })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "genre-name my-4",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genre-view\\genre-view.jsx",
-                lineNumber: 61
+                lineNumber: 63
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
             className: "value",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genre-view\\genre-view.jsx",
-                lineNumber: 62
+                lineNumber: 64
             },
             __self: this
         }, genre.name)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "genre-description my-4",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genre-view\\genre-view.jsx",
-                lineNumber: 64
+                lineNumber: 66
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "value font-italic",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genre-view\\genre-view.jsx",
-                lineNumber: 65
+                lineNumber: 67
             },
             __self: this
         }, genre.description)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "my-4",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genre-view\\genre-view.jsx",
-                lineNumber: 67
+                lineNumber: 69
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
             className: "label h3 font-weight-bold",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genre-view\\genre-view.jsx",
-                lineNumber: 68
+                lineNumber: 70
             },
             __self: this
         }, "Movies")), loading && /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Spinner, {
@@ -48220,21 +48282,21 @@ class GenreView extends _reactDefault.default.Component {
             role: "status",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genre-view\\genre-view.jsx",
-                lineNumber: 71
+                lineNumber: 73
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "sr-only",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genre-view\\genre-view.jsx",
-                lineNumber: 72
+                lineNumber: 74
             },
             __self: this
         }, "Loading...")))), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Row, {
             className: "justify-content-center",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\genre-view\\genre-view.jsx",
-                lineNumber: 77
+                lineNumber: 79
             },
             __self: this
         }, moviesMatched)));
@@ -48259,6 +48321,7 @@ helpers.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+// Rendering director components: * 1. director-main -> 2. director-list -> 3. director-card -> 4. director-view
 parcelHelpers.export(exports, "DirectorMain", ()=>DirectorMain
 );
 var _react = require("react");
@@ -48299,21 +48362,21 @@ class DirectorMain extends _reactDefault.default.Component {
             className: "main-view text-center my-3",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-main\\director-main.jsx",
-                lineNumber: 40
+                lineNumber: 41
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
             className: "my-4",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-main\\director-main.jsx",
-                lineNumber: 41
+                lineNumber: 42
             },
             __self: this
         }, "Directors"), /*#__PURE__*/ _reactDefault.default.createElement(_directorsListDefault.default, {
             directors: directors,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-main\\director-main.jsx",
-                lineNumber: 42
+                lineNumber: 43
             },
             __self: this
         }), loading && /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Spinner, {
@@ -48322,14 +48385,14 @@ class DirectorMain extends _reactDefault.default.Component {
             role: "status",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-main\\director-main.jsx",
-                lineNumber: 44
+                lineNumber: 45
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "sr-only",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-main\\director-main.jsx",
-                lineNumber: 45
+                lineNumber: 46
             },
             __self: this
         }, "Loading..."))));
@@ -48379,42 +48442,45 @@ const mapStateToProps = (state)=>{
         visibilityFilter
     };
 };
+// Rendering director components: 1. director-main -> * 2. directors-list -> 3. director-card -> 4. director-view
 function DirectorsList(props) {
     const { directors , visibilityFilter  } = props;
     let filteredDirectors = directors;
+    // Filter directors
     if (visibilityFilter !== '') filteredDirectors = directors.filter((director)=>director.name.toLowerCase().includes(visibilityFilter.toLowerCase())
     );
+    // Error catcher
     if (!directors) return(/*#__PURE__*/ _reactDefault.default.createElement(_errorListDefault.default, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\directors-list\\directors-list.jsx",
-            lineNumber: 24
+            lineNumber: 27
         },
         __self: this
     }));
     return(/*#__PURE__*/ _reactDefault.default.createElement(_reactDefault.default.Fragment, null, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Row, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\directors-list\\directors-list.jsx",
-            lineNumber: 28
+            lineNumber: 31
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, {
         className: "my-3",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\directors-list\\directors-list.jsx",
-            lineNumber: 29
+            lineNumber: 32
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_visibilityFilterInputDefault.default, {
         visibilityFilter: visibilityFilter,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\directors-list\\directors-list.jsx",
-            lineNumber: 30
+            lineNumber: 33
         },
         __self: this
     }))), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Row, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\directors-list\\directors-list.jsx",
-            lineNumber: 33
+            lineNumber: 36
         },
         __self: this
     }, filteredDirectors.map((director)=>/*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, {
@@ -48424,14 +48490,14 @@ function DirectorsList(props) {
             key: director._id,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\directors-list\\directors-list.jsx",
-                lineNumber: 35
+                lineNumber: 38
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_directorCard.DirectorCard, {
             director: director,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\directors-list\\directors-list.jsx",
-                lineNumber: 36
+                lineNumber: 39
             },
             __self: this
         }))
@@ -48460,6 +48526,7 @@ helpers.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+// Rendering director components: 1. director-main -> 2. directors-list -> * 3. director-card -> 4. director-view
 parcelHelpers.export(exports, "DirectorCard", ()=>DirectorCard
 );
 var _react = require("react");
@@ -48475,7 +48542,7 @@ class DirectorCard extends _reactDefault.default.Component {
             className: "card-image h-100",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-card\\director-card.jsx",
-                lineNumber: 11
+                lineNumber: 12
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Img, {
@@ -48483,41 +48550,41 @@ class DirectorCard extends _reactDefault.default.Component {
             src: director.imagePath,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-card\\director-card.jsx",
-                lineNumber: 12
+                lineNumber: 13
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Body, {
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-card\\director-card.jsx",
-                lineNumber: 13
+                lineNumber: 14
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Title, {
             className: "text-center",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-card\\director-card.jsx",
-                lineNumber: 14
+                lineNumber: 15
             },
             __self: this
         }, director.name)), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Footer, {
             className: "text-center",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-card\\director-card.jsx",
-                lineNumber: 16
+                lineNumber: 17
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
             to: `/directors/${director._id}`,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-card\\director-card.jsx",
-                lineNumber: 17
+                lineNumber: 18
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Button, {
             variant: "outline-info",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-card\\director-card.jsx",
-                lineNumber: 18
+                lineNumber: 19
             },
             __self: this
         }, "Show more")))));
@@ -48580,30 +48647,32 @@ class DirectorView extends _reactDefault.default.Component {
         let { director , movies , loading  } = this.state;
         let directorDead;
         let moviesMatched = [];
+        // Shows date of death if the director is dead
         function DirectorIsDead() {
             if (director.deathYear) directorDead = /*#__PURE__*/ _reactDefault.default.createElement("div", {
                 className: "director-death",
                 __source: {
                     fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-view\\director-view.jsx",
-                    lineNumber: 46
+                    lineNumber: 48
                 },
                 __self: this
             }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
                 className: "label font-weight-bold",
                 __source: {
                     fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-view\\director-view.jsx",
-                    lineNumber: 47
+                    lineNumber: 49
                 },
                 __self: this
             }, "Year of death: "), /*#__PURE__*/ _reactDefault.default.createElement("span", {
                 className: "value",
                 __source: {
                     fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-view\\director-view.jsx",
-                    lineNumber: 48
+                    lineNumber: 50
                 },
                 __self: this
             }, director.deathYear));
         }
+        // Shows the movies that the director has directed
         function ShowMovies() {
             movies.map((movie)=>{
                 if (movie.director.includes(director._id)) moviesMatched.push(/*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, {
@@ -48613,14 +48682,14 @@ class DirectorView extends _reactDefault.default.Component {
                     key: movie._id,
                     __source: {
                         fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-view\\director-view.jsx",
-                        lineNumber: 58
+                        lineNumber: 61
                     },
                     __self: this
                 }, /*#__PURE__*/ _reactDefault.default.createElement(_movieCard.MovieCard, {
                     movie: movie,
                     __source: {
                         fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-view\\director-view.jsx",
-                        lineNumber: 59
+                        lineNumber: 62
                     },
                     __self: this
                 })));
@@ -48632,14 +48701,14 @@ class DirectorView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 70
+                lineNumber: 73
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Row, {
             className: "justify-content-md-center",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 71
+                lineNumber: 74
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, {
@@ -48647,14 +48716,14 @@ class DirectorView extends _reactDefault.default.Component {
             md: 8,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 72
+                lineNumber: 75
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "director-image",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 73
+                lineNumber: 76
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("img", {
@@ -48662,70 +48731,70 @@ class DirectorView extends _reactDefault.default.Component {
             className: "film-image mt-5 mb-3",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 74
+                lineNumber: 77
             },
             __self: this
         })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "director-name my-4",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 76
+                lineNumber: 79
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
             className: "value",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 77
+                lineNumber: 80
             },
             __self: this
         }, director.name)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "director-birth",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 79
+                lineNumber: 82
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "label font-weight-bold",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 80
+                lineNumber: 83
             },
             __self: this
         }, "Year of birth: "), /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "value",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 81
+                lineNumber: 84
             },
             __self: this
         }, director.birthYear)), directorDead, /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "director-description my-4",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 84
+                lineNumber: 87
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "value font-italic",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 85
+                lineNumber: 88
             },
             __self: this
         }, director.bio)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "my-4",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 87
+                lineNumber: 90
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
             className: "label h3 font-weight-bold",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 88
+                lineNumber: 91
             },
             __self: this
         }, "Movies:")), loading && /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Spinner, {
@@ -48734,21 +48803,21 @@ class DirectorView extends _reactDefault.default.Component {
             role: "status",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 91
+                lineNumber: 94
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "sr-only",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 92
+                lineNumber: 95
             },
             __self: this
         }, "Loading...")))), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Row, {
             className: "justify-content-center",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\director-view\\director-view.jsx",
-                lineNumber: 97
+                lineNumber: 100
             },
             __self: this
         }, moviesMatched)));
@@ -48773,6 +48842,7 @@ helpers.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+// Rendering actor components: * 1. actor-main -> 2. actors-list -> 3. actor-card -> 4. actor-view
 parcelHelpers.export(exports, "ActorMain", ()=>ActorMain
 );
 var _react = require("react");
@@ -48813,21 +48883,21 @@ class ActorMain extends _reactDefault.default.Component {
             className: "main-view text-center my-3",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-main\\actor-main.jsx",
-                lineNumber: 40
+                lineNumber: 41
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
             className: "my-4",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-main\\actor-main.jsx",
-                lineNumber: 41
+                lineNumber: 42
             },
             __self: this
         }, "Actors"), /*#__PURE__*/ _reactDefault.default.createElement(_actorsListDefault.default, {
             actors: actors,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-main\\actor-main.jsx",
-                lineNumber: 42
+                lineNumber: 43
             },
             __self: this
         }), loading && /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Spinner, {
@@ -48836,14 +48906,14 @@ class ActorMain extends _reactDefault.default.Component {
             role: "status",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-main\\actor-main.jsx",
-                lineNumber: 44
+                lineNumber: 45
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "sr-only",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-main\\actor-main.jsx",
-                lineNumber: 45
+                lineNumber: 46
             },
             __self: this
         }, "Loading..."))));
@@ -48893,42 +48963,45 @@ const mapStateToProps = (state)=>{
         visibilityFilter
     };
 };
+// Rendering actor components: 1. actor-main -> * 2. actors-list -> 3. actor-card -> 4. actor-view
 function ActorsList(props) {
     const { actors , visibilityFilter  } = props;
     let filteredActors = actors;
+    // Filter actors
     if (visibilityFilter !== '') filteredActors = actors.filter((actor)=>actor.name.toLowerCase().includes(visibilityFilter.toLowerCase())
     );
+    // Error catcher
     if (!actors) return(/*#__PURE__*/ _reactDefault.default.createElement(_errorListDefault.default, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actors-list\\actors-list.jsx",
-            lineNumber: 24
+            lineNumber: 27
         },
         __self: this
     }));
     return(/*#__PURE__*/ _reactDefault.default.createElement(_reactDefault.default.Fragment, null, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Row, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actors-list\\actors-list.jsx",
-            lineNumber: 28
+            lineNumber: 31
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, {
         className: "my-3",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actors-list\\actors-list.jsx",
-            lineNumber: 29
+            lineNumber: 32
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_visibilityFilterInputDefault.default, {
         visibilityFilter: visibilityFilter,
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actors-list\\actors-list.jsx",
-            lineNumber: 30
+            lineNumber: 33
         },
         __self: this
     }))), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Row, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actors-list\\actors-list.jsx",
-            lineNumber: 33
+            lineNumber: 36
         },
         __self: this
     }, filteredActors.map((actor)=>/*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, {
@@ -48938,14 +49011,14 @@ function ActorsList(props) {
             key: actor._id,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actors-list\\actors-list.jsx",
-                lineNumber: 35
+                lineNumber: 38
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_actorCard.ActorCard, {
             actor: actor,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actors-list\\actors-list.jsx",
-                lineNumber: 36
+                lineNumber: 39
             },
             __self: this
         }))
@@ -48974,6 +49047,7 @@ helpers.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+// Rendering actor components: 1. actor-main -> 2. actors-list -> * 3. actor-card -> 4. actor-view
 parcelHelpers.export(exports, "ActorCard", ()=>ActorCard
 );
 var _react = require("react");
@@ -48989,7 +49063,7 @@ class ActorCard extends _reactDefault.default.Component {
             className: "card-image h-100",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-card\\actor-card.jsx",
-                lineNumber: 11
+                lineNumber: 12
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Img, {
@@ -48997,41 +49071,41 @@ class ActorCard extends _reactDefault.default.Component {
             src: actor.imagePath,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-card\\actor-card.jsx",
-                lineNumber: 12
+                lineNumber: 13
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Body, {
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-card\\actor-card.jsx",
-                lineNumber: 13
+                lineNumber: 14
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Title, {
             className: "text-center",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-card\\actor-card.jsx",
-                lineNumber: 14
+                lineNumber: 15
             },
             __self: this
         }, actor.name)), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Footer, {
             className: "text-center",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-card\\actor-card.jsx",
-                lineNumber: 16
+                lineNumber: 17
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
             to: `/actors/${actor._id}`,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-card\\actor-card.jsx",
-                lineNumber: 17
+                lineNumber: 18
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Button, {
             variant: "outline-info",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-card\\actor-card.jsx",
-                lineNumber: 18
+                lineNumber: 19
             },
             __self: this
         }, "Show more")))));
@@ -49094,30 +49168,32 @@ class ActorView extends _reactDefault.default.Component {
         let { actor , movies , loading  } = this.state;
         let actorDead;
         let moviesMatched = [];
+        // Shows date of death if the actress or actor is dead
         function ActorIsDead() {
             if (actor.deathYear) actorDead = /*#__PURE__*/ _reactDefault.default.createElement("div", {
                 className: "actor-death",
                 __source: {
                     fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-view\\actor-view.jsx",
-                    lineNumber: 42
+                    lineNumber: 44
                 },
                 __self: this
             }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
                 className: "label font-weight-bold",
                 __source: {
                     fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-view\\actor-view.jsx",
-                    lineNumber: 43
+                    lineNumber: 45
                 },
                 __self: this
             }, "Year of death: "), /*#__PURE__*/ _reactDefault.default.createElement("span", {
                 className: "value",
                 __source: {
                     fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-view\\actor-view.jsx",
-                    lineNumber: 44
+                    lineNumber: 46
                 },
                 __self: this
             }, actor.deathYear));
         }
+        // Shows the movies that the actress or actor has starred in
         function ShowMovies() {
             movies.map((movie)=>{
                 if (movie.actors.includes(actor._id)) moviesMatched.push(/*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, {
@@ -49127,14 +49203,14 @@ class ActorView extends _reactDefault.default.Component {
                     key: movie._id,
                     __source: {
                         fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-view\\actor-view.jsx",
-                        lineNumber: 54
+                        lineNumber: 57
                     },
                     __self: this
                 }, /*#__PURE__*/ _reactDefault.default.createElement(_movieCard.MovieCard, {
                     movie: movie,
                     __source: {
                         fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-view\\actor-view.jsx",
-                        lineNumber: 55
+                        lineNumber: 58
                     },
                     __self: this
                 })));
@@ -49146,14 +49222,14 @@ class ActorView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-view\\actor-view.jsx",
-                lineNumber: 66
+                lineNumber: 69
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Row, {
             className: "justify-content-md-center",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-view\\actor-view.jsx",
-                lineNumber: 67
+                lineNumber: 70
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, {
@@ -49161,14 +49237,14 @@ class ActorView extends _reactDefault.default.Component {
             md: 8,
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-view\\actor-view.jsx",
-                lineNumber: 68
+                lineNumber: 71
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "actor-image",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-view\\actor-view.jsx",
-                lineNumber: 69
+                lineNumber: 72
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("img", {
@@ -49176,70 +49252,70 @@ class ActorView extends _reactDefault.default.Component {
             className: "film-image mt-5 mb-3",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-view\\actor-view.jsx",
-                lineNumber: 70
+                lineNumber: 73
             },
             __self: this
         })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "actor-name my-4",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-view\\actor-view.jsx",
-                lineNumber: 72
+                lineNumber: 75
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
             className: "value",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-view\\actor-view.jsx",
-                lineNumber: 73
+                lineNumber: 76
             },
             __self: this
         }, actor.name)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "actor-birth",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-view\\actor-view.jsx",
-                lineNumber: 75
+                lineNumber: 78
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "label font-weight-bold",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-view\\actor-view.jsx",
-                lineNumber: 76
+                lineNumber: 79
             },
             __self: this
         }, "Year of birth: "), /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "value",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-view\\actor-view.jsx",
-                lineNumber: 77
+                lineNumber: 80
             },
             __self: this
         }, actor.birthYear)), actorDead, /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "actor-description my-4",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-view\\actor-view.jsx",
-                lineNumber: 80
+                lineNumber: 83
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "value font-italic",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-view\\actor-view.jsx",
-                lineNumber: 81
+                lineNumber: 84
             },
             __self: this
         }, actor.bio)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "my-4",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-view\\actor-view.jsx",
-                lineNumber: 83
+                lineNumber: 86
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
             className: "label h3 font-weight-bold",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-view\\actor-view.jsx",
-                lineNumber: 84
+                lineNumber: 87
             },
             __self: this
         }, "Movies:")), loading && /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Spinner, {
@@ -49248,21 +49324,21 @@ class ActorView extends _reactDefault.default.Component {
             role: "status",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-view\\actor-view.jsx",
-                lineNumber: 87
+                lineNumber: 90
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "sr-only",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-view\\actor-view.jsx",
-                lineNumber: 88
+                lineNumber: 91
             },
             __self: this
         }, "Loading...")))), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Row, {
             className: "justify-content-center",
             __source: {
                 fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\actor-view\\actor-view.jsx",
-                lineNumber: 93
+                lineNumber: 96
             },
             __self: this
         }, moviesMatched)));
@@ -49295,38 +49371,39 @@ var _logoSvgDefault = parcelHelpers.interopDefault(_logoSvg);
 function MainView() {
     let infoGuest;
     let accessToken = localStorage.getItem('token');
+    // Show special message for users who are not logged in
     if (!accessToken) infoGuest = /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert, {
         className: "alert-info",
         variant: "alert",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\main-view\\main-view.jsx",
-            lineNumber: 11
+            lineNumber: 12
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\main-view\\main-view.jsx",
-            lineNumber: 12
+            lineNumber: 13
         },
         __self: this
     }, "Join our exclusive club for free and get access to the best 80s movie information page."), /*#__PURE__*/ _reactDefault.default.createElement("div", {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\main-view\\main-view.jsx",
-            lineNumber: 16
+            lineNumber: 17
         },
         __self: this
     }, "Click ", /*#__PURE__*/ _reactDefault.default.createElement("a", {
         href: "/register",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\main-view\\main-view.jsx",
-            lineNumber: 17
+            lineNumber: 18
         },
         __self: this
     }, "here to sign up"), " or", ' ', /*#__PURE__*/ _reactDefault.default.createElement("a", {
         href: "/login",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\main-view\\main-view.jsx",
-            lineNumber: 18
+            lineNumber: 19
         },
         __self: this
     }, "here to login"), "!"));
@@ -49334,20 +49411,20 @@ function MainView() {
         className: "main-view text-center d-flex justify-content-center align-items-center",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\main-view\\main-view.jsx",
-            lineNumber: 25
+            lineNumber: 26
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Row, {
         className: "w-100",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\main-view\\main-view.jsx",
-            lineNumber: 26
+            lineNumber: 27
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\main-view\\main-view.jsx",
-            lineNumber: 27
+            lineNumber: 28
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement("img", {
@@ -49356,28 +49433,28 @@ function MainView() {
         className: "img-fluid logo-web",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\main-view\\main-view.jsx",
-            lineNumber: 28
+            lineNumber: 29
         },
         __self: this
     }), /*#__PURE__*/ _reactDefault.default.createElement("p", {
         className: "h1 my-4",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\main-view\\main-view.jsx",
-            lineNumber: 29
+            lineNumber: 30
         },
         __self: this
     }, "Welcome to myVHS!"), /*#__PURE__*/ _reactDefault.default.createElement("p", {
         className: "h4 my-4",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\main-view\\main-view.jsx",
-            lineNumber: 30
+            lineNumber: 31
         },
         __self: this
     }, "Get comfy, grab your favorite snacks and get ready for an exciting trip right back to the mind-blowing decade of the 80's!"), infoGuest, /*#__PURE__*/ _reactDefault.default.createElement("p", {
         className: "text-muted my-4",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\main-view\\main-view.jsx",
-            lineNumber: 35
+            lineNumber: 36
         },
         __self: this
     }, "(We bring the popcorn! \u{1f37f})")))));
@@ -49442,20 +49519,20 @@ function AboutView() {
         className: "main-view text-center d-flex justify-content-center align-items-center",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\about-view\\about-view.jsx",
-            lineNumber: 7
+            lineNumber: 8
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Row, {
         className: "align-items-center",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\about-view\\about-view.jsx",
-            lineNumber: 8
+            lineNumber: 9
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Col, {
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\about-view\\about-view.jsx",
-            lineNumber: 9
+            lineNumber: 10
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement("img", {
@@ -49464,21 +49541,21 @@ function AboutView() {
         className: "img-fluid logo-web",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\about-view\\about-view.jsx",
-            lineNumber: 10
+            lineNumber: 11
         },
         __self: this
     }), /*#__PURE__*/ _reactDefault.default.createElement("p", {
         className: "h2 my-4",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\about-view\\about-view.jsx",
-            lineNumber: 11
+            lineNumber: 12
         },
         __self: this
     }, "Web App for enthusiasts of 80's movies."), /*#__PURE__*/ _reactDefault.default.createElement("p", {
         className: "h4 my-4",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\about-view\\about-view.jsx",
-            lineNumber: 14
+            lineNumber: 15
         },
         __self: this
     }, "All in one VHS! Built with its own API and the MERN stack."), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Alert, {
@@ -49486,41 +49563,41 @@ function AboutView() {
         variant: "alert",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\about-view\\about-view.jsx",
-            lineNumber: 17
+            lineNumber: 18
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
         className: "",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\about-view\\about-view.jsx",
-            lineNumber: 18
+            lineNumber: 19
         },
         __self: this
     }, "Want to know more about the project?"), /*#__PURE__*/ _reactDefault.default.createElement("p", {
         className: "h6",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\about-view\\about-view.jsx",
-            lineNumber: 19
-        },
-        __self: this
-    }, "Repositories on GitHub:"), /*#__PURE__*/ _reactDefault.default.createElement("a", {
-        href: "https://github.com/gregoriodelasheras/myVHS-server",
-        className: "badge badge-info m-2",
-        target: "_blank",
-        rel: "noreferrer",
-        __source: {
-            fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\about-view\\about-view.jsx",
             lineNumber: 20
         },
         __self: this
-    }, "myVHS Server-Side"), /*#__PURE__*/ _reactDefault.default.createElement("a", {
-        href: "https://github.com/gregoriodelasheras/myVHS-client",
+    }, "Repositories on GitHub:"), /*#__PURE__*/ _reactDefault.default.createElement("a", {
+        href: "https://github.com/gregoriodelasheras/myvhs-server",
         className: "badge badge-info m-2",
         target: "_blank",
         rel: "noreferrer",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\about-view\\about-view.jsx",
-            lineNumber: 27
+            lineNumber: 21
+        },
+        __self: this
+    }, "myVHS Server-Side"), /*#__PURE__*/ _reactDefault.default.createElement("a", {
+        href: "https://github.com/gregoriodelasheras/myvhs-client",
+        className: "badge badge-info m-2",
+        target: "_blank",
+        rel: "noreferrer",
+        __source: {
+            fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\about-view\\about-view.jsx",
+            lineNumber: 28
         },
         __self: this
     }, "myVHS Client-Side"), /*#__PURE__*/ _reactDefault.default.createElement("a", {
@@ -49530,7 +49607,7 @@ function AboutView() {
         rel: "noreferrer",
         __source: {
             fileName: "C:\\Users\\Pancho\\Desktop\\WebDev\\web-projects\\myVHS-client\\src\\components\\about-view\\about-view.jsx",
-            lineNumber: 34
+            lineNumber: 35
         },
         __self: this
     }, "Other projects"))))));

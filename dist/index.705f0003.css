@@ -14,6 +14,9 @@ body a:hover {
   min-height: 90vh;
   padding-top: 70px;
 }
+.logo-web {
+  width: 600px;
+}
 .card:nth-child(1) {
   background-color: #282c34;
   color: #ffffff;
@@ -29,8 +32,11 @@ body a:hover {
 .form-neon {
   box-shadow: 0 0 10px 5px rgba(23, 162, 184, 0.3);
 }
-.logo-web {
-  width: 600px;
+.main-footer a {
+  color: #17a2b8;
+}
+.main-footer a:hover {
+  color: #148ea1;
 }
 .btn-show, .btn-form {
   box-shadow: 0 0 5px 5px rgba(23, 162, 184, 0.2);
@@ -77,12 +83,6 @@ body a:hover {
 .profile-container {
   max-width: 500px;
   margin: 0 auto;
-}
-.main-footer a {
-  color: #17a2b8;
-}
-.main-footer a:hover {
-  color: #148ea1;
 }
 .modalUser {
   background-color: #282c34;
