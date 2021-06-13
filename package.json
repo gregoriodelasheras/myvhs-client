@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gregoriodelasheras/myVHS-client.git"
+    "url": "git+https://github.com/gregoriodelasheras/myvhs-client.git"
   },
   "author": "Francisco Gregorio de las Heras",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gregoriodelasheras/myVHS-client/issues"
+    "url": "https://github.com/gregoriodelasheras/myvhs-client/issues"
   },
-  "homepage": "https://github.com/gregoriodelasheras/myVHS-client#readme",
+  "homepage": "https://github.com/gregoriodelasheras/myvhs-client#readme",
   "dependencies": {
     "axios": "^0.21.1",
     "parcel": "^2.0.0-beta.3.1",

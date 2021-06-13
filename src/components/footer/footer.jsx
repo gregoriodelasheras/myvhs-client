@@ -20,7 +20,7 @@ export default function Footer() {
             <p>
               Latest version:{' '}
               <a
-                href='https://github.com/gregoriodelasheras/myVHS-client/releases/latest'
+                href='https://github.com/gregoriodelasheras/myvhs-client/releases/latest'
                 target='_blank'
                 rel='noreferrer'>
                 v.1.0.4

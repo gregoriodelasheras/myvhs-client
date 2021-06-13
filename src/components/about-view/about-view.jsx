@@ -19,14 +19,14 @@ export default function AboutView() {
             <p className=''>Want to know more about the project?</p>
             <p className='h6'>Repositories on GitHub:</p>
             <a
-              href='https://github.com/gregoriodelasheras/myVHS-server'
+              href='https://github.com/gregoriodelasheras/myvhs-server'
               className='badge badge-info m-2'
               target='_blank'
               rel='noreferrer'>
               myVHS Server-Side
             </a>
             <a
-              href='https://github.com/gregoriodelasheras/myVHS-client'
+              href='https://github.com/gregoriodelasheras/myvhs-client'
               className='badge badge-info m-2'
               target='_blank'
               rel='noreferrer'>

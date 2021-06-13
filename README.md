@@ -105,7 +105,7 @@ Another advantage is that React prioritizes the user experience, which is one of
 
 ## Server-side
 
-To see the Server-side of the app, please check [this repository](https://github.com/gregoriodelasheras/myVHS-server).
+To see the Server-side of the app, please check [this repository](https://github.com/gregoriodelasheras/myvhs-server).
 
 ## License
 
@@ -117,7 +117,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Francisco Gregorio de las Heras: [LinkedIn](https://www.linkedin.com/in/francisco-gregorio-de-las-heras/)
 
-Project Link: [https://gregoriodelasheras.github.io/myVHS-client/](https://gregoriodelasheras.github.io/myVHS-client/)
+Project Link: [https://gregoriodelasheras.github.io/myvhs-client/](https://gregoriodelasheras.github.io/myvhs-client/)
 
 <!-- ACKNOWLEDGEMENTS -->
 
